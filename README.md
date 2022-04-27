@@ -10,3 +10,6 @@
  
  **Step 3**: By running the following command, you will be able to get all the dependencies in your node_modules folder:
  `npm install && npm run dev`
+
+ **Step 3**: By running the following command, you will be able to compile all the dependencies in your node_modules folder:
+  `npm run development`
