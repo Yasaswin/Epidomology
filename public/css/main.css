@@ -1062,7 +1062,7 @@ html.t-pattern-8 {
 header {
 	position: relative;
 	z-index: 1000;
-	background-color: #272b31;
+	background-color: #720000;
 	background-image: url();
 	background-size: cover;
 	background-position: 0% 50%;
@@ -1127,9 +1127,9 @@ header:before{
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
-	background-color: #f27c66;
+	background-color: #410303;
 	font-family: FontAwesome;
-	color: #262a2f;
+	color: #410303;
 	font-size: 1em;
 	line-height: 18px;
 	text-align: center;
@@ -1937,7 +1937,7 @@ nav.main-nav.mobile_nav.opened ul {
 /* footer */
 /**/
 footer {
-	background-color: #2d3339;
+	background-color: #3f0303;
 	line-height: 24px;
 }
 footer p {
@@ -1951,7 +1951,7 @@ footer h2 {
 	color: #f7f7f7;
 	text-transform: uppercase;
 	font-weight: 700;
-	background-color: #f27c66;
+	background-color: #360000;
 	padding: 17px 15px 13px 10px;
 	margin-bottom: 30px;
 	margin-top: 0px;
@@ -1960,11 +1960,11 @@ footer h2 {
 footer h2:before{
 	float: right;
 	font-family: FontAwesome;
-	color: #2d3339;
+	color: #3f0303;
 	line-height: 25px; 
 	font-size: 25px;
 }
-.footer-about h2:before{
+/* .footer-about h2:before{
 	content: "\f19d";
 }
 .footer-latest h2:before{
@@ -1972,14 +1972,14 @@ footer h2:before{
 }
 .footer-contact-form h2:before{
 	content: "\f14b";
-}
-.footer-latest h2{
+} */
+/* .footer-latest h2{
 	background-color: #f9cb8f;
 }
 
 .footer-contact-form h2{
 	background-color: #18bb7c;
-}
+} */
 footer h3 {
 	color: #f7f7f7;
 	font-size: inherit;
@@ -2741,7 +2741,7 @@ input[type="text"][disabled] {
 	border-left: 9px solid transparent;
 	border-right: 9px solid transparent;
 	position: absolute;
-	top: -9px;\
+	top: -9px;
 	left: -webkit-calc(50% - 9px);
 	left: -moz-calc(50% - 9px);
 	left: calc(50% - 9px);
@@ -7120,7 +7120,7 @@ p.form-row.form-row-wide.select-arrow:before {
 	margin-bottom: 40px;
 }
 .portfolio-item:hover {
-	border-color: #f27c66;
+	border-color: #850000;
 	
 } 
 main>.portfolio-item {

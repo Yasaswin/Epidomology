@@ -4,8 +4,7 @@
 				<div class="grid-row clear-fix">
 					<!-- logo -->
 					<a href="index.html" class="logo">
-						<img src="img/logo.png"  data-at2x="img/logo@2x.png" alt>
-						<h1>uniLearn</h1>
+						<img src="img/logo.png"  data-at2x="img/logo.png" alt>
 					</a>
 					<!-- / logo -->
 					<nav class="main-nav">
@@ -46,7 +45,7 @@
 											<li><a href="page-login.html">Login</a></li>
 											
 										</ul>
-										<img src="http://placehold.it/250x150" alt>
+										<!-- <img src="http://placehold.it/250x150" alt> -->
 									</li>
 									<li><div class="header-megamenu">Portfolio</div>
 										<ul>
@@ -57,7 +56,7 @@
 											<li><a href="portfolio-gallery.html">Gallery</a></li>
 											<li><a href="portfolio-filtered.html">Filtered</a></li>
 										</ul>
-										<img src="http://placehold.it/250x150" alt>
+										<!-- <img src="http://placehold.it/250x150" alt> -->
 									</li>
 									<li><div class="header-megamenu">Blog</div>
 										<ul>
@@ -67,7 +66,7 @@
 											<li><a href="blog-fullwidth.html">Full Width</a></li>
 											<li><a href="blog-post.html">Blog Post</a></li>
 										</ul>
-										<img src="http://placehold.it/250x150" alt>
+										<!-- <img src="http://placehold.it/250x150" alt> -->
 									</li>
 								</ul>
 								<!-- / sub mega menu -->

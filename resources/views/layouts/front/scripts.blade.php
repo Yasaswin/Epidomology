@@ -1,10 +1,10 @@
 {{-- Scripts that are available on every frontend page --}}
-{{--<script src="{{ asset('js/app.js') }}"></script>--}}
+<!-- <script src="{{ asset('js/app.js') }}"></script> -->
 
 <!-- / footer -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-1.4.1.min.js"></script>
 <script type="text/javascript" src='https://maps.google.com/maps/api/js?sensor=false'></script>
-<script type="text/javascript" src='https://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox_packed.js'></script>
+<!-- <script type="text/javascript" src='https://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox_packed.js'></script> -->
 <script type='text/javascript' src="{{ asset('js/jquery.validate.min.js') }}"></script>
 <script src="{{ asset('js/jquery.form.min.js') }}"></script>
 <script src="{{ asset('js/TweenMax.min.js') }}"></script>

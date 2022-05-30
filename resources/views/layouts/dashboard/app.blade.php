@@ -81,11 +81,11 @@
     </footer>
 </div>
 
-<script src="{{ mix('js/app.js') }}" defer></script>
 
 @yield('third_party_scripts')
 
 @stack('page_scripts')
+<script src="{{ mix('js/app.js') }}" defer></script>
 
 </body>
 </html>

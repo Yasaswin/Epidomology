@@ -29,7 +29,7 @@
 				<section class="grid-col grid-col-4 footer-latest">
 					<h2 class="corner-radius">Latest courses</h2>
 					<article>
-						<img src="http://placehold.it/83x83" data-at2x="http://placehold.it/83x83" alt>
+						<!-- <img src="http://placehold.it/83x83" data-at2x="http://placehold.it/83x83" alt> -->
 						<h3>Sed aliquet dui at auctor blandit</h3>
 						<div class="course-date">
 							<div>10<sup>00</sup></div>
@@ -39,7 +39,7 @@
 	sit amet pretium tortor mattis.</p>
 					</article>
 					<article>
-						<img src="http://placehold.it/83x83" data-at2x="http://placehold.it/83x83" alt>
+						<!-- <img src="http://placehold.it/83x83" data-at2x="http://placehold.it/83x83" alt> -->
 						<h3>Sed aliquet dui at auctor blandit</h3>
 						<div class="course-date">
 							<div>10<sup>00</sup></div>
@@ -53,7 +53,7 @@
 					<h2 class="corner-radius">apply for instructor</h2>
 					<div class="email_server_responce"></div>
 					<form action="php/contacts-process.php" class="contact-form" method="post" novalidate="novalidate">
-						<p><span class="your-name"><input type="text" name="name" value="" size="40" placeholder="Name" aria-invalid="false" required></span>
+						<p><span class="your-name"><input type="text" id="name" name="name" value="" size="40" placeholder="Name" aria-invalid="false" required></span>
 						</p>
 						<p><span class="your-email"><input type="text" name="phone" value="" size="40" placeholder="Phone" aria-invalid="false" required></span> </p>
 						<p><span class="your-message"><textarea name="message" placeholder="Comments" cols="40" rows="5" aria-invalid="false" required></textarea></span> </p>
@@ -65,29 +65,7 @@
 		<div class="footer-bottom">
 			<div class="grid-row clear-fix">
 				<div class="copyright">uniLearn<span></span> 2015 . All Rights Reserved</div>
-				<nav class="footer-nav">
-					<ul class="clear-fix">
-						<li>
-							<a href="index.html">Home</a>
-						</li>
-						<li>
-							<a href="courses-grid.html">Courses</a>
-						</li>
-						<li>
-							<a href="content-elements.html">Plans</a>
-						</li>
-						<li>
-							<a href="blog-default.html">News</a>
-						</li>
-						<li>
-							<a href="page-about-us.html">Pages</a>
-						</li>
-						<li>
-							<a href="contact-us.html">Contact</a>
-						</li>
-					</ul>
-				</nav>
 			</div>
 		</div>
-	</footer>
+	</footer>	
 	<!-- / footer -->
