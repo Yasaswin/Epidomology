@@ -11,7 +11,11 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
+    global.moment = require('moment');
+    require('tempusdominus-bootstrap-4');
+    require('admin-lte');
 } catch (e) {
+    console.log(e);
 }
 
 /**

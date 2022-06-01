@@ -25,11 +25,18 @@ require __DIR__.'/auth.php';
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('categories', [App\Http\Controllers\CategoryController::class, 'index'])->name('category');
+Route::get('categories', [App\Http\Controllers\CategoryController::class, 'index'])->name('category.filter');
 Route::get('category/create', [App\Http\Controllers\CategoryController::class, 'create'])->name('category.create');
 Route::post('category/create', [App\Http\Controllers\CategoryController::class, 'store'])->name('category.store');
+Route::get('category/{category}/edit', [App\Http\Controllers\CategoryController::class, 'edit'])->name('category.edit');
+Route::post('category/{category}/edit', [App\Http\Controllers\CategoryController::class, 'store'])->name('category.update');
+Route::get('category/{category}', [App\Http\Controllers\CategoryController::class, 'show'])->name('category.show');
 
 
+
+// pages
+Route::get('history', [App\Http\Controllers\FrontController::class, 'history'])->name('history');
+Route::get('vision', [App\Http\Controllers\FrontController::class, 'vision'])->name('vision');
 
 
 Auth::routes();

@@ -1381,7 +1381,7 @@ header:before{
 }
 .main-nav>ul>li {
 	float: left;
-	line-height: 100px;
+	line-height: 40px;
 	
 }
 .sticky-menu.double-menu:not(.second-nav) .main-nav:not(.mobile_nav)>ul>li {
@@ -1392,11 +1392,11 @@ header:before{
 	color: #ffffff;
 }
 .sticky-menu.scrolling .main-nav>ul>li {
-	line-height: 64px;
+	line-height: 44px;
 }
 .main-nav>ul>li>a {
 	display: block;
-	padding-left: 20px;
+	padding-left: 16px;
 }
 .main-nav>ul>li>a:after {
 	content: "|";

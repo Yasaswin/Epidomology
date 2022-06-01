@@ -2,11 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\category;
+use App\Models\Category;
+use App\Services\CategoryService;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreCategory;
+use App\Http\Requests\UpdatCategory;
+Use Alert;
 
 class CategoryController extends Controller
 {
+    private $categoryservice;
+    private $model = 'Category';
+
+    public function __construct(CategoryService $service)
+    {
+        $this->categoryservice = $service;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +26,11 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('dashboard.categories.filter');
+        $categories = Category::all();
+        return view('dashboard.categories.filter',[
+            'categories'=>$categories
+
+        ]);
     }
 
     /**
@@ -24,7 +40,12 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('dashboard.categories.create');
+        $category = New category;
+        $name = 'New';
+        return view('dashboard.categories.create',[
+            'category'=>$category,
+            'name' => $name 
+        ]);
 
     }
 
@@ -34,23 +55,13 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCategory $request)
     {
-        $this->validate($request, [
-            'name' => 'required|string|unique:categories|max:255',
-            'description' => 'nullable|string|max:255'
-        ]);
+        $data = $request->all();
+        $category = $this->categoryservice->store($data);
+        // Alert::success('Success Title', 'STD Clinic was created successfully!');
+        return redirect()->route('category.show', [ $category->id])->with('success', 'Category created was created successfully!');
   
-          $category = Category::create([
-            'name' => $request->input('name'),
-        ]);
-  
-          if ($request->has('description')) {
-            $category->fill(['description' => $request->input('description')]);
-            $category->save();
-        }
-  
-        return redirect()->route('category')->with('success', 'Category created.');
       }
 
     /**
@@ -59,9 +70,13 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(category $category)
+    public function show(Category $category)
     {
-        //
+        $name = $category->name;
+        return view('dashboard.categories.view', [
+            'category'=>$category,
+            'name' => $name 
+        ]);
     }
 
     /**
@@ -70,9 +85,13 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(category $category)
+    public function edit(Category $category)
     {
-        //
+        $name = $category->name;
+        return view('dashboard.categories.edit', [
+            'category'=>$category,
+            'name' => $name 
+         ]);
     }
 
     /**
@@ -82,9 +101,15 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, category $category)
+    public function update(UpdateCategory $request, Category $category)
     {
-        //
+        $data = $request->all();
+        $shouldUpdate = $this->categoryservice->shouldUpdate( $category, $data );
+        if ($shouldUpdate){
+            $this->categoryservice->update( $category, $data );
+            // Alert::success('Success Title', 'Subpopulation was updated successfully!');
+        }
+        return redirect()->route('category.show', ['subpopulation' => $category])->with('success', 'Subpopulation was updated successfully!'); 
     }
 
     /**
@@ -93,7 +118,7 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(category $category)
+    public function destroy(Category $category)
     {
         //
     }

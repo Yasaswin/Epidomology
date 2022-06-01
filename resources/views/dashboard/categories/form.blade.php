@@ -1,7 +1,7 @@
 <div class="container">
     <div class="card card-shadow sharp-corners mt-4"> 
         <div class="card-header my-form-header @lang('theme.card_outline_color')">
-            <h4 class="my-form-heading" ><i class="far fa-file-alt pr-2"></i></h4>
+            <h4 class="my-form-heading" ><i class="far fa-file-alt pr-2"></i>{{$name}}</h4>
         </div>
         <div class="card-body px-4 pt-4" onload="script();">
             <!-- <div class="row align-items-end"> -->
@@ -9,7 +9,7 @@
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
                     <div class="form-group">
                         <label for="name">Tittle</label>
-                        <input type="text" class="form-control form-control-sm{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="Tittle" name="name" value="" >
+                        <input type="text" class="form-control form-control-sm{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="Tittle" name="name" value="{{$errors->has('name')?old('name'):(empty(old('name'))?$category->name:old('name'))}}" {{$editable?'':' disabled'}} >
                         @if ($errors->has('name'))
                             <span class="invalid-feedback">
                                 <strong>{{ $errors->first('name') }}</strong>
@@ -17,11 +17,10 @@
                         @endif
                     </div>
                 </div>
-
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                     <div class="form-group">
                         <label for="address">Description</label>
-                        <textarea class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="Description" name="description" rows="4" ></textarea>
+                        <textarea class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" placeholder="Description" name="description" rows="4" {{$editable?'':' disabled'}}>{{$errors->has('description')?old('description'):(empty(old('description'))?$category->description:old('description'))}}</textarea>
                         @if ($errors->has('description'))
                             <span class="invalid-feedback">
                                 <strong>{{ $errors->first('description') }}</strong>
@@ -35,12 +34,11 @@
             <!-- <div class="row justify-content-end"> </div> -->
             <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-2">
                     
-                </div>
-                <label class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pl-2 heading-lbl"></label>
+            </div>
+            <label class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 pl-2 heading-lbl"></label>
         </div>
     </div>
 </div>
-<script type="text/javascript">
-   
-</script>
+
+
    

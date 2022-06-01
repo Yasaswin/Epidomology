@@ -19,8 +19,48 @@
 								</ul>
 								<!-- / sub menu -->
 							</li>
+							<li>
+								<a href="index.html" >About Us</a>
+								<!-- sub menu -->
+								<ul>
+									<li><a href="index.html" class="active">Full-Width Slider</a></li>
+									<li><a href="index-fullscreen.html">Full-Screen Slider</a></li>
+									<li><a href="index-bg-video.html">Video Slider</a></li>
+								</ul>
+								<!-- / sub menu -->
+							</li>
+							<li>
+								<a href="index.html">Immunization </a>
+								<!-- sub menu -->
+								<ul>
+									<li><a href="index.html" class="active">Full-Width Slider</a></li>
+									<li><a href="index-fullscreen.html">Full-Screen Slider</a></li>
+									<li><a href="index-bg-video.html">Video Slider</a></li>
+								</ul>
+								<!-- / sub menu -->
+							</li>
+							<li>
+								<a href="index.html">Disease Surveillance </a>
+								<!-- sub menu -->
+								<ul>
+									<li><a href="index.html" class="active">Full-Width Slider</a></li>
+									<li><a href="index-fullscreen.html">Full-Screen Slider</a></li>
+									<li><a href="index-bg-video.html">Video Slider</a></li>
+								</ul>
+								<!-- / sub menu -->
+							</li>
+							<li>
+								<a href="index.html">Disease Information</a>
+								<!-- sub menu -->
+								<ul>
+									<li><a href="index.html" class="active">Full-Width Slider</a></li>
+									<li><a href="index-fullscreen.html">Full-Screen Slider</a></li>
+									<li><a href="index-bg-video.html">Video Slider</a></li>
+								</ul>
+								<!-- / sub menu -->
+							</li>
 							<li class="megamenu">
-								<a href="content-elements.html">Features</a>
+								<a href="content-elements.html">Training</a>
 								<!-- sub mega menu -->
 								<ul class="clear-fix">
 									<li><div class="header-megamenu">Pages</div>
@@ -72,7 +112,7 @@
 								<!-- / sub mega menu -->
 							</li>
 							<li>
-								<a href="courses-grid.html">Courses</a>
+								<a href="courses-grid.html">Dashboards</a>
 								<!-- sub menu -->
 								<ul>
 									<li><a href="courses-grid.html">Courses grid</a></li>
@@ -82,7 +122,7 @@
 								<!-- / sub menu -->
 							</li>
 							<li>
-								<a href="events-single-item.html">Events</a>
+								<a href="events-single-item.html">Web Systems</a>
 								<!-- sub menu -->
 								<ul>
 									<li><a href="event-calendar.html">Events Calendar</a></li>
@@ -91,7 +131,7 @@
 								<!-- / sub menu -->
 							</li>
 							<li>
-								<a href="shop-product-list.html">Shop</a>
+								<a href="shop-product-list.html">Resources</a>
 								<!-- sub menu -->
 								<ul>
 									<li><a href="shop-product-list.html">Product List</a></li>
@@ -102,7 +142,7 @@
 								<!-- / sub menu -->
 							</li>
 							<li>
-								<a href="contact-us.html">Contact Us</a>
+								<a href="contact-us.html">Gallery</a>
 							</li>
 						</ul>
 					</nav>

@@ -28,7 +28,7 @@
         </a>
         </li>
         <li class="nav-item">
-        <a href="./index3.html" class="nav-link">
+        <a href="{{ route('category.filter') }}" class="nav-link">
             <i class="nav-icon fas fa-th"></i>
             <p>Categories</p>
         </a>
