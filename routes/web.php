@@ -32,7 +32,10 @@ Route::get('category/{category}/edit', [App\Http\Controllers\CategoryController:
 Route::post('category/{category}/edit', [App\Http\Controllers\CategoryController::class, 'store'])->name('category.update');
 Route::get('category/{category}', [App\Http\Controllers\CategoryController::class, 'show'])->name('category.show');
 
-
+Route::get('posts', [App\Http\Controllers\PostController::class, 'index'])->name('post.filter');
+Route::get('post/create', [App\Http\Controllers\PostController::class, 'create'])->name('post.create');
+Route::post('post/create', [App\Http\Controllers\PostController::class, 'store'])->name('post.store');
+Route::get('post/{post}', [App\Http\Controllers\PostController::class, 'show'])->name('post.show');
 
 // pages
 Route::get('history', [App\Http\Controllers\FrontController::class, 'history'])->name('history');

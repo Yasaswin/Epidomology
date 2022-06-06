@@ -14,6 +14,9 @@ try {
     global.moment = require('moment');
     require('tempusdominus-bootstrap-4');
     require('admin-lte');
+    require('sweetalert2');
+    require('select2');
+
 } catch (e) {
     console.log(e);
 }

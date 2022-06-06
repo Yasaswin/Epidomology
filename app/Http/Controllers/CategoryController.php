@@ -6,8 +6,9 @@ use App\Models\Category;
 use App\Services\CategoryService;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreCategory;
-use App\Http\Requests\UpdatCategory;
+use App\Http\Requests\UpdateCategory;
 Use Alert;
+
 
 class CategoryController extends Controller
 {
@@ -26,11 +27,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        return view('dashboard.categories.filter',[
-            'categories'=>$categories
-
-        ]);
+        
+        $categories = Category::paginate(15);
+        return view('dashboard.categories.filter',['categories'=>$categories]);
     }
 
     /**
@@ -42,10 +41,7 @@ class CategoryController extends Controller
     {
         $category = New category;
         $name = 'New';
-        return view('dashboard.categories.create',[
-            'category'=>$category,
-            'name' => $name 
-        ]);
+        return view('dashboard.categories.create',['category'=>$category,'name' => $name]);
 
     }
 
@@ -60,9 +56,9 @@ class CategoryController extends Controller
         $data = $request->all();
         $category = $this->categoryservice->store($data);
         // Alert::success('Success Title', 'STD Clinic was created successfully!');
-        return redirect()->route('category.show', [ $category->id])->with('success', 'Category created was created successfully!');
+        return redirect()->route('category.show', [ $category])->with('success', 'Category created was created successfully!');
   
-      }
+    }
 
     /**
      * Display the specified resource.
@@ -73,10 +69,7 @@ class CategoryController extends Controller
     public function show(Category $category)
     {
         $name = $category->name;
-        return view('dashboard.categories.view', [
-            'category'=>$category,
-            'name' => $name 
-        ]);
+        return view('dashboard.categories.view', ['category'=>$category,'name' => $name]);
     }
 
     /**
@@ -88,10 +81,7 @@ class CategoryController extends Controller
     public function edit(Category $category)
     {
         $name = $category->name;
-        return view('dashboard.categories.edit', [
-            'category'=>$category,
-            'name' => $name 
-         ]);
+        return view('dashboard.categories.edit', ['category'=>$category,'name' => $name]);
     }
 
     /**

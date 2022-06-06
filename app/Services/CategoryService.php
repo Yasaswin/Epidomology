@@ -18,6 +18,8 @@ class CategoryService {
         {          
             $category = new Category;           
             $category->name = $data['name'];
+            // $category->slug = SlugService::createSlug(Category::class, 'slug');
+            // $category-> slug = SlugService::createSlug(Category::class, 'slug', $data['name']);
             $category->description = $data['description'];
             $category->save();
         }

@@ -23,9 +23,12 @@
 								<a href="index.html" >About Us</a>
 								<!-- sub menu -->
 								<ul>
-									<li><a href="index.html" class="active">Full-Width Slider</a></li>
-									<li><a href="index-fullscreen.html">Full-Screen Slider</a></li>
-									<li><a href="index-bg-video.html">Video Slider</a></li>
+									<li><a href="index.html" class="active">Vision and Mission</a></li>
+									<li><a href="index-fullscreen.html">Organization Structure</a></li>
+									<li><a href="index-bg-video.html">History</a></li>
+									<li><a href="index-bg-video.html">Key Achievements</a></li>
+									<li><a href="index-bg-video.html">Careers at EPID</a></li>
+
 								</ul>
 								<!-- / sub menu -->
 							</li>
@@ -39,15 +42,45 @@
 								</ul>
 								<!-- / sub menu -->
 							</li>
-							<li>
-								<a href="index.html">Disease Surveillance </a>
-								<!-- sub menu -->
-								<ul>
-									<li><a href="index.html" class="active">Full-Width Slider</a></li>
-									<li><a href="index-fullscreen.html">Full-Screen Slider</a></li>
-									<li><a href="index-bg-video.html">Video Slider</a></li>
+							<li class="megamenu">
+								<a href="content-elements.html">Disease Surveillance</a>
+								<!-- sub mega menu -->
+								<ul class="clear-fix">
+									<li><div class="header-megamenu">Disease Surveillance System</div>
+										<ul>
+											<li><a href="page-about-us.html">Surveillance Methods</a></li>
+											<li><a href="page-our-staff.html">List of Notifiable Diseases</a></li>
+											<li><a href="page-services.html">Vaccine Preventable Diseases</a></li>
+										</ul>
+									</li>
+									<li><div class="header-megamenu">Disease surveillance during disaster</div>
+										<ul>
+
+										</ul>
+										<!-- <img src="http://placehold.it/250x150" alt> -->
+									</li>
+									<li><div class="header-megamenu">Weekly Epidemiological Repor</div>
+										<ul>
+
+										</ul>
+										<!-- <img src="http://placehold.it/250x150" alt> -->
+									</li>
+									<li><div class="header-megamenu">Quarterly Epidemiological Bulletin</div>
+										<ul>
+
+										</ul>
+										<!-- <img src="http://placehold.it/250x150" alt> -->
+									</li>
+									<li><div class="header-megamenu">Investigation Forms <br></div>
+										<ul>
+										<li><a href="page-about-us.html">Special Surveillance</a></li>
+											<li><a href="page-our-staff.html">Other Surveillance</a></li>
+
+										</ul>
+										<!-- <img src="http://placehold.it/250x150" alt> -->
+									</li>
 								</ul>
-								<!-- / sub menu -->
+								<!-- / sub mega menu -->
 							</li>
 							<li>
 								<a href="index.html">Disease Information</a>
@@ -60,51 +93,74 @@
 								<!-- / sub menu -->
 							</li>
 							<li class="megamenu">
-								<a href="content-elements.html">Training</a>
+								<a href="content-elements.html">Resources</a>
 								<!-- sub mega menu -->
 								<ul class="clear-fix">
-									<li><div class="header-megamenu">Pages</div>
+									<li><div class="header-megamenu">Publications</div>
 										<ul>
-											<li><a href="page-about-us.html">About Us</a></li>
-											<li><a href="page-our-staff.html">Our Staff</a></li>
-											<li><a href="page-services.html">Services</a></li>
-											<li><a href="page-full-width.html">Full-Width Page</a></li>
-											<li><a href="page-left-sidebar.html">Page Left Sidebar</a></li>
-											<li><a href="page-right-sidebar.html">Page Right Sidebar</a></li>
-											<li><a href="page-double-sidebars.html">Double Sidebars</a></li>
-											<li><a href="page-faq.html">Faq Page</a></li>
-											<li><a href="page-sitemap.html">SiteMap</a></li>
-											<li><a href="page-404.html">404 Page</a></li>
+											<li><a href="page-about-us.html">NIP</a></li>
+											<li><a href="page-our-staff.html">Disease Surveillance</a></li>
+											<li><a href="page-services.html">Covid-19</a></li>
+											<li><a href="page-full-width.html">Dengue</a></li>
+											<li><a href="page-left-sidebar.html">Leptospirosis</a></li>
+											<li><a href="page-right-sidebar.html">Influenza</a></li>
+											<li><a href="page-double-sidebars.html">Typhoid</a></li>
+											<li><a href="page-faq.html">Disease Surveillance</a></li>
+											<li><a href="page-sitemap.html">Ebola</a></li>
+											<li><a href="page-404.html">CKDu</a></li>
+											<li><a href="page-404.html">Other</a></li>
+
 										</ul>
 									</li>
-									<li><div class="header-megamenu">Content</div>
+									<li><div class="header-megamenu">Circulars</div>
 										<ul>
-											<li><a href="content-elements.html">Content Elements</a></li>
-											<li><a href="page-content-typography.html">Typography</a></li>
-											<li><a href="page-pricing-plans.html">Pricing Plans</a></li>
-											<li><a href="page-login.html">Login</a></li>
-											
-										</ul>
-										<!-- <img src="http://placehold.it/250x150" alt> -->
-									</li>
-									<li><div class="header-megamenu">Portfolio</div>
-										<ul>
-											<li><a href="portfolio-one-column.html">One Column</a></li>
-											<li><a href="portfolio-two-columns.html">Two Columns</a></li>
-											<li><a href="portfolio-three-columns.html">Three Columns</a></li>
-											<li><a href="portfolio-four-columns.html">Four Columns</a></li>
-											<li><a href="portfolio-gallery.html">Gallery</a></li>
-											<li><a href="portfolio-filtered.html">Filtered</a></li>
+										<li><a href="page-about-us.html">NIP</a></li>
+											<li><a href="page-our-staff.html">Disease Surveillance</a></li>
+											<li><a href="page-services.html">Covid-19</a></li>
+											<li><a href="page-full-width.html">Dengue</a></li>
+											<li><a href="page-left-sidebar.html">Leptospirosis</a></li>
+											<li><a href="page-right-sidebar.html">Influenza</a></li>
+											<li><a href="page-double-sidebars.html">Typhoid</a></li>
+											<li><a href="page-faq.html">Disease Surveillance</a></li>
+											<li><a href="page-sitemap.html">Ebola</a></li>
+											<li><a href="page-404.html">CKDu</a></li>
+											<li><a href="page-404.html">Other</a></li>
+
 										</ul>
 										<!-- <img src="http://placehold.it/250x150" alt> -->
 									</li>
-									<li><div class="header-megamenu">Blog</div>
+									<li><div class="header-megamenu">Guidelines</div>
 										<ul>
-											<li><a href="blog-default.html">Default</a></li>
-											<li><a href="blog-two-columns.html">Two Columns</a></li>
-											<li><a href="blog-three-columns.html">Three Columns</a></li>
-											<li><a href="blog-fullwidth.html">Full Width</a></li>
-											<li><a href="blog-post.html">Blog Post</a></li>
+										<li><a href="page-about-us.html">NIP</a></li>
+											<li><a href="page-our-staff.html">Disease Surveillance</a></li>
+											<li><a href="page-services.html">Covid-19</a></li>
+											<li><a href="page-full-width.html">Dengue</a></li>
+											<li><a href="page-left-sidebar.html">Leptospirosis</a></li>
+											<li><a href="page-right-sidebar.html">Influenza</a></li>
+											<li><a href="page-double-sidebars.html">Typhoid</a></li>
+											<li><a href="page-faq.html">Disease Surveillance</a></li>
+											<li><a href="page-sitemap.html">Ebola</a></li>
+											<li><a href="page-404.html">CKDu</a></li>
+											<li><a href="page-404.html">Other</a></li>
+										</ul>
+										<!-- <img src="http://placehold.it/250x150" alt> -->
+									</li>
+									<li><div class="header-megamenu">Policy/Strategic Plans</div>
+										<ul>
+
+										</ul>
+										<!-- <img src="http://placehold.it/250x150" alt> -->
+									</li>
+									<li><div class="header-megamenu">Review/<br>Reporting/Surveillance</div>
+										<ul>
+										<li><a href="page-about-us.html">EPI Review Formats</a></li>
+											<li><a href="page-our-staff.html">Reporting Forms</a></li>
+											<li><a href="page-services.html">AEFI</a></li>
+											<li><a href="page-full-width.html">EPI Returns</a></li>
+											<li><a href="page-left-sidebar.html">Special Surveillance Forms</a></li>
+											<li><a href="page-right-sidebar.html">Other Surveillance Forms</a></li>
+											<li><a href="page-double-sidebars.html">Other Downloads</a></li>
+
 										</ul>
 										<!-- <img src="http://placehold.it/250x150" alt> -->
 									</li>
@@ -112,12 +168,15 @@
 								<!-- / sub mega menu -->
 							</li>
 							<li>
-								<a href="courses-grid.html">Dashboards</a>
+								<a href="courses-grid.html">Resources</a>
 								<!-- sub menu -->
 								<ul>
-									<li><a href="courses-grid.html">Courses grid</a></li>
-									<li><a href="courses-list.html">Courses list</a></li>
-									<li><a href="courses-single-item.html">Courses single item</a></li>
+									<li><a href="courses-grid.html">Publications</a></li>
+									<li><a href="courses-list.html">Circulars</a></li>
+									<li><a href="courses-single-item.html">Guidelines</a></li>
+									<li><a href="courses-single-item.html">Policy/Strategic Plans</a></li>
+									<li><a href="courses-single-item.html">Review/<br>Reporting/Surveillance</a></li>
+
 								</ul>
 								<!-- / sub menu -->
 							</li>
@@ -131,7 +190,7 @@
 								<!-- / sub menu -->
 							</li>
 							<li>
-								<a href="shop-product-list.html">Resources</a>
+								<a href="shop-product-list.html">Training</a>
 								<!-- sub menu -->
 								<ul>
 									<li><a href="shop-product-list.html">Product List</a></li>

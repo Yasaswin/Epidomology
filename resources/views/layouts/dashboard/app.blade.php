@@ -11,9 +11,11 @@
 
           <link href="{{ asset('css/app.css') }}" rel="stylesheet">
           <script src="{{ asset('js/app.js') }}" ></script>
+          <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+          <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
           @yield('third_party_stylesheets')
 
-    @stack('page_css')
+          @stack('page_css')
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -62,20 +64,45 @@
     </nav>
 
     <!-- Left side column. contains the logo and sidebar -->
-@include('layouts.dashboard.sidebar')
+    @include('layouts.dashboard.sidebar')
 
-<!-- Content Wrapper. Contains page content -->
+    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <section class="content">
+        @if (session('app.error') || session('success'))
+              <div class="container">
+                @if (session('app.error'))
+                  <div class="alert alert-danger"><i class="fas fa-exclamation-triangle px-2"></i>{{ session('error') }}</div>
+                @endif
+                <!-- @if (session('success'))
+                  <div class="alert alert-success"><i class="fas fa-check-circle px-2"></i>{{ session('success') }}</div> 
+                @endif -->
+              </div>
+            @endif
+            
             @yield('content')
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $('.invisible').hide();
+                    $('.loading-hide').css({'visibility':'visible'});
+                    if( @json(!empty($errors->toArray())) ){
+                        Swal.fire({
+                            icon: 'warning',
+                            title: 'Validation errors',
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 5000
+                        });
+                    } 
+
+                });  
+            </script>
         </section>
     </div>
 
     <!-- Main Footer -->
     <footer class="main-footer">
-        <div class="float-right d-none d-sm-block">
-
-        </div>
         <strong>Copyright &copy;<a href="#">K-soft</a>.</strong> All rights
         reserved.
     </footer>

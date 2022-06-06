@@ -22,7 +22,7 @@
         </a>
         </li>
         <li class="nav-item">
-        <a href="./index2.html" class="nav-link">
+        <a href="{{ route('post.create') }}" class="nav-link">
             <i class="nav-icon fas fa-edit"></i>
             <p>New Post</p>
         </a>

@@ -4,9 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Models\Category;
+use App\Services\PostService;
+use Illuminate\Support\Facades\Auth;
+
 
 class PostController extends Controller
 {
+    private $postservice;
+    private $model = 'Post';
+
+    public function __construct(PostService $service)
+    {
+        $this->postservice = $service;
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +27,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all(['id', 'name']);
+        $posts = Post::paginate(15);
+        return view('dashboard.posts.filter',['posts'=>$posts,'categories'=>$categories]);
     }
 
     /**
@@ -24,7 +39,11 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all(['id', 'name']);
+        $post = New Post;
+        $name = 'New';
+        $post->category_ids = [];
+        return view('dashboard.posts.create',['post'=>$post,'name' => $name,'categories'=>$categories]);
     }
 
     /**
@@ -35,7 +54,11 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $post = $this->postservice->store($data);
+        // Alert::success('Success Title', 'STD Clinic was created successfully!');
+        return redirect()->route('post.show', [$post])->with('success', 'Post was created successfully!');
+  
     }
 
     /**
@@ -46,7 +69,10 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        $categories = Category::all(['id', 'name']);
+        $name = $post->name;
+        $post->category_ids = $post->categories()->pluck('categories.id')->toArray();
+        return view('dashboard.posts.view', ['post'=>$post,'name' => $name,'categories'=>$categories]);
     }
 
     /**
