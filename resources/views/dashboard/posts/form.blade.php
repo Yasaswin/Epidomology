@@ -19,10 +19,10 @@
                         <div class="card-body pad">
                             <div class="form-group">
                                 <label for="name">Tittle</label>
-                                <input type="text" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="Enter Tittle" name="title" value="{{$errors->has('title')?old('title'):(empty(old('title'))?$post->title:old('title'))}}" {{$editable?'':' disabled'}} >
-                                @if ($errors->has('name'))
+                                <input type="text" class="form-control {{ $errors->has('title') ? ' is-invalid' : '' }}" placeholder="Enter Tittle" name="title" value="{{$errors->has('title')?old('title'):(empty(old('title'))?$post->title:old('title'))}}" {{$editable?'':' disabled'}} >
+                                @if ($errors->has('title'))
                                     <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>{{ $errors->first('title') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -35,6 +35,28 @@
                                 </span>
                                 @endif
                             </div>
+                            <div class="form-group" class="@if ($post->images) display-none @endif">
+                    <div class="card">
+                        <div class="card-header"> Featured images
+                            <div class="card-header-actions"><a class="card-header-action" href="https://coreui.io/icons/" target="_blank"></a></div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row text-center">
+                                @foreach ($images as $image)
+                                <div class="col-6 col-sm-4 col-md-2 control-remove"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-3d"></i>
+                                    <div class="@if ($image->image) display-block @else display-none @endif">
+
+                                        <img src="{{ asset('storage/post/images/'  . $image->image) }}" id="image_preview" class="img-fluid">
+                                        <button type="button" id="remove_image_button" data-id="{{ $image->id }}" class="btn btn-sm btn-link p-0 ">
+                                            Remove image
+                                        </button>
+                                    </div>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
                         </div>
                     </div>
                 </div>
@@ -200,14 +222,14 @@ $(document).ready(function() {
 
     $(document).ready(function() {
 
-      $(".btn-image").click(function(){
-          var html = $(".clone_image").html();
-          $(".increment-image").after(html);
-      });
+        $(".btn-image").click(function(){
+            var html = $(".clone_image").html();
+            $(".increment-image").after(html);
+        });
 
-      $("body").on("click",".btn-remove-image",function(){
-          $(this).parents(".control-group").remove();
-      });
+        $("body").on("click",".btn-remove-image",function(){
+            $(this).parents(".control-group").remove();
+        });
 
         $(".btn-document").click(function(){
             var html = $(".clone_doc").html();
@@ -225,6 +247,63 @@ $(document).ready(function() {
 
         $("body").on("click",".btn-remove-video",function(){
             $(this).parents(".control-group").remove();
+        });
+
+        $("body").on("click","#remove_image_button",function(){
+            $(this).parents(".control-remove").remove();
+            var id = $(this).data("id");
+            var token = $("meta[name='csrf-token']").attr("content");
+
+            $.ajax(
+                {
+                    url: "/dashboard/postImage/"+id,
+                    type: 'DELETE',
+                    data: {
+                        "id": id,
+                        "_token": token,
+                    },
+                    success: function (){
+                        console.log("it Works");
+                    }
+                });
+        });
+
+        $("body").on("click","#remove_doc_button",function(){
+            $(this).parents(".control-remove").remove();
+            var id = $(this).data("id");
+            var token = $("meta[name='csrf-token']").attr("content");
+
+            $.ajax(
+                {
+                    url: "/dashboard/postPdf/"+id,
+                    type: 'DELETE',
+                    data: {
+                        "id": id,
+                        "_token": token,
+                    },
+                    success: function (){
+                        console.log("it Works");
+                    }
+                });
+        });
+
+        $("body").on("click","#remove_video_button",function(){
+            $(this).parents(".control-remove").remove();
+            var id = $(this).data("id");
+            var token = $("meta[name='csrf-token']").attr("content");
+
+            $.ajax(
+                {
+                    url: "/dashboard/postVideo/"+id,
+                    type: 'DELETE',
+                    data: {
+                        "id": id,
+                        "_token": token,
+                    },
+                    success: function (){
+                        console.log("it Works");
+                    }
+                });
         });
 
     });

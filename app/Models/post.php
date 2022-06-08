@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 
 class Post extends Model
@@ -43,6 +44,18 @@ class Post extends Model
     }
 
     /**
+     * Get the user's first name.
+     *
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute
+     */
+    protected function categoryIds(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => $this->categories()->pluck('categories.id')->toArray(),
+        );
+    }
+
+    /**
      * Get the categories that belongs to post.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
@@ -52,6 +65,26 @@ class Post extends Model
         return $this->belongsToMany('App\Models\Category');
     }
     
+    /**
+     * Get the user that created the post.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
+
+    /**
+     * Get the images that belongs to post.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function images()
+    {
+        return $this->hasMany('App\Models\PostImage', 'post_id',  'id');
+    }
+
 
     
 

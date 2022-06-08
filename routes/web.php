@@ -29,17 +29,21 @@ Route::get('categories', [App\Http\Controllers\CategoryController::class, 'index
 Route::get('category/create', [App\Http\Controllers\CategoryController::class, 'create'])->name('category.create');
 Route::post('category/create', [App\Http\Controllers\CategoryController::class, 'store'])->name('category.store');
 Route::get('category/{category}/edit', [App\Http\Controllers\CategoryController::class, 'edit'])->name('category.edit');
-Route::post('category/{category}/edit', [App\Http\Controllers\CategoryController::class, 'store'])->name('category.update');
+Route::post('category/{category}/edit', [App\Http\Controllers\CategoryController::class, 'update'])->name('category.update');
 Route::get('category/{category}', [App\Http\Controllers\CategoryController::class, 'show'])->name('category.show');
 
 Route::get('posts', [App\Http\Controllers\PostController::class, 'index'])->name('post.filter');
 Route::get('post/create', [App\Http\Controllers\PostController::class, 'create'])->name('post.create');
 Route::post('post/create', [App\Http\Controllers\PostController::class, 'store'])->name('post.store');
+Route::get('post/{post}/edit', [App\Http\Controllers\PostController::class, 'edit'])->name('post.edit');
+Route::post('post/{post}/edit', [App\Http\Controllers\PostController::class, 'update'])->name('post.update');
 Route::get('post/{post}', [App\Http\Controllers\PostController::class, 'show'])->name('post.show');
 
 // pages
 Route::get('history', [App\Http\Controllers\FrontController::class, 'history'])->name('history');
 Route::get('vision', [App\Http\Controllers\FrontController::class, 'vision'])->name('vision');
+Route::get('resources', [App\Http\Controllers\FrontController::class, 'resources'])->name('resources');
+
 
 
 Auth::routes();

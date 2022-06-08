@@ -8,17 +8,21 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\PostImage;
+
 
 class PostService {
 
 
-    public function store($data)
+    public function store($request,$uid=null)
     {
+        $data = $request->all();
+
         DB::beginTransaction();
         try 
         {          
             $post = new Post; 
-            $post->user_id = auth()->id();          
+            $post->user_id = $uid;          
             $post->title = $data['title'];
             $post->body = $data['body'];
             $post->published_at = \Carbon\Carbon::now();
@@ -27,6 +31,22 @@ class PostService {
             if($post->id && isset($data['category_ids'])){
                 foreach($data['category_ids'] as $category_id) {
                     $post->categories()->attach($category_id);
+                }
+            }
+
+            if ($request->hasFile('image')) {
+
+                foreach($request->file('image') as $image)
+                {
+                    $name=$image->getClientOriginalName();
+                    $destinationPath = 'storage/post/images';
+                    $image->move($destinationPath, $name);
+                    // Generate a random name for every file
+                    // $image = $request->file('image')->hashName();
+                    $post_image = PostImage::create([
+                        'post_id' => $post->id,
+                        'image' => $name,
+                    ]);
                 }
             }
 
@@ -40,13 +60,13 @@ class PostService {
         return $post;
     }
 
-    public function shouldUpdate(Post $post,$data)
+    public function shouldUpdate($post,$data)
     {    
         if (
-            $post->user_id = Auth::auth()->id() ||          
+            !$post->user_id ||          
             $post->title != $data['title'] ||
             $post->body != $data['body'] ||
-            $post->published_at = \Carbon\Carbon::now()
+            !$post->published_at
                 ) {          
                 return true;
         }
@@ -55,17 +75,38 @@ class PostService {
             }
     }
 
-    public function update(Post $post,$data)
-    {
-        $this->checkConcurrency($post->updated_at, $data['updated_at']);
+    public function update(Post $post,$request,$uid=null)
+    {      
+
+        // $this->checkConcurrency($post->updated_at, $data['updated_at']);
+        $data = $request->all();
+
         DB::beginTransaction();
         try 
         {
-            $post->user_id = Auth::auth()->id();          
+            if ($this->shouldUpdate($post,$data)){
+            $post->user_id = $post->user_id ?? $uid;          
             $post->title = $data['title'];
             $post->body = $data['body'];
             $post->published_at = \Carbon\Carbon::now();
-            $post->save();     
+            $post->save();
+            }
+            
+            $category_ids = $post->category_ids;
+
+            if(isset($data['category_ids'])){
+                foreach($data['category_ids'] as $category_id) {
+                    if(in_array($category_id,$category_ids)){
+
+                    }
+                    $post->categories()->attach($category_id);
+                }
+            }
+            else {
+
+                $post->categories()->detach();
+
+            }
         }
         catch (Exception $e)
         {

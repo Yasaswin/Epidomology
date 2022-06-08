@@ -25,9 +25,9 @@
                                     <tr class = "my-table-header">
                                         <th scope="col" class="my-table-heading" style="width:20px;"></th>
                                         <th scope="col" class="my-table-heading" style="width:150px;">Tittle</th>
-                                        <th scope="col" class="my-table-heading" style="width:150px;">Created By</th>
+                                        <th scope="col" class="my-table-heading" style="width:150px;">Created by</th>
+                                        <th scope="col" class="my-table-heading" style="width:150px;">Category</th>
                                         <th scope="col" class="my-table-heading" style="width:150px;">Created At</th>
-                                        <th scope="col" class="my-table-heading" style="width:150px;">Updated At</th>
 
                                     </tr>
                                 </thead>
@@ -36,9 +36,16 @@
                                         <tr>
                                             <td><a class="@lang('theme.link')" href="{{ route('post.show',[$post->slug]) }}"><i class="fas fa-eye"></i></a></td>
                                             <td>{{$post->title}}</td>
-                                            <td></td>
-                                            <td>{{$post->created_at}}</td>
-                                            <td>{{$post->updated_at}}</td>
+                                            <td>{{ $post->user->name }}</td>
+                                            <td>
+                                                @foreach ($post->categories as $category)
+                                                <a href="">
+                                                    {{ $category->name }}
+                                                </a>
+                                                @if (!$loop->last), @endif
+                                                @endforeach
+                                            </td>
+                                            <td>{{$post->created_at->format('Y/m/d')}}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

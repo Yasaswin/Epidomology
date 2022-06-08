@@ -99,7 +99,7 @@ class CategoryController extends Controller
             $this->categoryservice->update( $category, $data );
             // Alert::success('Success Title', 'Subpopulation was updated successfully!');
         }
-        return redirect()->route('category.show', ['subpopulation' => $category])->with('success', 'Subpopulation was updated successfully!'); 
+        return redirect()->route('category.show', [$category])->with('success', 'Subpopulation was updated successfully!'); 
     }
 
     /**

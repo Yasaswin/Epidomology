@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-fulied">
-    <form class="form" method="POST" action="{{ route('category.update', [$category->id]) }}">
+    <form class="form" method="POST" action="{{ route('category.update', [$category]) }}">
         @csrf
         <nav aria-label="breadcrumb" >
             <ol class="breadcrumb @lang('theme.breadcrumb')">

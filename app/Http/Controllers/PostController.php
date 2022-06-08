@@ -5,18 +5,28 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\PostImage;
 use App\Services\PostService;
 use Illuminate\Support\Facades\Auth;
-
+use App\Http\Requests\StorePost;
+use App\Http\Requests\UpdatePost;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
     private $postservice;
     private $model = 'Post';
+    private $uid;
+
 
     public function __construct(PostService $service)
     {
         $this->postservice = $service;
+        $this->middleware(function ($request, $next) {
+            $this->uid = Auth::id() ?? null;
+            return $next($request);
+        });
+
     }
 
 
@@ -41,9 +51,10 @@ class PostController extends Controller
     {
         $categories = Category::all(['id', 'name']);
         $post = New Post;
+        $images = $post->images;
         $name = 'New';
         $post->category_ids = [];
-        return view('dashboard.posts.create',['post'=>$post,'name' => $name,'categories'=>$categories]);
+        return view('dashboard.posts.create',['post'=>$post,'name' => $name,'categories'=>$categories,'images'=>$images]);
     }
 
     /**
@@ -52,10 +63,11 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePost $request)
     {
-        $data = $request->all();
-        $post = $this->postservice->store($data);
+        // $data = $request->all();
+        $post = $this->postservice->store($request,$this->uid);
+
         // Alert::success('Success Title', 'STD Clinic was created successfully!');
         return redirect()->route('post.show', [$post])->with('success', 'Post was created successfully!');
   
@@ -70,9 +82,10 @@ class PostController extends Controller
     public function show(Post $post)
     {
         $categories = Category::all(['id', 'name']);
+        $images = $post->images;
         $name = $post->name;
         $post->category_ids = $post->categories()->pluck('categories.id')->toArray();
-        return view('dashboard.posts.view', ['post'=>$post,'name' => $name,'categories'=>$categories]);
+        return view('dashboard.posts.view', ['post'=>$post,'name' => $name,'categories'=>$categories,'images'=>$images]);
     }
 
     /**
@@ -83,7 +96,11 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        $categories = Category::all(['id', 'name']);
+        $name = $post->title;
+        $images = $post->images;
+        $post->category_ids = $post->categories()->pluck('categories.id')->toArray();
+        return view('dashboard.posts.edit', ['post'=>$post,'name' => $name,'categories'=>$categories,'images'=>$images]);
     }
 
     /**
@@ -95,8 +112,11 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
-    }
+
+        $post = $this->postservice->update( $post, $request,$this->uid );
+            // Alert::success('Success Title', 'Subpopulation was updated successfully!');
+            return redirect()->route('post.show', [$post])->with('success', 'Post was updated successfully!');
+        }
 
     /**
      * Remove the specified resource from storage.
