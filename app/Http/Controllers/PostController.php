@@ -6,6 +6,8 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\PostImage;
+use App\Models\PostPdf;
+use App\Models\PostVideo;
 use App\Services\PostService;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StorePost;
@@ -52,9 +54,11 @@ class PostController extends Controller
         $categories = Category::all(['id', 'name']);
         $post = New Post;
         $images = $post->images;
+        $pdfs = $post->pdfs;
+        $vedios = $post->vedios;
         $name = 'New';
         $post->category_ids = [];
-        return view('dashboard.posts.create',['post'=>$post,'name' => $name,'categories'=>$categories,'images'=>$images]);
+        return view('dashboard.posts.create',['post'=>$post,'name' => $name,'categories'=>$categories,'images'=>$images,'pdfs'=>$pdfs,'vedios'=>$vedios]);
     }
 
     /**
@@ -129,7 +133,7 @@ class PostController extends Controller
         //
     }
 
-        /**
+    /**
      * Remove the specified resource from storage.
      *
      * @param  $id
@@ -138,7 +142,6 @@ class PostController extends Controller
      */
     public function destroyImage($id)
     {
-
         $image = PostImage::find($id);
         Storage::disk('local')->delete('post/images'.$image->image);
         $image->delete();
@@ -147,4 +150,48 @@ class PostController extends Controller
             'success' => 'Record deleted successfully!'
         ]);
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  $id
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
+    public function destroyPdf($id)
+    {
+
+        $pdf = PostPdf::find($id);
+        Storage::disk('local')->delete('post/pdfs'.$pdf->pdf);
+        $pdf->delete();
+
+        return response()->json([
+            'success' => 'Record deleted successfully!'
+        ]);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  $id
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
+    public function destroyVideo($id)
+    {
+        //$this->authorize('manage', $PostPdf);
+
+        $video = PostVideo::find($id);
+        $video->delete();
+
+        // Flash alert message
+        session()->flash('post_update', 'Post updated.');
+
+        return response()->json([
+            'success' => 'Record deleted successfully!'
+        ]);
+
+
+    }
+
 }

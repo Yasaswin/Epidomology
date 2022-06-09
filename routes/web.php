@@ -40,6 +40,8 @@ Route::post('post/{post}/edit', [App\Http\Controllers\PostController::class, 'up
 Route::get('post/{post}', [App\Http\Controllers\PostController::class, 'show'])->name('post.show');
 
 Route::delete('post/postImage/{id}', [App\Http\Controllers\PostController::class, 'destroyImage'])->name('post.destroyImage');
+Route::delete('post/postPdf/{id}', [App\Http\Controllers\PostController::class, 'destroyPdf'])->name('post.destroyPdf');
+Route::delete('post/postVideo/{id}', [App\Http\Controllers\PostController::class, 'destroyVideo'])->name('post.destroyVideo');
 
 
 // pages

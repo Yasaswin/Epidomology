@@ -85,7 +85,25 @@ class Post extends Model
         return $this->hasMany('App\Models\PostImage', 'post_id',  'id');
     }
 
+    /**
+     * Get the pdfs that belongs to post.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function pdfs()
+    {
+        return $this->hasMany('App\Models\PostPdf', 'post_id',  'id');
+    }
 
+    /**
+     * Get the videos that belongs to post.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function videos()
+    {
+        return $this->hasMany('App\Models\PostVideo', 'post_id',  'id');
+    }
     
 
 }

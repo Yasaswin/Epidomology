@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\PostImage;
-
+use App\Models\PostPdf;
+use App\Models\PostVideo;
 
 class PostService {
 
@@ -20,13 +21,45 @@ class PostService {
             $name=$image->getClientOriginalName();
             $destinationPath = 'storage/post/images';
             $image->move($destinationPath, $name);
-            // Generate a random name for every file
-            // $image = $request->file('image')->hashName();
             $post_image = PostImage::create([
                 'post_id' => $post_id,
                 'image' => $name,
             ]);
         }
+    }
+
+    protected function storePdfs($post_id,$pdfs){
+
+        foreach($pdfs as $pdf)
+        {
+            $name=$pdf->getClientOriginalName();
+            $destinationPath = 'storage/post/pdfs';
+            $pdf->move($destinationPath, $name);
+            $post_pdf = PostPdf::create([
+                'post_id' => $post_id,
+                'pdf' => $name,
+            ]);
+        }
+    }
+
+    protected function storeVedios($post_id,$videos){
+        foreach($videos as $key=> $video)
+        {
+            if ($video){
+                $post_video = PostVideo::create([
+                    'post_id' => $post_id,
+                    'video_link' => $video,
+                    'related_id' => self::youtubeId($video),
+                ]); 
+            }
+        }
+    }
+
+    protected static function youtubeId($url){
+        $match = [];
+        preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);
+        $youtube_id = $match[1];
+        return $youtube_id;
     }
 
     public function store($request,$uid=null)
@@ -50,10 +83,16 @@ class PostService {
             }
 
             if ($request->hasFile('image')) {
-
                 $this->storeImages($post->id,$request->file('image'));
             }
 
+            if ($request->hasFile('pdf')) {
+                $this->storePdfs($post->id,$request->file('pdf'));
+            }
+
+            if($videos=$data['video_link']??[]){
+                $this->storeVedios($post->id,$videos); 
+            }
         }
         catch (Exception $e)
         {
@@ -106,7 +145,6 @@ class PostService {
                 }
             }
             else {
-
                 $post->categories()->detach();
 
             }
@@ -114,6 +152,15 @@ class PostService {
             if ($request->hasFile('image')) {
                 $this->storeImages($post->id,$request->file('image'));
             }
+
+            if ($request->hasFile('pdf')) {
+                $this->storePdfs($post->id,$request->file('pdf'));
+            }
+
+            if($videos=$data['video_link']??[]){
+                $this->storeVedios($post->id,$videos); 
+            }
+
         }
         catch (Exception $e)
         {

@@ -4,12 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
-class PostImage extends Model
+
+class PostVideo extends Model
 {
     use HasFactory;
 
-       /**
+    
+
+    /**
      * The attributes that should be cast to native types.
      *
      * @var array
@@ -18,22 +22,22 @@ class PostImage extends Model
         'deleted_at' => 'datetime',
         'published_at' => 'datetime'
     ];
-    
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'post_id', 'image'
+        'post_id', 'video_link', 'related_id'
     ];
 
-    /**
-     * Get the post that belongs to image.
+        /**
+     * Get the post that belongs to video.
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function post()
+    public function video()
     {
         return $this->belongsTo('App\Models\Post');
     }

@@ -3,7 +3,7 @@
         <div class="card-body px-4 pt-4" onload="script();">
             <!-- <div class="row align-items-end"> -->
             <div class="row">
-                <div class="col-12 col-lg-8">
+                <div class="col-12 col-lg-9">
                     <div class="card card-outline card-info">
                         <div class="card-header">
                             <h3 class="card-title">{{$name}}</h3>
@@ -36,31 +36,78 @@
                                 @endif
                             </div>
                             <div class="form-group" class="@if ($post->images) display-none @endif">
-                    <div class="card">
-                        <div class="card-header"> Featured images
-                            <div class="card-header-actions"><a class="card-header-action" href="https://coreui.io/icons/" target="_blank"></a></div>
-                        </div>
-                        <div class="card-body">
-                            <div class="row text-center">
-                                @foreach ($images as $image)
-                                <div class="col-6 col-sm-4 col-md-2 control-remove"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-3d"></i>
-                                    <div class="@if ($image->image) display-block @else display-none @endif">
+                                <div class="card">
+                                    <div class="card-header"> Featured images
+                                        <div class="card-header-actions"><a class="card-header-action" href="" target="_blank"></a></div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row text-center">
+                                            @foreach ($images as $image)
+                                            <div class="col-6 col-sm-4 col-md-2 control-remove"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-3d"></i>
+                                                <div class="@if ($image->image) display-block @else display-none @endif">
 
-                                        <img src="{{ asset('storage/post/images/'  . $image->image) }}" id="image_preview" class="img-fluid">
-                                        <button type="button" id="remove_image_button" data-id="{{ $image->id }}" class="btn btn-sm btn-link p-0 ">
-                                            Remove image
-                                        </button>
+                                                    <img src="{{ asset('storage/post/images/'  . $image->image) }}" id="image_preview" class="img-fluid">
+                                                    <button type="button" id="remove_image_button" data-id="{{ $image->id }}" class="btn btn-sm btn-link p-0 ">
+                                                        Remove image
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            @endforeach
+                                        </div>
                                     </div>
                                 </div>
-                                @endforeach
+                            </div>
+                            <div class="form-group">
+                                <div class="card">
+                                    <div class="card-header"> Featured Documents
+                                        <div class="card-header-actions"><a class="card-header-action" href="" target="_blank"></a></div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row text-center">
+                                            @foreach ($post->pdfs as $pdf)
+                                                <div class="col-6 col-sm-4 col-md-2 control-remove"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-3d"></i>
+                                                    <div class="@if ($pdf->pdf) display-block @else display-none @endif">
+                                                        <a href="{{ asset('storage/post/pdfs/'.$pdf->pdf)}}" target="_blank">
+                                                            <img src="{{ asset('storage/system/document-icon.png') }}" id="image_preview" class="img-fluid">
+                                                        </a>
+                                                        <meta name="csrf-token" content="{{ csrf_token() }}">
+                                                        <button type="button" id="remove_doc_button" data-id="{{ $pdf->id }}" class="btn btn-sm btn-link p-0">
+                                                            Remove Document
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="card">
+                                    <div class="card-header"> Featured Videos
+                                        <div class="card-header-actions"><a class="card-header-action" href="https://coreui.io/icons/" target="_blank"></a></div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row text-center">
+                                            @foreach ($post->videos as $video)
+                                                <div class="col-6 col-sm-4 col-md-2 control-remove"><i class="c-icon c-icon-2xl mt-5 mb-2 cil-3d"></i>
+                                                    <div  class="@if ($video->video_link) display-block @else display-none @endif">
+                                                        <div class="embed-responsive embed-responsive-16by9">
+                                                            <iframe src="https://www.youtube.com/embed/{{$video->related_id}}" title="YouTube video player" frameborder="0"  allowfullscreen></iframe>     
+                                                        </div>
+                                                        <button type="button" id="remove_video_button" data-id="{{ $video->id }}" class="btn btn-sm btn-link p-0">
+                                                            Remove Video
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-4">
+                <div class="col-12 col-lg-3">
                     <div class="form-group">
                         <div class="card card-outline card-info card-shadow sharp-corners  p-3 mb-3">
                             <p class="mb-4">Post settings</p>
@@ -173,7 +220,6 @@
                             @endif
                         </div>
                     </div>
-
                 </div>    
             </div>
         </div>
@@ -252,18 +298,20 @@ $(document).ready(function() {
         $("body").on("click","#remove_image_button",function(){
             $(this).parents(".control-remove").remove();
             var id = $(this).data("id");
-            var token = $("meta[name='csrf-token']").attr("content");
 
             $.ajax(
                 {
-                    url: "/dashboard/postImage/"+id,
+                    url: "/post/postImage/"+id,
                     type: 'DELETE',
                     data: {
-                        "id": id,
-                        "_token": token,
-                    },
+                        "_token": "{{ csrf_token() }}",
+                        "id": id
+                        },
                     success: function (){
                         console.log("it Works");
+                    },
+                    error: function(xhr) {
+                        console.log(xhr.responseText);
                     }
                 });
         });
@@ -271,18 +319,20 @@ $(document).ready(function() {
         $("body").on("click","#remove_doc_button",function(){
             $(this).parents(".control-remove").remove();
             var id = $(this).data("id");
-            var token = $("meta[name='csrf-token']").attr("content");
 
             $.ajax(
                 {
-                    url: "/dashboard/postPdf/"+id,
+                    url: "/post/postPdf/"+id,
                     type: 'DELETE',
                     data: {
-                        "id": id,
-                        "_token": token,
-                    },
+                        "_token": "{{ csrf_token() }}",
+                        "id": id
+                        },
                     success: function (){
                         console.log("it Works");
+                    },
+                    error: function(xhr) {
+                        console.log(xhr.responseText);
                     }
                 });
         });
@@ -290,19 +340,22 @@ $(document).ready(function() {
         $("body").on("click","#remove_video_button",function(){
             $(this).parents(".control-remove").remove();
             var id = $(this).data("id");
-            var token = $("meta[name='csrf-token']").attr("content");
 
             $.ajax(
                 {
-                    url: "/dashboard/postVideo/"+id,
+                    url: "/post/postVideo/"+id,
                     type: 'DELETE',
                     data: {
-                        "id": id,
-                        "_token": token,
-                    },
+                        "_token": "{{ csrf_token() }}",
+                        "id": id
+                        },
                     success: function (){
                         console.log("it Works");
+                    },
+                    error: function(xhr) {
+                        console.log(xhr.responseText);
                     }
+
                 });
         });
 
