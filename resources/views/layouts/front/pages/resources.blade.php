@@ -21,9 +21,9 @@
 <div class="page-title">
 			<div class="grid-row">
 				<nav class="bread-crumb">
-					<a href="index.html">About us</a>
+					<a href="index.html">Resources</a>
 					<i class="fa fa-long-arrow-right"></i>
-					<a href="content-elements.html">History</a>
+					<a href="content-elements.html">PUBLICATIONS</a>
 				</nav>
 			</div>
 		</div>
@@ -39,20 +39,11 @@
                                 <div class="container clear-fix">
                                     <div class="grid-col-row">
                                         <div class="grid-col grid-col-12">
-                                            <h2>Some category</h2>
+                                            <h2>Resources</h2>
                                             <!-- Shop -->
                                             <div id="page-meta" class="group">
                                                 <p class="woocommerce-result-count">Showing 1-9 of 23 results </p>
-                                                <form class="woocommerce-ordering" method="get">
-                                                    <select name="orderby" class="orderby">
-                                                        <option value="menu_order">Default sorting</option>
-                                                        <option value="popularity">Sort by popularity</option>
-                                                        <option value="rating">Sort by average rating</option>
-                                                        <option value="date">Sort by newness</option>
-                                                        <option value="price">Sort by price: low to high</option>
-                                                        <option value="price-desc">Sort by price: high to low</option>
-                                                    </select>
-                                                </form>
+                  
                                             </div>
                                             <ul class="products">
                                                 <!-- product -->
@@ -72,7 +63,7 @@
                                                         
                                                     </div>
                                                     <div class="product-name">
-                                                        <a href="shop-single-product.html">NATIONAL GUIDELINES FOR </a>
+                                                        <a href="{{ route('ressingle') }}">NATIONAL GUIDELINES FOR </a>
                                                     </div>
                                                     <div class="product-description">
                                                         <div class="short-description">

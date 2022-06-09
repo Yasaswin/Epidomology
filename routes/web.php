@@ -39,11 +39,14 @@ Route::get('post/{post}/edit', [App\Http\Controllers\PostController::class, 'edi
 Route::post('post/{post}/edit', [App\Http\Controllers\PostController::class, 'update'])->name('post.update');
 Route::get('post/{post}', [App\Http\Controllers\PostController::class, 'show'])->name('post.show');
 
+Route::delete('post/postImage/{id}', [App\Http\Controllers\PostController::class, 'destroyImage'])->name('post.destroyImage');
+
+
 // pages
 Route::get('history', [App\Http\Controllers\FrontController::class, 'history'])->name('history');
 Route::get('vision', [App\Http\Controllers\FrontController::class, 'vision'])->name('vision');
 Route::get('resources', [App\Http\Controllers\FrontController::class, 'resources'])->name('resources');
-
+Route::get('ressingle', [App\Http\Controllers\FrontController::class, 'resourcesSingle'])->name('ressingle');
 
 
 Auth::routes();

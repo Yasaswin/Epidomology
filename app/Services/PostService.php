@@ -13,6 +13,21 @@ use App\Models\PostImage;
 
 class PostService {
 
+    protected function storeImages($post_id,$images){
+
+        foreach($images as $image)
+        {
+            $name=$image->getClientOriginalName();
+            $destinationPath = 'storage/post/images';
+            $image->move($destinationPath, $name);
+            // Generate a random name for every file
+            // $image = $request->file('image')->hashName();
+            $post_image = PostImage::create([
+                'post_id' => $post_id,
+                'image' => $name,
+            ]);
+        }
+    }
 
     public function store($request,$uid=null)
     {
@@ -36,18 +51,7 @@ class PostService {
 
             if ($request->hasFile('image')) {
 
-                foreach($request->file('image') as $image)
-                {
-                    $name=$image->getClientOriginalName();
-                    $destinationPath = 'storage/post/images';
-                    $image->move($destinationPath, $name);
-                    // Generate a random name for every file
-                    // $image = $request->file('image')->hashName();
-                    $post_image = PostImage::create([
-                        'post_id' => $post->id,
-                        'image' => $name,
-                    ]);
-                }
+                $this->storeImages($post->id,$request->file('image'));
             }
 
         }
@@ -95,17 +99,20 @@ class PostService {
             $category_ids = $post->category_ids;
 
             if(isset($data['category_ids'])){
-                foreach($data['category_ids'] as $category_id) {
-                    if(in_array($category_id,$category_ids)){
 
-                    }
-                    $post->categories()->attach($category_id);
+                if($category_ids != $data['category_ids']){
+                    $post->categories()->detach(array_diff($category_ids,$data['category_ids']));
+                    $post->categories()->attach(array_diff($data['category_ids'],  $category_ids));
                 }
             }
             else {
 
                 $post->categories()->detach();
 
+            }
+
+            if ($request->hasFile('image')) {
+                $this->storeImages($post->id,$request->file('image'));
             }
         }
         catch (Exception $e)

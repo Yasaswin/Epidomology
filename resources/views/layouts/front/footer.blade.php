@@ -3,20 +3,22 @@
 		<div class="grid-row">
 			<div class="grid-col-row clear-fix">
 				<section class="grid-col grid-col-4 footer-about">
-					<h2 class="corner-radius">About Us</h2>
-					<div>
-						<h3>Sed aliquet dui auctor blandit ipsum tincidunt</h3>
-						<p>Quis rhoncus lorem dolor eu sem. Aenean enim risus, convallis id ultrices eget.</p>
-					</div>
+					<h2 class="corner-radius">Contact Us</h2>
 					<address>
 						<p></p>
-						<a href="tel:123-123456789" class="phone-number">123-123456789</a>
+						<a href="tel:+94-11-2695112" class="phone-number">+94-11-2695112,  +94-11-2681548,  +94-11-4740490,<br/> +94-11-4740491,  +94-11-4740492,  +94-11-4334841</a>
 						<br />
-						<a href="mailto:uni@domain.com" class="email">uni@domain.com</a>
+						<br />
+						<a href="tel:+94-11-2696583" class="phone-number">Fax: +94-11-2696583</a>
+						<br />
+						<br />
+						<a href="mailto:chepid@sltnet.lk" class="email">chepid@sltnet.lk (Chief Epidemiologist), epidunit@sltnet.lk (Epidemiology Unit)</a>
+						<br />
 						<br />
 						<a href="www.sample.com" class="site">www.sample.com</a>
 						<br />
-						<a href="www.sample.com" class="address">250 Biscayne Blvd. (North) 11st Floor<br/>New World Tower Miami, 33148</a>
+						<br />
+						<a href="www.sample.com" class="address">Epidemiology Unit,<br/>Ministry of Health,<br/> #231, De Saram Place, Colombo 10</a>
 					</address>
 					<div class="footer-social">
 						<a href="" class="fa fa-twitter"></a>
@@ -27,7 +29,7 @@
 					</div>
 				</section>
 				<section class="grid-col grid-col-4 footer-latest">
-					<h2 class="corner-radius">Latest courses</h2>
+					<h2 class="corner-radius">Latest </h2>
 					<article>
 						<!-- <img src="http://placehold.it/83x83" data-at2x="http://placehold.it/83x83" alt> -->
 						<h3>Sed aliquet dui at auctor blandit</h3>
@@ -36,7 +38,7 @@
 							<div>23.02.15</div>
 						</div>
 						<p>Sed pharetra lorem ut dolor dignissim,
-	sit amet pretium tortor mattis.</p>
+						sit amet pretium tortor mattis.</p>
 					</article>
 					<article>
 						<!-- <img src="http://placehold.it/83x83" data-at2x="http://placehold.it/83x83" alt> -->
@@ -46,7 +48,7 @@
 							<div>23.02.15</div>
 						</div>
 						<p>Sed pharetra lorem ut dolor dignissim,
-	sit amet pretium tortor mattis.</p>
+						sit amet pretium tortor mattis.</p>
 					</article>
 				</section>
 				<section class="grid-col grid-col-4 footer-contact-form">
@@ -64,7 +66,7 @@
 		</div>
 		<div class="footer-bottom">
 			<div class="grid-row clear-fix">
-				<div class="copyright">uniLearn<span></span> 2015 . All Rights Reserved</div>
+				<div class="copyright">Epidemiology Unit<span></span> 2022 . All Rights Reserved</div>
 			</div>
 		</div>
 	</footer>	

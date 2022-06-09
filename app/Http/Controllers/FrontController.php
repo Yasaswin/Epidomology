@@ -36,6 +36,17 @@ class FrontController extends Controller
         return view('layouts.front.pages.resources');
     }
 
+    /**
+     * Display history page.
+     *
+     * @return Factory|View
+     */
+    public function resourcesSingle()
+    {
+        return view('layouts.front.pages.ressingle');
+    }
+
+
 
 
 }

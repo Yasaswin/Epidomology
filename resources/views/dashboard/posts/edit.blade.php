@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-fulied">
-    <form class="form" method="POST" action="{{ route('post.update', [$post]) }}">
+    <form class="form" method="POST" enctype="multipart/form-data" action="{{ route('post.update', [$post]) }}">
         @csrf
         <nav aria-label="breadcrumb" >
             <ol class="breadcrumb @lang('theme.breadcrumb')">

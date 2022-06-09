@@ -128,4 +128,23 @@ class PostController extends Controller
     {
         //
     }
+
+        /**
+     * Remove the specified resource from storage.
+     *
+     * @param  $id
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
+    public function destroyImage($id)
+    {
+
+        $image = PostImage::find($id);
+        Storage::disk('local')->delete('post/images'.$image->image);
+        $image->delete();
+
+        return response()->json([
+            'success' => 'Record deleted successfully!'
+        ]);
+    }
 }

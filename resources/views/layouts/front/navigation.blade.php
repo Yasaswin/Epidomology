@@ -10,22 +10,16 @@
 					<nav class="main-nav">
 						<ul class="clear-fix">
 							<li>
-								<a href="index.html" class="active">Home</a>
-								<!-- sub menu -->
-								<ul>
-									<li><a href="index.html" class="active">Full-Width Slider</a></li>
-									<li><a href="index-fullscreen.html">Full-Screen Slider</a></li>
-									<li><a href="index-bg-video.html">Video Slider</a></li>
-								</ul>
-								<!-- / sub menu -->
+								<a href="/" class="active">Home</a>
+		
 							</li>
 							<li>
 								<a href="index.html" >About Us</a>
 								<!-- sub menu -->
 								<ul>
-									<li><a href="index.html" class="active">Vision and Mission</a></li>
+									<li><a href="{{ route('vision') }}" class="active">Vision and Mission</a></li>
 									<li><a href="index-fullscreen.html">Organization Structure</a></li>
-									<li><a href="index-bg-video.html">History</a></li>
+									<li><a href="{{ route('history') }}">History</a></li>
 									<li><a href="index-bg-video.html">Key Achievements</a></li>
 									<li><a href="index-bg-video.html">Careers at EPID</a></li>
 
@@ -93,7 +87,7 @@
 								<!-- / sub menu -->
 							</li>
 							<li class="megamenu">
-								<a href="content-elements.html">Resources</a>
+								<a href="{{ route('resources') }}">Resources</a>
 								<!-- sub mega menu -->
 								<ul class="clear-fix">
 									<li><div class="header-megamenu">Publications</div>
