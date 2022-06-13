@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('post_id');
             $table->text('video_link')->nullable();
+            $table->text('related_id')->nullable();
             $table->timestamps();
         });
     }

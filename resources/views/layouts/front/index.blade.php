@@ -3,12 +3,13 @@
 		<main>
 			<div class="grid-col-row clear-fix">
 				<div class="grid-col grid-col-4">
-					<div class="portfolio-item">
-						<div class="picture">
-							<div class="hover-effect"></div>
+				<div class="portfolio-item">
+					<a href="{{ route('events') }}"> <div class="picture">
+						<div class="hover-effect"></div>
 							<img src="img/4.jpg" data-at2x="img/4.jpg" alt>
 						</div>
-						<h3>Donec mollis magna quis urna convallis</h3>
+					</a>
+						<h3>Events</h3> 
 						<p>Donec sollicitudin lacus in felis luctus blandit. Ut hendrerit mattis justo at suscipit.</p>
 					</div>
 					<div class=" portfolio-item">

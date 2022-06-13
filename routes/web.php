@@ -49,6 +49,7 @@ Route::get('history', [App\Http\Controllers\FrontController::class, 'history'])-
 Route::get('vision', [App\Http\Controllers\FrontController::class, 'vision'])->name('vision');
 Route::get('resources', [App\Http\Controllers\FrontController::class, 'resources'])->name('resources');
 Route::get('ressingle', [App\Http\Controllers\FrontController::class, 'resourcesSingle'])->name('ressingle');
-
+Route::get('events', [App\Http\Controllers\FrontController::class, 'events'])->name('events');
+Route::get('eventsingle', [App\Http\Controllers\FrontController::class, 'eventSingle'])->name('eventsingle');
 
 Auth::routes();

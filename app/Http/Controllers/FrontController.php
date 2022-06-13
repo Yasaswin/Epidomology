@@ -46,7 +46,25 @@ class FrontController extends Controller
         return view('layouts.front.pages.ressingle');
     }
 
+    /**
+     * Display history page.
+     *
+     * @return Factory|View
+     */
+    public function events()
+    {
+        return view('layouts.front.pages.events');
+    }
 
+    /**
+     * Display history page.
+     *
+     * @return Factory|View
+     */
+    public function eventSingle()
+    {
+        return view('layouts.front.pages.eventsingle');
+    }
 
 
 }
