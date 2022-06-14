@@ -27,7 +27,7 @@
 						<div class="hover-effect"></div>
 							<img src="img/4.jpg" data-at2x="img/4.jpg" alt>
 						</div>
-						<h3>Vivamus quam quam dignissim dictum</h3>
+						<h3>Dasboards</h3>
 						<p>Donec sollicitudin lacus in felis luctus blandit. Ut hendrerit mattis justo at suscipit.</p>
 					</div>
 					<div class=" portfolio-item">

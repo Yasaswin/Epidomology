@@ -63,17 +63,8 @@
                                                         
                                                     </div>
                                                     <div class="product-name">
-                                                        <a href="{{ route('ressingle') }}">NATIONAL GUIDELINES FOR </a>
+                                                        <a href="{{ route('ressingle') }}">Guidelines on Corona Virus - English</a>
                                                     </div>
-                                                    <div class="product-description">
-                                                        <div class="short-description">
-                                                            <p>Phasellus tristique diam turpis, vitae rhoncus mi ultricies vel</p>
-                                                        </div>
-                                                        <!-- <div class="full-description">
-                                                            <p>In blandit ultricies euismod.Lobortis erat, sed ullamcorper erat interdum et. Cras volutpat felis id enim vehicula, eu facilisis dui lacinia. Vivamus sollicitudin tristique tellus.</p>
-                                                        </div> -->
-                                                    </div>
-                                                    
                                                     <a href="shop-cart.html" rel="nofollow" data-product_id="70" data-product_sku="" class="cws-button border-radius icon-left alt"> <i class="fa fa-download"></i> Download</a>
                                                 </li>
                                                 <!-- product -->
@@ -89,16 +80,9 @@
                                                         
                                                     </div>
                                                     <div class="product-name">
-                                                        <a href="shop-single-product.html">Nullam blandit lectus ac sem</a>
+                                                        <a href="shop-single-product.html">Guidelines on Corona Virus - English</a>
                                                     </div>
-                                                    <div class="product-description">
-                                                        <div class="short-description">
-                                                            <p>Phasellus tristique diam turpis, vitae rhoncus mi ultricies vel</p>
-                                                        </div>
-                                                        <!-- <div class="full-description">
-                                                            <p>In blandit ultricies euismod.Lobortis erat, sed ullamcorper erat interdum et. Cras volutpat felis id enim vehicula, eu facilisis dui lacinia. Vivamus sollicitudin tristique tellus.</p>
-                                                        </div> -->
-                                                    </div>
+       
                                                     
                                                     <a href="shop-cart.html" rel="nofollow" data-product_id="70" data-product_sku="" class="cws-button border-radius icon-left alt"> <i class="fa fa-download"></i> Download</a>
                                                 </li>
@@ -115,16 +99,9 @@
                                                         
                                                     </div>
                                                     <div class="product-name">
-                                                        <a href="shop-single-product.html">Nullam blandit lectus ac sem</a>
+                                                        <a href="shop-single-product.html">Guidelines on Corona Virus - English</a>
                                                     </div>                                                    
-                                                    <div class="product-description">
-                                                        <div class="short-description">
-                                                            <p>Phasellus tristique diam turpis, vitae rhoncus mi ultricies vel</p>
-                                                        </div>
-                                                        <!-- <div class="full-description">
-                                                            <p>In blandit ultricies euismod.Lobortis erat, sed ullamcorper erat interdum et. Cras volutpat felis id enim vehicula, eu facilisis dui lacinia. Vivamus sollicitudin tristique tellus.</p>
-                                                        </div> -->
-                                                    </div>
+  
                                                     
                                                     <a href="shop-cart.html" rel="nofollow" data-product_id="70" data-product_sku="" class="cws-button border-radius icon-left alt"> <i class="fa fa-download"></i> Download</a>
                                                 </li>
@@ -141,16 +118,9 @@
                                                         
                                                     </div>
                                                     <div class="product-name">
-                                                        <a href="shop-single-product.html">Nullam blandit lectus ac sem</a>
+                                                        <a href="shop-single-product.html">Guidelines on Corona Virus - English</a>
                                                     </div>
-                                                    <div class="product-description">
-                                                        <div class="short-description">
-                                                            <p>Phasellus tristique diam turpis, vitae rhoncus mi ultricies vel</p>
-                                                        </div>
-                                                        <!-- <div class="full-description">
-                                                            <p>In blandit ultricies euismod.Lobortis erat, sed ullamcorper erat interdum et. Cras volutpat felis id enim vehicula, eu facilisis dui lacinia. Vivamus sollicitudin tristique tellus.</p>
-                                                        </div> -->
-                                                    </div>
+
                                                     
                                                     <a href="shop-cart.html" rel="nofollow" data-product_id="70" data-product_sku="" class="cws-button border-radius icon-left alt"> <i class="fa fa-download"></i> Download</a>
                                                 </li>
@@ -172,17 +142,9 @@
                                                         
                                                     </div>
                                                     <div class="product-name">
-                                                        <a href="shop-single-product.html">Nullam blandit lectus ac sem</a>
+                                                        <a href="shop-single-product.html">Guidelines on Corona Virus - English</a>
                                                     </div>
-                                                    <div class="product-description">
-                                                        <div class="short-description">
-                                                            <p>Phasellus tristique diam turpis, vitae rhoncus mi ultricies vel</p>
-                                                        </div>
-                                                        <!-- <div class="full-description">
-                                                            <p>In blandit ultricies euismod.Lobortis erat, sed ullamcorper erat interdum et. Cras volutpat felis id enim vehicula, eu facilisis dui lacinia. Vivamus sollicitudin tristique tellus.</p>
-                                                        </div> -->
-                                                    </div>
-                                                    
+
                                                     <a href="shop-cart.html" rel="nofollow" data-product_id="70" data-product_sku="" class="cws-button border-radius icon-left alt"> <i class="fa fa-download"></i> Download</a>
                                                 </li>
                                                 <!-- product -->
@@ -198,16 +160,9 @@
                                                         
                                                     </div>
                                                     <div class="product-name">
-                                                        <a href="shop-single-product.html">Nullam blandit lectus ac sem</a>
+                                                        <a href="shop-single-product.html">Guidelines on Corona Virus - English</a>
                                                     </div>                                                    
-                                                    <div class="product-description">
-                                                        <div class="short-description">
-                                                            <p>Phasellus tristique diam turpis, vitae rhoncus mi ultricies vel</p>
-                                                        </div>
-                                                        <!-- <div class="full-description">
-                                                            <p>In blandit ultricies euismod.Lobortis erat, sed ullamcorper erat interdum et. Cras volutpat felis id enim vehicula, eu facilisis dui lacinia. Vivamus sollicitudin tristique tellus.</p>
-                                                        </div> -->
-                                                    </div>
+
                                                     
                                                     <a href="shop-cart.html" rel="nofollow" data-product_id="70" data-product_sku="" class="cws-button border-radius icon-left alt"> <i class="fa fa-download"></i> Download</a>
                                                 </li>
@@ -224,17 +179,9 @@
                                                         
                                                     </div>
                                                     <div class="product-name">
-                                                        <a href="shop-single-product.html">Nullam blandit lectus ac sem</a>
+                                                        <a href="shop-single-product.html">Guidelines on Corona Virus - English</a>
                                                     </div>                                                    
-                                                    <div class="product-description">
-                                                        <div class="short-description">
-                                                            <p>Phasellus tristique diam turpis, vitae rhoncus mi ultricies vel</p>
-                                                        </div>
-                                                        <!-- <div class="full-description">
-                                                            <p>In blandit ultricies euismod.Lobortis erat, sed ullamcorper erat interdum et. Cras volutpat felis id enim vehicula, eu facilisis dui lacinia. Vivamus sollicitudin tristique tellus.</p>
-                                                        </div> -->
-                                                    </div>
-                                                    
+
                                                     <a href="shop-cart.html" rel="nofollow" data-product_id="70" data-product_sku="" class="cws-button border-radius icon-left alt"> <i class="fa fa-download"></i> Download</a>
                                                 </li>
                                                 <!-- product -->
@@ -250,46 +197,14 @@
                                                         
                                                     </div>
                                                     <div class="product-name">
-                                                        <a href="shop-single-product.html">Nullam blandit lectus ac sem</a>
+                                                        <a href="shop-single-product.html">Guidelines on Corona Virus - English</a>
                                                     </div>
-                                                    <div class="product-description">
-                                                        <div class="short-description">
-                                                            <p>Phasellus tristique diam turpis, vitae rhoncus mi ultricies vel</p>
-                                                        </div>
-                                                        <!-- <div class="full-description">
-                                                            <p>In blandit ultricies euismod.Lobortis erat, sed ullamcorper erat interdum et. Cras volutpat felis id enim vehicula, eu facilisis dui lacinia. Vivamus sollicitudin tristique tellus.</p>
-                                                        </div> -->
-                                                    </div>
+                   
                                                     
                                                     <a href="shop-cart.html" rel="nofollow" data-product_id="70" data-product_sku="" class="cws-button border-radius icon-left alt"> <i class="fa fa-download"></i> Download</a>
                                                 </li>
                                                 <!-- product -->
-                                                <!-- product -->
-                                                <li class="product">
-                                                    <div class="picture">
-                                                    <img src="img/5.jpg" data-at2x="img/5.jpg" alt="">
-                                                        <span class="hover-effect"></span>
-                                                        <div class="link-cont">
-                                                            <a href="http://placehold.it/270x200" class="cws-right fancy cws-slide-left "><i class="fa fa-search"></i></a>
-                                                            <a href="shop-single-product.html" class=" cws-left cws-slide-right"><i class="fa fa-link"></i></a>
-                                                        </div>
-                                                        
-                                                    </div>
-                                                    <div class="product-name">
-                                                        <a href="shop-single-product.html">Nullam blandit lectus ac sem</a>
-                                                    </div>
-                                                    <div class="product-description">
-                                                        <div class="short-description">
-                                                            <p>Phasellus tristique diam turpis, vitae rhoncus mi ultricies vel</p>
-                                                        </div>
-                                                        <!-- <div class="full-description">
-                                                            <p>In blandit ultricies euismod.Lobortis erat, sed ullamcorper erat interdum et. Cras volutpat felis id enim vehicula, eu facilisis dui lacinia. Vivamus sollicitudin tristique tellus.</p>
-                                                        </div> -->
-                                                    </div>
-                                                    
-                                                    <a href="shop-cart.html" rel="nofollow" data-product_id="70" data-product_sku="" class="cws-button border-radius icon-left alt"> <i class="fa fa-download"></i> Download</a>
-                                                </li>
-                                                <!-- product -->
+
                                             </ul>
                                             <!--Shop -->
                                                                                                     

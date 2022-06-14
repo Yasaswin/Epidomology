@@ -165,7 +165,7 @@
 								<a href="courses-grid.html">Resources</a>
 								<!-- sub menu -->
 								<ul>
-									<li><a href="courses-grid.html">Publications</a></li>
+									<li><a href="{{ route('resources2') }}">Publications</a></li>
 									<li><a href="courses-list.html">Circulars</a></li>
 									<li><a href="courses-single-item.html">Guidelines</a></li>
 									<li><a href="courses-single-item.html">Policy/Strategic Plans</a></li>
