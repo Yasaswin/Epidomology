@@ -1062,7 +1062,7 @@ html.t-pattern-8 {
 header {
 	position: relative;
 	z-index: 1000;
-	background-color: #720000;
+	background-color: #ff0000;
 	background-image: url();
 	background-size: cover;
 	background-position: 0% 50%;
@@ -1127,9 +1127,9 @@ header:before{
 	border-radius: 3px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
-	background-color: #410303;
+	background-color: #601313;
 	font-family: FontAwesome;
-	color: #410303;
+	color: #601313;
 	font-size: 1em;
 	line-height: 18px;
 	text-align: center;
@@ -1316,7 +1316,7 @@ header:before{
 	background-color: rgb(255, 255, 255);
 }
 .sticky-menu .logo {
-	height: 72px;
+	height: 85px;
 	display: flex;
 	margin: 14px 0;
 	float: left;
@@ -1357,7 +1357,7 @@ header:before{
 	box-shadow:         0px 4px 9px 0px rgba(0, 0, 0, 0.24);
 }
 .sticky-menu.scrolling .logo {
-	height: 58px;
+	height: 68px;
 	margin: 3px 0;
 }
 .sticky-menu.scrolling .logo h1 {
@@ -1366,17 +1366,22 @@ header:before{
 }
 .main-nav ul {
 	margin: 0;
+	/* color: white; */
+
 }
 .main-nav ul li {
 	border-bottom: 0;
 	padding: 0;
+	/* background-color: #601313; */
+
+
 }
 .main-nav ul li:before {
 	display: none;
 }
 .main-nav {
-	font-size: 14px;
-	font-weight: 500;
+	font-size: 16px;
+	font-weight: 550;
 	float: right;
 }
 .main-nav>ul>li {
@@ -1396,11 +1401,11 @@ header:before{
 }
 .main-nav>ul>li>a {
 	display: block;
-	padding-left: 16px;
+	padding-left: 8.3px;
 }
 .main-nav>ul>li>a:after {
 	content: "|";
-	padding-left: 20px;
+	padding-left: 8px;
 	color: #dfdfdf;
 	font-size: 1em;
 }
@@ -1566,7 +1571,7 @@ header:before{
 }
 .main-nav>ul>li>ul a:before{
 	font-family: FontAwesome;
-	content: "\f111";
+	/* content: "\f111"; */
 	font-size: 5px;
 	color: #f27c66;
 	vertical-align: middle;
@@ -1937,7 +1942,7 @@ nav.main-nav.mobile_nav.opened ul {
 /* footer */
 /**/
 footer {
-	background-color: #3f0303;
+	background-color: #601313;
 	line-height: 24px;
 }
 footer p {
@@ -1951,7 +1956,7 @@ footer h2 {
 	color: #f7f7f7;
 	text-transform: uppercase;
 	font-weight: 700;
-	background-color: #360000;
+	background-color: #580404;
 	padding: 17px 15px 13px 10px;
 	margin-bottom: 30px;
 	margin-top: 0px;
@@ -1960,7 +1965,7 @@ footer h2 {
 footer h2:before{
 	float: right;
 	font-family: FontAwesome;
-	color: #3f0303;
+	color: #601313;
 	line-height: 25px; 
 	font-size: 25px;
 }
@@ -6177,7 +6182,7 @@ p.form-row.form-row-wide.select-arrow:before {
 /**/
 .community {
 	border: 1px solid #e6e6e6;
-	border-top: 2px solid #f9cb8f;
+	border-top: 2px solid #ff9a00;
 	border-radius: 4px;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
@@ -6189,10 +6194,10 @@ p.form-row.form-row-wide.select-arrow:before {
 	font-weight: 500;
 	font-size: 18px;
 	font-family: "Raleway";
-	color: #f9cb8f;
+	color: #ff9a00;
 }
 .community .community-logo {
-	background-color: #f9cb8f;
+	background-color: #ff9a00;
 	position: relative;
 	width: 160px;
 	height: 160px;
@@ -6223,7 +6228,7 @@ p.form-row.form-row-wide.select-arrow:before {
 	-webkit-transition: all 0.4s;
 }
 .community:hover .community-logo i{
-	color: #f9cb8f;
+	color: #ff9a00;
 }
 .community .info-block {
 	position: relative;
@@ -6251,20 +6256,19 @@ p.form-row.form-row-wide.select-arrow:before {
 	z-index: 2;
 }
 .community.color-1 {
-	border-top-color: #f27c66;
+	border-top-color: #00234b;
 }
 .community.color-1 .info-block:before,
 .community.color-1 .community-logo{
-	background-color: #f27c66;
+	background-color: #00234b;
 }
 .community.color-1:hover .community-logo i,
 .community.color-1 h3{
-	color: #f27c66;
+	color: #00234b;
 }
 .community.color-1 .community-logo {
-	border-color: #f27c66;
+	border-color: #7a92ad;
 }
-
 
 .community.color-2 {
 	border-top-color: #18bb7c;
@@ -6413,10 +6417,10 @@ p.form-row.form-row-wide.select-arrow:before {
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
-	width: 370px;
+	width: 472px;
 	max-width: 100%;
 	margin: 30px 0;
-	border: 2px solid #f27c66;
+	border: 2px solid #00234b;
 	border-radius: 4px;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
@@ -6432,7 +6436,7 @@ p.form-row.form-row-wide.select-arrow:before {
 }
 .action .action-block i {
 	font-size: 98px;
-	color: #f27c66;
+	color: #00234b;
 	opacity: 0.25;
 	margin-left: -10px;
 	margin-bottom: -5px;
@@ -6440,9 +6444,9 @@ p.form-row.form-row-wide.select-arrow:before {
 .action .action-block .text {
 	position: relative;
 	z-index: 2;
-	background-color: #f27c66;
+	background-color: #00234b;
 	margin-left: 66px;
-	padding: 40px;
+	padding: 13px;
 	text-align: left;
 }
 .action .action-block:before {
@@ -6458,7 +6462,7 @@ p.form-row.form-row-wide.select-arrow:before {
 	width: 0;
 	height: 0;
 	border-top: 30px solid transparent;
-	border-left: 30px solid #f27c66;
+	border-left: 30px solid #00234b;
 	border-bottom: 30px solid transparent;
 }
 .action:last-child .action-block span {
@@ -6486,7 +6490,7 @@ p.form-row.form-row-wide.select-arrow:before {
 	line-height: 80px;
 	padding: 0 35px;
 	color: #ffffff;
-	background-color: #f27c66;
+	background-color: #00234b;
 	border-radius: 9px;
 	-moz-border-radius: 9px;
 	-webkit-border-radius: 9px;
@@ -6505,7 +6509,7 @@ p.form-row.form-row-wide.select-arrow:before {
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
 	background-color: #ffffff;
-	border: 3px solid #f27c66;
+	border: 3px solid #00234b;
 	top: 50%;
 	left: 0;
 	transform: translate(-50%, -50%);
@@ -6563,13 +6567,13 @@ p.form-row.form-row-wide.select-arrow:before {
 }
 .line-element.color-2 .level-block,
 .color-2 .action .action-block .text {
-	background-color: #f9cb8f;
+	background-color: #ff9a00;
 }
 .color-2 .action .action-block:before {
 	border-left-color: #f9cb8f;
 }
 .color-2 .action:last-child .action-block:before {
-	border-right-color: #f9cb8f;
+	border-right-color: #ff9a00;
 }
 .color-2 .action .action-block i {
 	color: #f9cb8f;
@@ -6581,10 +6585,10 @@ p.form-row.form-row-wide.select-arrow:before {
 }
 .line-element.color-3 .level-block,
 .color-3 .action .action-block .text {
-	background-color: #18bb7c;
+	background-color: #009038;
 }
 .color-3 .action .action-block:before {
-	border-left-color: #18bb7c;
+	border-left-color: #009038;
 }
 .color-3 .action:last-child .action-block:before {
 	border-right-color: #18bb7c;

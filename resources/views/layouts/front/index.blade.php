@@ -59,13 +59,7 @@
 				</div>
 				
 			</div>
-			<div class="page-pagination clear-fix">
-				<a href="#"><i class="fa fa-angle-double-left"></i></a><!--
-				--><a href="#">1</a><!-- 
-				--><a href="#">2</a><!-- 
-				--><a href="#" class="active">3</a><!-- 
-				--><a href="#"><i class="fa fa-angle-double-right"></i></a>
-			</div>
+
 		</main>
 	</div>
 	<!-- / page content -->

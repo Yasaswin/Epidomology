@@ -72,5 +72,14 @@ class FrontController extends Controller
         return view('layouts.front.pages.eventsingle');
     }
 
+    /**
+     * Display history page.
+     *
+     * @return Factory|View
+     */
+    public function gallery()
+    {
+        return view('layouts.front.pages.gallery');
+    }
 
 }

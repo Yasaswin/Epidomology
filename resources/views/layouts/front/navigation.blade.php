@@ -10,7 +10,7 @@
 					<nav class="main-nav">
 						<ul class="clear-fix">
 							<li>
-								<a href="/" class="active">Home</a>
+								<a href="/" ><i class="fa fa-home"></i></a>
 		
 							</li>
 							<li>
@@ -27,67 +27,49 @@
 								<!-- / sub menu -->
 							</li>
 							<li>
-								<a href="index.html">Immunization </a>
+								<a href="index.html">NIP</a>
 								<!-- sub menu -->
 								<ul>
-									<li><a href="index.html" class="active">Full-Width Slider</a></li>
-									<li><a href="index-fullscreen.html">Full-Screen Slider</a></li>
-									<li><a href="index-bg-video.html">Video Slider</a></li>
+									<li><a href="index.html">Immunization programme Implementation</a></li>
+									<li><a href="index-fullscreen.html">VPD</a></li>
+									<li><a href="index-bg-video.html">Special vaccination campaigns</a></li>
+									<li><a href="{{ route('resources') }}">Publications</a></li>
+									<li><a href="index-bg-video.html">Circulars & Letters</a></li>
+									<li><a href="index-bg-video.html">Reporting Formso	Web Resources </a></li>
+									<li><a href="index-bg-video.html">Web Resources </a></li>
 								</ul>
 								<!-- / sub menu -->
 							</li>
-							<li class="megamenu">
-								<a href="content-elements.html">Disease Surveillance</a>
+							<li>
+								<a href="content-elements.html">Communicable Disease Surveillance</a>
 								<!-- sub mega menu -->
-								<ul class="clear-fix">
-									<li><div class="header-megamenu">Disease Surveillance System</div>
-										<ul>
-											<li><a href="page-about-us.html">Surveillance Methods</a></li>
-											<li><a href="page-our-staff.html">List of Notifiable Diseases</a></li>
-											<li><a href="page-services.html">Vaccine Preventable Diseases</a></li>
-										</ul>
-									</li>
-									<li><div class="header-megamenu">Disease surveillance during disaster</div>
-										<ul>
+								<ul>
+									<li><a href="index.html">Surveillance Methods</a></li>
+									<li><a href="index-fullscreen.html">List of Notifiable Diseases</a></li>
+									<li><a href="index-bg-video.html">Vaccine Preventable Diseases</a></li>
+									<li><a href="index-bg-video.html">Weekly Epidemiological Report</a></li>
+									<li><a href="index-bg-video.html">Quarterly Epidemiological Bulletin</a></li>
+									<li><a href="index-bg-video.html">Investigation Forms </a></li>
+									<li><a href="index-bg-video.html">Disease surveillance during disaster</a></li>
 
-										</ul>
-										<!-- <img src="http://placehold.it/250x150" alt> -->
-									</li>
-									<li><div class="header-megamenu">Weekly Epidemiological Repor</div>
-										<ul>
 
-										</ul>
-										<!-- <img src="http://placehold.it/250x150" alt> -->
-									</li>
-									<li><div class="header-megamenu">Quarterly Epidemiological Bulletin</div>
-										<ul>
-
-										</ul>
-										<!-- <img src="http://placehold.it/250x150" alt> -->
-									</li>
-									<li><div class="header-megamenu">Investigation Forms <br></div>
-										<ul>
-										<li><a href="page-about-us.html">Special Surveillance</a></li>
-											<li><a href="page-our-staff.html">Other Surveillance</a></li>
-
-										</ul>
-										<!-- <img src="http://placehold.it/250x150" alt> -->
-									</li>
 								</ul>
 								<!-- / sub mega menu -->
+
 							</li>
 							<li>
 								<a href="index.html">Disease Information</a>
 								<!-- sub menu -->
 								<ul>
-									<li><a href="index.html" class="active">Full-Width Slider</a></li>
-									<li><a href="index-fullscreen.html">Full-Screen Slider</a></li>
-									<li><a href="index-bg-video.html">Video Slider</a></li>
+									<li><a href="index.html" class="active">Fact Sheets</a></li>
+									<li><a href="index-fullscreen.html">Web Resources</a></li>
+									<li><a href="index-bg-video.html">High Endemic Diseases / Outbreaks</a></li>
 								</ul>
+
 								<!-- / sub menu -->
 							</li>
 							<li class="megamenu">
-								<a href="{{ route('resources') }}">Resources</a>
+								<a href="{{ route('resources') }}">Training</a>
 								<!-- sub mega menu -->
 								<ul class="clear-fix">
 									<li><div class="header-megamenu">Publications</div>
@@ -162,6 +144,19 @@
 								<!-- / sub mega menu -->
 							</li>
 							<li>
+								<a href="courses-grid.html">Dashboards</a>
+								<!-- sub menu -->
+								<ul>
+									<li><a href="{{ route('resources2') }}">Publications</a></li>
+									<li><a href="courses-list.html">Circulars</a></li>
+									<li><a href="courses-single-item.html">Guidelines</a></li>
+									<li><a href="courses-single-item.html">Policy/Strategic Plans</a></li>
+									<li><a href="courses-single-item.html">Review/<br>Reporting/Surveillance</a></li>
+
+								</ul>
+								<!-- / sub menu -->
+							</li>
+							<li>
 								<a href="courses-grid.html">Resources</a>
 								<!-- sub menu -->
 								<ul>
@@ -175,28 +170,29 @@
 								<!-- / sub menu -->
 							</li>
 							<li>
-								<a href="events-single-item.html">Web Systems</a>
+								<a href="events-single-item.html">EPID Web Systems</a>
 								<!-- sub menu -->
 								<ul>
-									<li><a href="event-calendar.html">Events Calendar</a></li>
-									<li><a href="events-single-item.html">Events Single Item</a></li>
+									<li><a href="event-calendar.html">eNIP</a></li>
+									<li><a href="events-single-item.html">eAEFI</a></li>
+									<li><a href="events-single-item.html">eSurveillance</a></li>
+									<li><a href="events-single-item.html">Flusys</a></li>
 								</ul>
 								<!-- / sub menu -->
 							</li>
-							<li>
-								<a href="shop-product-list.html">Training</a>
-								<!-- sub menu -->
-								<ul>
-									<li><a href="shop-product-list.html">Product List</a></li>
-									<li><a href="shop-single-product.html">Single Product</a></li>
-									<li><a href="shop-checkout.html">Checkout</a></li>
-									<li><a href="shop-cart.html">Shop Cart</a></li>
-								</ul>
-								<!-- / sub menu -->
-							</li>
+
+
 							<li>
 								<a href="contact-us.html">Gallery</a>
+								<!-- sub menu -->
+								<ul>
+									<li><a href="{{ route('gallery') }}">Image Gallery</a></li>
+									<li><a href="events-single-item.html">Video Gallery</a></li>
+								</ul>
+								<!-- / sub menu -->
+
 							</li>
+							<li></li>
 						</ul>
 					</nav>
 				</div>

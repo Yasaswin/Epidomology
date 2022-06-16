@@ -49,6 +49,7 @@ Route::get('history', [App\Http\Controllers\FrontController::class, 'history'])-
 Route::get('vision', [App\Http\Controllers\FrontController::class, 'vision'])->name('vision');
 Route::get('resources', [App\Http\Controllers\FrontController::class, 'resources'])->name('resources');
 Route::get('resources2', [App\Http\Controllers\FrontController::class, 'resources2'])->name('resources2');
+Route::get('gallery', [App\Http\Controllers\FrontController::class, 'gallery'])->name('gallery');
 
 Route::get('ressingle', [App\Http\Controllers\FrontController::class, 'resourcesSingle'])->name('ressingle');
 Route::get('events', [App\Http\Controllers\FrontController::class, 'events'])->name('events');

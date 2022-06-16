@@ -33,6 +33,8 @@
     <div class="page-content container clear-fix">
         <div class="grid-col-row">
                 <div class="grid-col grid-col-12">
+                <h2>PUBLICATIONS</h2>
+
                     <!-- main content -->
                         <div class="page-content woocommerce">
                                 <div class="container clear-fix">
@@ -56,6 +58,21 @@
                                                                 <!-- accordions content -->
                                                                 <div class="content">
                                                                   <!-- Shop -->
+                                                                  <div id="page-meta" class="group">
+                                                                    <p class="woocommerce-result-count">Showing 1-9 of 23 results </p>
+                           
+                                                                    <!-- widget search -->
+                                                                    <aside class="widget-search">
+                                                                        <form method="get" class="search-form" action="#">
+                                                                            <label>
+                                                                                <span class="screen-reader-text">Search for:</span>
+                                                                                <input type="search" class="search-field" placeholder="Search" value="" name="s" title="Search for:">
+                                                                            </label>
+                                                                            <input type="submit" class="search-submit" value="GO">
+                                                                        </form>
+                                                                    </aside>
+                                                                    <!-- / widget search -->
+                                                                </div>
 
                                                                 <ul class="products">
                                                                     <!-- product -->
@@ -202,7 +219,21 @@
                                                                 <!-- accordions content -->
                                                                 <div class="content">
                                                                                                                 <!-- Shop -->
-                                  
+                                                                <div id="page-meta" class="group">
+                                                                    <p class="woocommerce-result-count">Showing 1-9 of 23 results </p>
+                           
+                                                                    <!-- widget search -->
+                                                                    <aside class="widget-search">
+                                                                        <form method="get" class="search-form" action="#">
+                                                                            <label>
+                                                                                <span class="screen-reader-text">Search for:</span>
+                                                                                <input type="search" class="search-field" placeholder="Search" value="" name="s" title="Search for:">
+                                                                            </label>
+                                                                            <input type="submit" class="search-submit" value="GO">
+                                                                        </form>
+                                                                    </aside>
+                                                                    <!-- / widget search -->
+                                                                </div>
                                                                 <ul class="products">
                                                                     <!-- product -->
                                                                     <li class="product">
@@ -310,6 +341,15 @@
 
                                                                 </ul>
                                                                 <!--Shop -->
+                                                                <!-- pagination -->
+                                                                <div class="page-pagination clear-fix">
+                                                                    <a href="#"><i class="fa fa-angle-double-left"></i></a><!--
+                                                                    --><a href="#">1</a><!-- 
+                                                                    --><a href="#">2</a><!-- 
+                                                                    --><a href="#" class="active">3</a><!-- 
+                                                                    --><a href="#"><i class="fa fa-angle-double-right"></i></a>
+                                                                </div>
+                                                                <!--/ pagination -->
                                                                 </div>
                                                                 <!--/accordions content -->
                                                                 <!-- content-title -->
