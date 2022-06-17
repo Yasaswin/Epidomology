@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Http\Request;
 
 class Menu extends Model
 {
@@ -12,6 +13,10 @@ class Menu extends Model
 
     public function parent(){
         return $this->belongsTo(Menu::class,'parent_id');
+    }
+
+    public function page(){
+        return $this->belongsTo(Page::class,'page_id');
     }
 
     public function children(){
@@ -43,50 +48,34 @@ class Menu extends Model
         return $query->orderBy('order');
     }
 
-    public function arrangeChildrenMenus($menu)
+    public function arrangeChildrenMenus($active_id=null,$open_menus=[])
     {
         $list='';
-        if($menu->children()->showMenus()->exists() ){
-            $list = '<ul class="nav-item nav-treeview"> <li class="nav-item"> ';
-            foreach($menu->children()->showMenus()->OrderMenus()->get() as $submenu){
-                $list = $list.'<a href="" class="nav-link"><i class="nav-icon far fa-id-card"></i><p>'.$submenu->name.'</p>';
-                if(!$submenu->isLastChild()){
-                    $list = $list.'<i class="fas fa-angle-left right"></i>';
+        if($this->isParent()){
+            if($this->children()->showMenus()->exists() ){
+                $list = '<ul> ';
+                foreach($this->children()->showMenus()->OrderMenus()->get() as $submenu){
+                    $open = in_array($this->id,$open_menus)?' menu-open':'';
+                    $route = $submenu->route ? route($submenu->route) : ($submenu->page ? route('viewpage',[$submenu->page->slug]) : '') ;
+                    $active = $submenu->id == $active_id ? ' active' : '';
+                    $list = $list.'<li> <a href="'.$route.'" class="'.$active.'">'.$submenu->name.'</a></li>';
                 }
-                $list = $list.'</a>';
-                if($submenu->children()->showMenus()->exists() ){
-                    $list = $list.'<ul class="nav-item nav-treeview"> ';
-                    foreach( $submenu->children()->showMenus()->OrderMenus()->get() as $child){
-                        $list = $list.'<li class="nav-item"> <a href="" class="nav-link"><i class="nav-icon far fa-id-card"></i><p>'.$child->name.'</p>';
-                        if(!$child->isLastChild()){
-                            $list = $list.'<i class="fas fa-angle-left right"></i>';
-                        }
-                        $list = $list.'</a>';
-                        if($list2 = $this->arrangeChildrenMenus($child)){
-                            $list = $list.$list2;
-                        }
-                        $list = $list.'</li>';
-                    }
-                }
-                else{
-                    $list = $list.'</li></ul>';
-                }
+                $list = $list.'</ul>';
             }
-            $list = $list.'</li></ul>';
         }
         return $list;
     }
 
-    protected function subMenus(): Attribute
-    {
-        $list = '';
-        if($this->isParent()){
-            $list = $this->arrangeChildrenMenus($this);
-        }
-        return Attribute::make(
-            get: fn ($value) => $list,
-        );
-    }
+    // protected function subMenus(): Attribute
+    // {
+    //     $list = '';
+    //     if($this->isParent()){
+    //         $list = $this->arrangeChildrenMenus($this);
+    //     }
+    //     return Attribute::make(
+    //         get: fn ($value) => $list,
+    //     );
+    // }
 
     protected function name(): Attribute
     {
@@ -107,5 +96,15 @@ class Menu extends Model
         return Attribute::make(
             get: fn ($value) => $family,
         );
+    }
+
+
+    public static function firstActiveChild(){
+        foreach(self::showMenus()->OrderMenus()->get() as $menu){
+            if( request()->is($menu->active)){
+                return $menu;
+            }
+        }
+        return null;
     }
 }
