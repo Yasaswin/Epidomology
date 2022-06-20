@@ -33,7 +33,7 @@
     <!-- page content -->
     <div class="page-content container clear-fix">
         <div class="grid-col-row">
-                <div class="grid-col grid-col-8">
+                <div class="grid-col grid-col-6">
                     <!-- main content -->
                     <div class="page-content grid-row">
 							<!-- widget event -->
@@ -70,6 +70,44 @@
 		            </div>
                     <!-- / main content -->
                 </div>
+				<div class="grid-col grid-col-6">
+                    <!-- main content -->
+                    <div class="page-content grid-row">
+							<!-- widget event -->
+							<aside class="widget-event">
+								<h2>Past Events</h2>
+								<article class="clear-fix" >
+                                <a href="{{ route('eventsingle') }}" >
+									<div class="date"><div class="day">22</div><div class="month">Feb</div></div>
+									<div class="event-description"><span>9:00am to 1:00pm</span><p>Donec ut velit varius, sodales velit ac, aliquet purus. </p></div>
+                                </a>
+								</article>
+								<article class="clear-fix">
+									<div class="date"><div class="day">23</div><div class="month">Feb</div></div>
+									<div class="event-description"><span>10:00am to 3:00pm</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+								</article>
+								<article class="clear-fix">
+									<div class="date"><div class="day">24</div><div class="month">Feb</div></div>
+									<div class="event-description"><span>12:00am to 5:00pm</span><p>Suspendisse consequat eros eget consequat pulvinar</p></div>
+								</article>
+                                <article class="clear-fix">
+									<div class="date"><div class="day">25</div><div class="month">Feb</div></div>
+									<div class="event-description"><span>9:00am to 1:00pm</span><p>Donec ut velit varius, sodales velit ac, aliquet purus. </p></div>
+								</article>
+								<article class="clear-fix">
+									<div class="date"><div class="day">27</div><div class="month">Feb</div></div>
+									<div class="event-description"><span>10:00am to 3:00pm</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+								</article>
+								<article class="clear-fix">
+									<div class="date"><div class="day">28</div><div class="month">Feb</div></div>
+									<div class="event-description"><span>12:00am to 5:00pm</span><p>Suspendisse consequat eros eget consequat pulvinar</p></div>
+								</article>
+							</aside>
+							<!-- / widget event -->
+		            </div>
+                    <!-- / main content -->
+                </div>
+				
             <!-- sidebar right content -->
             <!-- End sidebar right content -->
         </div>

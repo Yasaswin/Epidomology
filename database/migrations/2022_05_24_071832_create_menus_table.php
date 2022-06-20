@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
-            $table->string('name_lang', 50)->nullable();
-            $table->string('name_en', 50);
-            $table->string('name_si', 50)->nullable();
-            $table->string('name_ta', 50)->nullable();
+            $table->string('name_lang', 100)->nullable();
+            $table->string('name_en', 100);
+            $table->string('name_si', 100)->nullable();
+            $table->string('name_ta', 100)->nullable();
             $table->foreignId('parent_id')->nullable()->constrained('menus');
             $table->string('route', 50)->nullable();
             $table->string('policy', 50)->nullable();
