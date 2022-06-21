@@ -19,6 +19,10 @@ class Menu extends Model
         return $this->belongsTo(Page::class,'page_id');
     }
 
+    public function category(){
+        return $this->belongsTo(category::class);
+    }
+
     public function children(){
         return $this->hasMany(Menu::class,'parent_id');
     }
@@ -66,6 +70,39 @@ class Menu extends Model
         return $list;
     }
 
+    private $active_submenu = ' active';
+
+    public function arrangeSubMenus()
+    {
+
+        $list='';
+
+        if($this->children()->showMenus()->exists() ){
+                                    
+            foreach($this->children()->showMenus()->OrderMenus()->get() as $submenu){
+                $list = $list.'<div class="content-title "><h4>'.$submenu->name_en.'</h4></div> ';
+
+                $list = $list.'<div class="content">';
+                if( $submenu->isLastChild()){
+
+                    if($posts=$submenu->category->posts ?? false){
+                        $list = $list.Page::products($posts);
+                    }
+                    // $this->active='';   
+                }
+                elseif ($list2 = $submenu->arrangeSubMenus()){
+                    $list = $list.$list2;
+                    // dd($list2);
+
+                }
+                $list = $list.'</div>';
+            }
+
+        }
+
+        return $list;
+    }
+
     // protected function subMenus(): Attribute
     // {
     //     $list = '';
@@ -76,6 +113,8 @@ class Menu extends Model
     //         get: fn ($value) => $list,
     //     );
     // }
+
+
 
     protected function name(): Attribute
     {

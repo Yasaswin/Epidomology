@@ -51,7 +51,30 @@
 						sit amet pretium tortor mattis.</p>
 					</article>
 				</section>
-				<section class="grid-col grid-col-4 footer-contact-form">
+				<section class="grid-col grid-col-4 footer-latest">
+					<h2 class="corner-radius">Reference </h2>
+					<article>
+						<!-- <img src="http://placehold.it/83x83" data-at2x="http://placehold.it/83x83" alt> -->
+						<h3>Sed aliquet dui at auctor blandit</h3>
+						<div class="course-date">
+							<div>10<sup>00</sup></div>
+							<div>23.02.15</div>
+						</div>
+						<p>Sed pharetra lorem ut dolor dignissim,
+						sit amet pretium tortor mattis.</p>
+					</article>
+					<article>
+						<!-- <img src="http://placehold.it/83x83" data-at2x="http://placehold.it/83x83" alt> -->
+						<h3>Sed aliquet dui at auctor blandit</h3>
+						<div class="course-date">
+							<div>10<sup>00</sup></div>
+							<div>23.02.15</div>
+						</div>
+						<p>Sed pharetra lorem ut dolor dignissim,
+						sit amet pretium tortor mattis.</p>
+					</article>
+				</section>
+				<!-- <section class="grid-col grid-col-4 footer-contact-form">
 					<h2 class="corner-radius">apply for instructor</h2>
 					<div class="email_server_responce"></div>
 					<form action="php/contacts-process.php" class="contact-form" method="post" novalidate="novalidate">
@@ -61,7 +84,7 @@
 						<p><span class="your-message"><textarea name="message" placeholder="Comments" cols="40" rows="5" aria-invalid="false" required></textarea></span> </p>
 						<button type="submit" class="cws-button bt-color-3  alt icon-right" style="border-radius:8px;">Submit <i class="fa fa-angle-right"></i></button>
 					</form>
-				</section>
+				</section> -->
 			</div>
 		</div>
 		<div class="footer-bottom">

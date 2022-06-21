@@ -35,20 +35,31 @@
         <div class="grid-col grid-col-12">
             <h2>{{$page->title??''}}</h2>
             <!-- main content -->
-            @if($submenu = $page->submenu[0] ?? false)
-            <div class="grid-col grid-col-12">
-                <section>
-                    <div class="accordions">
-                        {!! $submenu->arrangeSubMenus() !!}
+            <section>
+                <div class="accordions">
+                    <div class="content-title active">NIP</div>
+                        <div class="content">
+                            <div class="content-title">Immunization Programme Implementation</div>
+                            <div class="content">
+                            <!-- data -->
+                                <ul class="products">
+                                    <li class="product">
+
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    <div class="content-title">VPD</div>
+                    <div class="content">
+                        <!-- data -->
                     </div>
-                </section>
-            </div>
-            @elseif($posts = $page->category->posts ?? false)
-
-                {!! Page::products($posts) !!}
-
-            @endif
-
+                    <div class="content-title">Disease Surveillance</div>
+                    <div class="content">
+                        <!-- data -->
+                    </div>
+                </div>
+			</section>
+             
 
             <!-- / main content -->
         </div>

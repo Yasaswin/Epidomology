@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('page_menue', function (Blueprint $table) {
+        Schema::create('page_menu', function (Blueprint $table) {
             $table->foreignId('page_id')->unique()->constrained('pages')->onDelete('cascade');    
-            $table->foreignId('menue_id')->nullable()->constrained('menus')->onDelete('cascade');            
+            $table->foreignId('menu_id')->constrained('menus')->onDelete('cascade');            
         
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('page_menue');
+        Schema::dropIfExists('page_menu');
     }
 };

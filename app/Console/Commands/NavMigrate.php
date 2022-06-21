@@ -958,7 +958,6 @@ class NavMigrate extends Command
                         $menu->save();
 
                     //VPD
-                    $parent_menu2 = $menu->id;
 
                     $menu = new Menu();
                     $menu->name_lang = 'VPD';
@@ -976,7 +975,6 @@ class NavMigrate extends Command
                     $menu->save();
 
                     //	Disease Surveillance
-                    $parent_menu2 = $menu->id;
 
                     $menu = new Menu();
                     $menu->name_lang = 'Disease Surveillance';
@@ -1041,7 +1039,6 @@ class NavMigrate extends Command
                         $menu->save();
 
                     //Covid-19
-                    $parent_menu2 = $menu->id;
 
                     $menu = new Menu();
                     $menu->name_lang = 'Covid-19';
@@ -1215,8 +1212,6 @@ class NavMigrate extends Command
                         $menu->save();
 
                     //VPD
-                    $parent_menu2 = $menu->id;
-
                     $menu = new Menu();
                     $menu->name_lang = 'VPD';
                     $menu->name_en = 'VPD';
@@ -1328,8 +1323,6 @@ class NavMigrate extends Command
                         $menu->save();
 
                     //Covid-19
-                    $parent_menu2 = $menu->id;
-
                     $menu = new Menu();
                     $menu->name_lang = 'Covid-19';
                     $menu->name_en = 'Covid-19';
