@@ -4,7 +4,9 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
+	
+	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+          <script src="{{ asset('js/app.js') }}" ></script>
 	<!-- CSRF Token -->
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -33,8 +35,52 @@
 			<!-- section -->
 			<section class="padding-section">
 			<div class="grid-row clear-fix">
-				<h2 class="center-text">Dashboard</h2>
-
+				<div class="bg-image p-3  shadow-1-strong rounded mb-5 text-white" style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');">
+					<div class="mask pl-5 pt-5 pb-5" style="background-color: rgba(0, 0, 0, 0.5);">
+					<h2 class="mb-3 h1 text-center" >Dieases Name</h2>
+					<h1 class="mb-3 h2 text-center">Current week</h1>
+						<div class="row justify-content-md-center">
+							<div class="col-md-6">
+								<h3 class="mb-3 h4">Notified cases during week "23"</i></h3>
+							</div>					
+							<div class="col-md-6">
+								<h3 class="mb-3 h4 text-center">45</h3>
+							</div>
+						</div>
+						<div class="row justify-content-md-center">
+							<div class="col-md-6">
+								<h3 class="mb-3 h4">Total Notified from week "23" to present </h3>
+							</div>					
+							<div class="col-md-6">
+								<h3 class="mb-3 h4 text-center">45</h3>
+							</div>
+						</div>
+						<div class="row justify-content-md-center">
+							<div class="col-md-6">
+								<h3 class="mb-3 h4">Total Confirmed from week "23" to present </h3>
+							</div>					
+							<div class="col-md-6">
+								<h3 class="mb-3 h4 text-center">45</h3>
+							</div>
+						</div>
+						<div class="row justify-content-md-left">
+							<div class="col-md-3">
+								<h3 class="mb-3 h4">Total Recoverd</h3>
+							</div>
+							<div class="col-md-3">
+								<h3 class="mb-3 h4">24</h3>
+							</div>	
+						</div>
+						<div class="row justify-content-md-left">
+							<div class="col-md-3">
+								<h3 class="mb-3 h4">Total Deaths</h3>
+							</div>
+							<div class="col-md-3">
+								<h3 class="mb-3 h4">24</h3>
+							</div>	
+						</div>
+					</div>
+				</div>
 			</div>
 
 		</section>
