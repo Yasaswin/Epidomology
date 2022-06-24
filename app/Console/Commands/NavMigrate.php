@@ -182,10 +182,10 @@ class NavMigrate extends Command
                             $parent_menu3 = $menu->id;
 
                             $menu = new Menu();
-                            $menu->name_lang = 'Immunization Programme Implementation';
-                            $menu->name_en = 'Immunization Programme Implementation';
-                            $menu->name_si = 'Immunization Programme Implementation';
-                            $menu->name_ta = 'Immunization Programme Implementation';
+                            $menu->name_lang = 'Delivery Structure';
+                            $menu->name_en = 'Delivery Structure';
+                            $menu->name_si = 'Delivery Structure';
+                            $menu->name_ta = 'Delivery Structure';
                             $menu->parent_id = $parent_menu3;
                             $menu->route = null;
                             $menu->policy = null;
@@ -240,10 +240,6 @@ class NavMigrate extends Command
                         $menu->order = '2013';
                         $menu->status = 'SHOW';
                         $menu->save();
-
-
-
-
 
                 $menu = new Menu();
                 $menu->name_lang = 'VPD';
@@ -731,55 +727,55 @@ class NavMigrate extends Command
                 $menu->status = 'SHOW';
                 $menu->save();
 
-                $parent_menu = $menu->id;
+                    $parent_menu = $menu->id;
 
-                $menu = new Menu();
-                $menu->name_lang = 'Immunization';
-                $menu->name_en = 'Immunization';
-                $menu->name_si = 'Immunization';
-                $menu->name_ta = 'Immunization';
-                $menu->parent_id = $parent_menu;
-                $menu->route = null;
-                $menu->policy = null;
-                $menu->icon = null;
-                $menu->model = null;
-                $menu->active = null;
-                $menu->order = '601';
-                $menu->status = 'SHOW';
-                $menu->save();
+                    $menu = new Menu();
+                    $menu->name_lang = 'Immunization';
+                    $menu->name_en = 'Immunization';
+                    $menu->name_si = 'Immunization';
+                    $menu->name_ta = 'Immunization';
+                    $menu->parent_id = $parent_menu;
+                    $menu->route = null;
+                    $menu->policy = null;
+                    $menu->icon = null;
+                    $menu->model = null;
+                    $menu->active = null;
+                    $menu->order = '601';
+                    $menu->status = 'SHOW';
+                    $menu->save();
 
-                $menu = new Menu();
-                $menu->name_lang = 'Disease Surveillance';
-                $menu->name_en = 'Disease Surveillance';
-                $menu->name_si = 'Disease Surveillance';
-                $menu->name_ta = 'Disease Surveillance';
-                $menu->parent_id = $parent_menu;
-                $menu->route = null;
-                $menu->policy = null;
-                $menu->icon = null;
-                $menu->model = null;
-                $menu->active = null;
-                $menu->order = '602';
-                $menu->status = 'SHOW';
-                $menu->save();
+                    $menu = new Menu();
+                    $menu->name_lang = 'Disease Surveillance';
+                    $menu->name_en = 'Disease Surveillance';
+                    $menu->name_si = 'Disease Surveillance';
+                    $menu->name_ta = 'Disease Surveillance';
+                    $menu->parent_id = $parent_menu;
+                    $menu->route = null;
+                    $menu->policy = null;
+                    $menu->icon = null;
+                    $menu->model = null;
+                    $menu->active = null;
+                    $menu->order = '602';
+                    $menu->status = 'SHOW';
+                    $menu->save();
 
-                $menu = new Menu();
-                $menu->name_lang = 'High Endemic Diseases / Outbreaks';
-                $menu->name_en = 'High Endemic Diseases / Outbreaks';
-                $menu->name_si = 'High Endemic Diseases / Outbreaks';
-                $menu->name_ta = 'High Endemic Diseases / Outbreaks';
-                $menu->parent_id = $parent_menu;
-                $menu->route = null;
-                $menu->policy = null;
-                $menu->icon = null;
-                $menu->model = null;
-                $menu->active = null;
-                $menu->order = '603';
-                $menu->status = 'SHOW';
-                $menu->save();
-                
+                    $menu = new Menu();
+                    $menu->name_lang = 'High Endemic Diseases / Outbreaks';
+                    $menu->name_en = 'High Endemic Diseases / Outbreaks';
+                    $menu->name_si = 'High Endemic Diseases / Outbreaks';
+                    $menu->name_ta = 'High Endemic Diseases / Outbreaks';
+                    $menu->parent_id = $parent_menu;
+                    $menu->route = null;
+                    $menu->policy = null;
+                    $menu->icon = null;
+                    $menu->model = null;
+                    $menu->active = null;
+                    $menu->order = '603';
+                    $menu->status = 'SHOW';
+                    $menu->save();
+                    
 
-                //•	Dashboards
+                //•	websystems
 
                 $menu = new Menu();
                 $menu->name_lang = 'Epid Web Systems';
@@ -796,67 +792,67 @@ class NavMigrate extends Command
                 $menu->status = 'SHOW';
                 $menu->save();
 
-                $parent_menu = $menu->id;
+                    $parent_menu = $menu->id;
 
-                $menu = new Menu();
-                $menu->name_lang = 'eNIP';
-                $menu->name_en = 'eNIP';
-                $menu->name_si = 'eNIP';
-                $menu->name_ta = 'Immunization';
-                $menu->parent_id = $parent_menu;
-                $menu->route = null;
-                $menu->policy = null;
-                $menu->icon = null;
-                $menu->model = null;
-                $menu->active = null;
-                $menu->order = '701';
-                $menu->status = 'SHOW';
-                $menu->save();
+                    $menu = new Menu();
+                    $menu->name_lang = 'eNIP';
+                    $menu->name_en = 'eNIP';
+                    $menu->name_si = 'eNIP';
+                    $menu->name_ta = 'Immunization';
+                    $menu->parent_id = $parent_menu;
+                    $menu->route = null;
+                    $menu->policy = null;
+                    $menu->icon = null;
+                    $menu->model = null;
+                    $menu->active = null;
+                    $menu->order = '701';
+                    $menu->status = 'SHOW';
+                    $menu->save();
 
-                $menu = new Menu();
-                $menu->name_lang = 'eAEFI';
-                $menu->name_en = 'eAEFI';
-                $menu->name_si = 'eAEFI';
-                $menu->name_ta = 'eAEFI';
-                $menu->parent_id = $parent_menu;
-                $menu->route = null;
-                $menu->policy = null;
-                $menu->icon = null;
-                $menu->model = null;
-                $menu->active = null;
-                $menu->order = '702';
-                $menu->status = 'SHOW';
-                $menu->save();
+                    $menu = new Menu();
+                    $menu->name_lang = 'eAEFI';
+                    $menu->name_en = 'eAEFI';
+                    $menu->name_si = 'eAEFI';
+                    $menu->name_ta = 'eAEFI';
+                    $menu->parent_id = $parent_menu;
+                    $menu->route = null;
+                    $menu->policy = null;
+                    $menu->icon = null;
+                    $menu->model = null;
+                    $menu->active = null;
+                    $menu->order = '702';
+                    $menu->status = 'SHOW';
+                    $menu->save();
 
-                $menu = new Menu();
-                $menu->name_lang = 'eSurveillance';
-                $menu->name_en = 'eSurveillance';
-                $menu->name_si = 'eSurveillance';
-                $menu->name_ta = 'eSurveillance';
-                $menu->parent_id = $parent_menu;
-                $menu->route = null;
-                $menu->policy = null;
-                $menu->icon = null;
-                $menu->model = null;
-                $menu->active = null;
-                $menu->order = '703';
-                $menu->status = 'SHOW';
-                $menu->save();
+                    $menu = new Menu();
+                    $menu->name_lang = 'eSurveillance';
+                    $menu->name_en = 'eSurveillance';
+                    $menu->name_si = 'eSurveillance';
+                    $menu->name_ta = 'eSurveillance';
+                    $menu->parent_id = $parent_menu;
+                    $menu->route = null;
+                    $menu->policy = null;
+                    $menu->icon = null;
+                    $menu->model = null;
+                    $menu->active = null;
+                    $menu->order = '703';
+                    $menu->status = 'SHOW';
+                    $menu->save();
 
-                $menu = new Menu();
-                $menu->name_lang = 'Flusys';
-                $menu->name_en = 'Flusys';
-                $menu->name_si = 'Flusys';
-                $menu->name_ta = 'Flusys';
-                $menu->parent_id = $parent_menu;
-                $menu->route = null;
-                $menu->policy = null;
-                $menu->icon = null;
-                $menu->model = null;
-                $menu->active = null;
-                $menu->order = '704';
-                $menu->status = 'SHOW';
-                $menu->save();
+                    $menu = new Menu();
+                    $menu->name_lang = 'Flusys';
+                    $menu->name_en = 'Flusys';
+                    $menu->name_si = 'Flusys';
+                    $menu->name_ta = 'Flusys';
+                    $menu->parent_id = $parent_menu;
+                    $menu->route = null;
+                    $menu->policy = null;
+                    $menu->icon = null;
+                    $menu->model = null;
+                    $menu->active = null;
+                    $menu->order = '704';
+                    $menu->status = 'SHOW';
+                    $menu->save();
 
                 //Resources 
 
@@ -1495,6 +1491,35 @@ class NavMigrate extends Command
                         $menu->save();
                     
                     
+                    $menu = new Menu();
+                    $menu->name_lang = 'Reporting Forms';
+                    $menu->name_en = 'Reporting Forms';
+                    $menu->name_si = 'Reporting Forms';
+                    $menu->name_ta = 'Reporting Forms';
+                    $menu->parent_id = $parent_menu2;
+                    $menu->route = null;
+                    $menu->policy = null;
+                    $menu->icon = null;
+                    $menu->model = null;
+                    $menu->active = null;
+                    $menu->order = '8042';
+                    $menu->status = 'SHOW';
+                    $menu->save();
+                    
+                    $menu = new Menu();
+                    $menu->name_lang = 'Other Surveillance Forms';
+                    $menu->name_en = 'Other Surveillance Forms';
+                    $menu->name_si = 'Other Surveillance Forms';
+                    $menu->name_ta = 'Other Surveillance Forms';
+                    $menu->parent_id = $parent_menu2;
+                    $menu->route = null;
+                    $menu->policy = null;
+                    $menu->icon = null;
+                    $menu->model = null;
+                    $menu->active = null;
+                    $menu->order = '8043';
+                    $menu->status = 'SHOW';
+                    $menu->save();
 
                 $menu = new Menu();
                 $menu->name_lang = 'Other Downloads';

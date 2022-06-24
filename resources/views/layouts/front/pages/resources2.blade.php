@@ -23,7 +23,7 @@
         <nav class="bread-crumb">
             <a href="index.html">Resources</a>
             <i class="fa fa-long-arrow-right"></i>
-            <a href="content-elements.html">PUBLICATIONS</a>
+            <a href="content-elements.html">{{$page->title??''}}</a>
         </nav>
     </div>
 </div>

@@ -33,23 +33,31 @@
     <!-- page content -->
     <div class="page-content container clear-fix">
         <div class="grid-col-row">
-                <div class="grid-col grid-col-12">
+        <div class="grid-col grid-col-9">
+                <h2>{{$page->title??''}}</h2>
                     <!-- main content -->
-                    <div class="page-content grid-row">
-                        <main>
-                            <section class="clear-fix">
-                                <h2>{{$page->title ?? 'Tittle'}}</h2>
-                                <p>
-                                    {!! $page->body !!}
-                                </p>
-                            </section>
-                            <hr class="divider-color" />
-                        </main>
-		            </div>
-                    <!-- / main content -->
+                    <main>
+						<!-- item -->
+						<div class="category-item list clear-fix">
+						    <div class="picture" style=" max-width: 14%;">
+                                <div class="hover-effect"></div>
+                                    <div class="link-cont">
+                                        <a href="" class="fancy fa fa-search"></a>
+                                    </div>
+                                    <img src="img/2.jpg" data-at2x="img/2.jpg" alt>
+                            </div>
+                                    <h3><a style="text-decoration: underline;" href="" target="_blank" >Tittle</a></h3>
+                            <p>Body</p>
+                            <div class="tags-post">
+                                <a href="#" rel="tag">2021.09.05 Admin</a>
+                                <a href="" class="tag"></a>
+                            </div>
+						</div>
+						<!-- / item -->
+
+					</main>
                 </div>
-            <!-- sidebar right content -->
-            <!-- End sidebar right content -->
+
         </div>
     </div>
 

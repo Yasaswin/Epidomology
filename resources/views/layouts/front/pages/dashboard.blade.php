@@ -27,31 +27,18 @@
 				</nav>
 			</div>
 		</div>
-
 </header>
 <!-- / page header -->
     <!-- page content -->
-    <div class="page-content container clear-fix">
-        <div class="grid-col-row">
-                <div class="grid-col grid-col-12">
-                    <!-- main content -->
-                    <div class="page-content grid-row">
-                        <main>
-                            <section class="clear-fix">
-                                <h2>{{$page->title ?? 'Tittle'}}</h2>
-                                <p>
-                                    {!! $page->body !!}
-                                </p>
-                            </section>
-                            <hr class="divider-color" />
-                        </main>
-		            </div>
-                    <!-- / main content -->
-                </div>
-            <!-- sidebar right content -->
-            <!-- End sidebar right content -->
-        </div>
-    </div>
+			<!-- section -->
+			<section class="padding-section">
+			<div class="grid-row clear-fix">
+				<h2 class="center-text">Dashboard</h2>
+
+			</div>
+
+		</section>
+		<!-- / section -->
 
     <!-- page content -->
     @include('layouts.front.footer')

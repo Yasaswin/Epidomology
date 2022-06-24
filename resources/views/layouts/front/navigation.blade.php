@@ -3,7 +3,7 @@
 			<div class="sticky-menu">
 				<div class="grid-row clear-fix">
 					<!-- logo -->
-					<a href="index.html" class="logo">
+					<a href="/" class="logo">
 						<img src="img/logo.png"  data-at2x="img/logo.png" alt>
 					</a>
 					<!-- / logo -->

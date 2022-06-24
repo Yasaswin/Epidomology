@@ -37,10 +37,17 @@ class PageMigrate extends Command
             try 
             {
                 $page = new Page();
-                $page->title = 'Vision';
+                $page->title = 'Vision and Mission';
                 $page->body = null;
                 $page->category_id = null;
                 $page->layout = 'layouts.front.pages.vision';
+                $page->save();
+
+                $page = new Page();
+                $page->title = 'Organization Structure';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.organisation';
                 $page->save();
 
                 $page = new Page();
@@ -51,11 +58,219 @@ class PageMigrate extends Command
                 $page->save();
 
                 $page = new Page();
-                $page->title = 'Resources';
+                $page->title = 'Key Achievements';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.layout';
+                $page->save();
+
+                $page = new Page();
+                $page->title = 'Careers at EPID';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.list';
+                $page->save();
+
+                //NIP
+                $page = new Page();
+                $page->title = 'Immunization programme Implementation';
                 $page->body = null;
                 $page->category_id = null;
                 $page->layout = 'layouts.front.pages.resources2';
                 $page->save();
+
+                $page = new Page();
+                $page->title = 'VPD';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.resources2';
+                $page->save();
+
+                $page = new Page();
+                $page->title = 'Special vaccination campaigns';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.resources2';
+                $page->save();
+                
+                $page = new Page();
+                $page->title = 'Reporting Forms';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.resources2';
+                $page->save();
+
+                $page = new Page();
+                $page->title = 'Web Resources';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.resources2';
+                $page->save();
+
+                //•	Communicable Disease Surveillance 
+
+                $page = new Page();
+                $page->title = 'Surveillance Methods';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.resources2';
+                $page->save();
+
+                
+                $page = new Page();
+                $page->title = 'List of Notifiable Diseases';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.resources2';
+                $page->save();
+                
+                $page = new Page();
+                $page->title = 'Vaccine Preventable Diseases';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.resources2';
+                $page->save();
+                
+                $page = new Page();
+                $page->title = 'Weekly Epidemiological Report';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.resources2';
+                $page->save();
+
+                $page = new Page();
+                $page->title = 'Quarterly Epidemiological Bulletin';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.resources2';
+                $page->save();
+
+                $page = new Page();
+                $page->title = 'Investigation Forms ';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.resources2';
+                $page->save();
+
+                $page = new Page();
+                $page->title = 'Disease surveillance during disaster';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.resources2';
+                $page->save();
+
+                //•	Disease Information 
+
+                $page = new Page();
+                $page->title = 'Fact Sheets';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.resources2';
+                $page->save();
+
+                //•	Training
+                $page = new Page();
+                $page->title = 'Local ';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.resources2';
+                $page->save();
+
+                $page = new Page();
+                $page->title = 'International';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.resources2';
+                $page->save();
+                
+                $page = new Page();
+                $page->title = 'Web-based opportunities';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.resources2';
+                $page->save();
+
+                //•	Dashboards
+
+                $page = new Page();
+                $page->title = 'Immunization';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.dashboard';
+                $page->save();
+
+                $page = new Page();
+                $page->title = 'Disease Surveillance';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.dashboard';
+                $page->save();
+
+                $page = new Page();
+                $page->title = 'High Endemic Diseases/Outbreaks';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.dashboard';
+                $page->save();
+
+                //Resources 
+
+                $page = new Page();
+                $page->title = 'Publications';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.resources2';
+                $page->save();
+
+                $page = new Page();
+                $page->title = 'Circulars/Circular Letters';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.resources2';
+                $page->save();
+
+                $page = new Page();
+                $page->title = 'Policy/Strategic Plans';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.resources2';
+                $page->save();
+
+                $page = new Page();
+                $page->title = 'Review/Reporting/Surveillance Forms';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.resources2';
+                $page->save();
+
+                $page = new Page();
+                $page->title = 'Other Downloads';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.resources2';
+                $page->save();
+
+                //Gallery
+
+                $page = new Page();
+                $page->title = 'Video Gallery';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.gallery';
+                $page->save();
+
+                $page = new Page();
+                $page->title = 'Image Gallery';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.gallery';
+                $page->save();
+
+
+
+
+
+
 
                 $page = new Page();
                 $page->title = 'Dynamic1';
@@ -74,9 +289,7 @@ class PageMigrate extends Command
                 <br>ln 1995, the cadre allocated to the Unit was revised and the total number of Medical Officers was increased to 13. This number included two senior administrative grade officers and eight specialist grade officers. ln addition to this, it was planned to appoint Regional Epidemiologists to all Districts and Provincial Epidemiologists to the Provinces. All 26 RDHS divisions are now served by a Regional Epidemiologist.<br>
 
                 <br>Over the years since 1959, the Unit has been steered by nine Chief Epidemiologists and at present, the Unit functions with a full cadre headed by the Chief Epidemiologist, Dr. Sudath Samaraweera.
-                </p>
-
-';
+                </p>';
                 $page->category_id = null;
                 $page->layout = 'layouts.front.pages.layout';
                 $page->save();
