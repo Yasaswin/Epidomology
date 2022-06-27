@@ -13,8 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('notice_detail', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('notice_details', function (Blueprint $table) {
+            $table->id();
             $table->foreignId('notice_id')->nullable()->constrained('notices')->onDelete('cascade');  
             $table->string('label_en', 100);
             $table->string('label_si', 100)->nullable();
@@ -24,8 +24,8 @@ return new class extends Migration
             $table->enum('status', array('SHOW','HIDE'))->default('SHOW');
             $table->unique(['notice_id','label_id']);
 
+
             $table->timestamps();
-            
         });
     }
 
@@ -36,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('notice_detail');
+        Schema::dropIfExists('notice_details');
     }
 };

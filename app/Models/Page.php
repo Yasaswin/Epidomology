@@ -55,6 +55,11 @@ class Page extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function notice(){
+        return $this->belongsTo(Notice::class);
+    }
+
+
 
     public static function products($posts){
         $list = '
