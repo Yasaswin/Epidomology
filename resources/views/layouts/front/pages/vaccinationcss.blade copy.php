@@ -72,7 +72,7 @@
 
 		<style>
 			.banner{
-				background-image: url("img/5.jpg");
+				background-image: url("img/covid.jpg");
    height: 700px;
    width: 100%;
 			}

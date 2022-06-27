@@ -53,10 +53,10 @@
 								<h3 class="mb-3 h4" id="data1">{{$values['data1'] ?? 'data1.value'}}</h3>
 							</div>
 							<div class="col-md-2">
-								<h3 class="mb-3 h4 text-center"><i class="fa fa-arrow-right"></i></h3>
+								<h3 class="mb-3 h4 text-left"><i class="fa fa-arrow-right"></i></h3>
 							</div>				
 							<div class="col-md-4">
-								<h3 class="mb-3 h4 text-center" id="notified_count">{{$values['notified_count'] ?? 'notified_count.value'}}</h3>
+								<h3 class="mb-3 h4 text-left" id="notified_count">{{$values['notified_count'] ?? 'notified_count.value'}}</h3>
 							</div>
 						</div>
 						<div class="row justify-content-md-center">
@@ -67,10 +67,10 @@
 								<h3 class="mb-3 h4" id="data2">{{$values['data2'] ?? 'data2.value'}}</h3>
 							</div>
 							<div class="col-md-2">
-								<h3 class="mb-3 h4 text-center">To present</h3>
+								<h3 class="mb-3 h4 text-left">To present</h3>
 							</div>				
 							<div class="col-md-4">
-									<h3 class="mb-3 h4 text-center">{{$values['total_notified_count'] ?? 'total_notified_count.value'}}</h3>
+									<h3 class="mb-3 h4 text-left">{{$values['total_notified_count'] ?? 'total_notified_count.value'}}</h3>
 							</div>
 						</div>						
 						<div class="row justify-content-md-center">
@@ -81,10 +81,10 @@
 								<h3 class="mb-3 h4" id="data3">{{$values['data3'] ?? 'data3.value'}}</h3>
 							</div>
 							<div class="col-md-2">
-								<h3 class="mb-3 h4 text-center">To present</h3>
+								<h3 class="mb-3 h4 text-left">To present</h3>
 							</div>				
 							<div class="col-md-4">
-									<h3 class="mb-3 h4 text-center">{{$values['total_conf_count'] ?? 'total_conf_count.value'}}</h3>
+									<h3 class="mb-3 h4 text-left">{{$values['total_conf_count'] ?? 'total_conf_count.value'}}</h3>
 							</div>
 						</div>	
 						@if($labels['recovered']??false)					
