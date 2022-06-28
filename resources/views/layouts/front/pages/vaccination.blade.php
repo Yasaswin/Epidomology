@@ -37,7 +37,6 @@
 		$notice=$page->notice ?? null;
 		$labels = $page->notice->getData()['labels'] ?? [];
 		$values = $page->notice->getData()['values'] ?? [];
-		//dd($labels,$values);
 		@endphp
 		<section class="padding-section">
 			<div class="grid-row clear-fix">
@@ -46,51 +45,66 @@
 						<div class="col-md-12">
 							<h2 class="mb-3 h1 text-center" id="title">{{$labels['title'] ?? 'Title'}}</h2>
 							<div class="row justify-content-md-center">
-								<div class="col-md-6">
-									<h3 class="mb-3 h4 text-right" id="data1">Target Group</h3>
+								<div class="col-md-2">
+									<h3 class="mb-3 h4" id="data1">{{$labels['data1'] ?? 'data1.label'}}</h3>
+								</div>
+								<div class="col-md-2">
+									<h3 class="mb-3 h4 text-center" id="data1">:</h3>
 								</div>	
-								<div class="col-md-6">
-									<h3 class="mb-3 h4 text-left" id="data1">: Teens</h3>
+								<div class="col-md-2">
+									<h3 class="mb-3 h4" id="data1">{{$values['data1'] ?? 'data1.value'}}</h3>
+								</div>
+							</div>
+							<div class="row justify-content-md-center">
+								<div class="col-md-2">
+									<h3 class="mb-3 h4" id="data2">{{$labels['data2'] ?? 'data2.label'}}</h3>
+								</div>
+								<div class="col-md-2">
+									<h3 class="mb-3 h4 text-center" id="data2">:</h3>
+								</div>		
+								<div class="col-md-2">
+									<h3 class="mb-3 h4" id="data2">{{$values['data2'] ?? 'data2.values'}}</h3>
 								</div>
 							</div>
 							<div class="row justify-content-md-center">
 								<div class="col-md-6">
-									<h3 class="mb-3 h4 text-right" id="data1">Location</h3>
+									<h3 class="mb-3 h3 text-right" id="date">{{$labels['date'] ?? 'date.label'}}</h3>
 								</div>	
 								<div class="col-md-6">
-									<h3 class="mb-3 h4 text-left" id="data1">: Colombo</h3>
-								</div>
-							</div>
-							<div class="row justify-content-md-center">
-								<div class="col-md-6">
-									<h3 class="mb-3 h3 text-right" id="data1">Total vaccines adminstered as at </h3>
-								</div>	
-								<div class="col-md-6">
-									<h3 class="mb-3 h3 text-left" id="data1">2021.05.21</h3>
+									<h3 class="mb-3 h3 " id="date">{{$values['date'] ?? 'date.value'}}</h3>
 								</div>
 							</div>
 							<div class="row justify-content-md-left">
-								<div class="col-md-3">
-									<h3 class="mb-3 h4" id="recovered">First Dose </h3>
+								<div class="col-md-2">
+									<h3 class="mb-3 h4" id="dose1">{{$labels['dose1'] ?? 'dose1.label'}}</h3>
 								</div>
-								<div class="col-md-3">
-									<h3 class="mb-3 h4" id="recovered">: 233</h3>
+								<div class="col-md-1">
+									<h3 class="mb-3 h4" id="dose1">:</h3>
+								</div>
+								<div class="col-md-2">
+									<h3 class="mb-3 h4" id="dose1">{{$values['dose1'] ?? 'dose1.value'}}</h3>
 								</div>	
 							</div>
 							<div class="row justify-content-md-left">
-								<div class="col-md-3">
-									<h3 class="mb-3 h4" id="recovered">Second Dose </h3>
+								<div class="col-md-2">
+									<h3 class="mb-3 h4" id="dose2">{{$labels['dose2'] ?? 'dose2.label'}}</h3>
 								</div>
-								<div class="col-md-3">
-									<h3 class="mb-3 h4" id="recovered">: 253</h3>
+								<div class="col-md-1">
+									<h3 class="mb-3 h4" id="dose2">:</h3>
+								</div>
+								<div class="col-md-2">
+									<h3 class="mb-3 h4" id="dose2">{{$values['dose2'] ?? 'dose2.value'}}</h3>
 								</div>	
 							</div>
 							<div class="row justify-content-md-left">
-								<div class="col-md-3">
-									<h3 class="mb-3 h4" id="recovered">Third Dose </h3>
+								<div class="col-md-2">
+									<h3 class="mb-3 h4" id="dose3">{{$labels['dose3'] ?? 'dose3.label'}}</h3>
 								</div>
-								<div class="col-md-3">
-									<h3 class="mb-3 h4" id="recovered">: 253</h3>
+								<div class="col-md-1">
+									<h3 class="mb-3 h4" id="dose3">:</h3>
+								</div>
+								<div class="col-md-2">
+									<h3 class="mb-3 h4" id="dose3">{{$values['dose3'] ?? 'dose3.value'}}</h3>
 								</div>	
 							</div>
 						</div>
@@ -100,6 +114,10 @@
 
 		</section>
 		<!-- / section -->
+
+		<style>
+
+		</style>
 
     <!-- page content -->
     @include('layouts.front.footer')
