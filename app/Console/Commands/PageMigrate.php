@@ -37,6 +37,13 @@ class PageMigrate extends Command
             try 
             {
                 $page = new Page();
+                $page->title = 'About Us';
+                $page->body = null;
+                $page->category_id = null;
+                $page->layout = 'layouts.front.pages.layout';
+                $page->save();
+
+                $page = new Page();
                 $page->title = 'Vision and Mission';
                 $page->body = null;
                 $page->category_id = null;
