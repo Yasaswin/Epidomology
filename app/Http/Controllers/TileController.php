@@ -4,9 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Models\Tile;
 use Illuminate\Http\Request;
+use App\Services\TileService;
+
 
 class TileController extends Controller
 {
+    private $tileService;
+    private $model = 'Tile';
+
+    public function __construct(TileService $service)
+    {
+        $this->tileService = $service;
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +25,8 @@ class TileController extends Controller
      */
     public function index()
     {
-        //
+        $tiles = Tile::paginate(15);
+        return view('dashboard.tiles.filter',['tiles'=>$tiles]);
     }
 
     /**

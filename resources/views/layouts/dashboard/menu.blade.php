@@ -6,7 +6,7 @@
     </a>
 </li>
 
-<li class="nav-item has-treeview menu-open">
+<li class="nav-item has-treeview">
     <a href="#"class="nav-link {{ Request::is('home') ? 'active' : '' }}">
         <i class="nav-icon fas fa-file-alt"></i>
         <p>
@@ -40,4 +40,11 @@
         </a>
         </li>
     </ul>
-    </li>
+</li>
+<li class="nav-item">
+    <a href="{{ route('tile.filter') }}" class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-th"></i>
+        <p>Tiles</p>
+    </a>
+</li>
+

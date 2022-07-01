@@ -39,6 +39,14 @@ Route::get('post/{post}/edit', [App\Http\Controllers\PostController::class, 'edi
 Route::post('post/{post}/edit', [App\Http\Controllers\PostController::class, 'update'])->name('post.update');
 Route::get('post/{post}', [App\Http\Controllers\PostController::class, 'show'])->name('post.show');
 
+Route::get('tiles', [App\Http\Controllers\TileController::class, 'index'])->name('tile.filter');
+Route::get('tile/create', [App\Http\Controllers\TileController::class, 'create'])->name('tile.create');
+Route::post('tile/create', [App\Http\Controllers\TileController::class, 'store'])->name('tile.store');
+Route::get('tile/{tile}/edit', [App\Http\Controllers\TileController::class, 'edit'])->name('tile.edit');
+Route::post('tile/{tile}/edit', [App\Http\Controllers\TileController::class, 'update'])->name('tile.update');
+Route::get('tile/{tile}', [App\Http\Controllers\TileController::class, 'show'])->name('tile.show');
+
+
 Route::delete('post/postImage/{id}', [App\Http\Controllers\PostController::class, 'destroyImage'])->name('post.destroyImage');
 Route::delete('post/postPdf/{id}', [App\Http\Controllers\PostController::class, 'destroyPdf'])->name('post.destroyPdf');
 Route::delete('post/postVideo/{id}', [App\Http\Controllers\PostController::class, 'destroyVideo'])->name('post.destroyVideo');
