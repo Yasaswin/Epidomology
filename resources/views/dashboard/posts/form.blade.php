@@ -3,7 +3,7 @@
         <div class="card-body px-4 pt-4" onload="script();">
             <!-- <div class="row align-items-end"> -->
             <div class="row">
-                <div class="col-12 col-lg-9">
+                <div class="col-12 col-lg-8">
                     <div class="card card-outline card-info">
                         <div class="card-header">
                             <h3 class="card-title">{{$name}}</h3>
@@ -107,7 +107,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-3">
+                <div class="col-12 col-lg-4">
                     <div class="form-group">
                         <div class="card card-outline card-info card-shadow sharp-corners  p-3 mb-3">
                             <p class="mb-4">Post settings</p>

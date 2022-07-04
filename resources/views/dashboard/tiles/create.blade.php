@@ -6,7 +6,7 @@
         @csrf
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb @lang('theme.breadcrumb')">
-                <li class="breadcrumb-item"><a href="{{ route('tile.filter') }}">Posts</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('tile.filter') }}">Tiles</a></li>
                 <li class="breadcrumb-item active"  aria-current="page">{{$name}}</li>
             </ol>
             <ol class="breadcrumb py-0 my-0" style="@lang('theme.actionline')">

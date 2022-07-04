@@ -3,18 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tile;
+use App\Models\Page;
 use Illuminate\Http\Request;
 use App\Services\TileService;
 
-
 class TileController extends Controller
 {
-    private $tileService;
+    private $tileservice;
     private $model = 'Tile';
 
     public function __construct(TileService $service)
     {
-        $this->tileService = $service;
+        $this->tileservice = $service;
+
     }
 
 
@@ -36,7 +37,11 @@ class TileController extends Controller
      */
     public function create()
     {
-        //
+        $pages = Page::all(['id', 'title']);
+        $tile = New Tile;
+        $images = $tile->images;
+        $name = 'New';
+        return view('dashboard.tiles.create',['tile'=>$tile,'name' => $name,'images'=>$images,'pages'=>$pages]);
     }
 
     /**
@@ -47,7 +52,10 @@ class TileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tile = $this->tileservice->store($request);
+
+        // Alert::success('Success Title', 'Tile was created successfully!');
+        return redirect()->route('tile.show', [$tile])->with('success', 'Tile was created successfully!');
     }
 
     /**
@@ -58,7 +66,11 @@ class TileController extends Controller
      */
     public function show(Tile $tile)
     {
-        //
+        $pages = Page::all(['id', 'title']);
+        $images = $tile->background_image;
+        // dd($images);
+        $name = $tile->name;
+        return view('dashboard.tiles.view', ['tile'=>$tile,'name' => $name,'pages'=>$pages,'images'=>$images]);
     }
 
     /**
@@ -69,7 +81,10 @@ class TileController extends Controller
      */
     public function edit(Tile $tile)
     {
-        //
+        $pages = Page::all(['id', 'title']);
+        $images = $tile->images;
+        $name = $tile->name;
+        return view('dashboard.tiles.edit', ['tile'=>$tile,'name' => $name,'pages'=>$pages,'images'=>$images]);
     }
 
     /**
@@ -81,7 +96,9 @@ class TileController extends Controller
      */
     public function update(Request $request, Tile $tile)
     {
-        //
+        $tile = $this->tileservice->update( $tile, $request );
+        // Alert::success('Success Title', 'Subpopulation was updated successfully!');
+        return redirect()->route('tile.show', [$tile])->with('success', 'Tile was updated successfully!');
     }
 
     /**

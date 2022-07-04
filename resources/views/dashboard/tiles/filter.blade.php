@@ -34,7 +34,7 @@
                                 <tbody style="@lang('theme.tbl-bottom')">
                                     @foreach ($tiles as $tile)
                                         <tr>
-                                            <td><a class="@lang('theme.link')" href=""><i class="fas fa-eye"></i></a></td>
+                                            <td><a class="@lang('theme.link')" href="{{ route('tile.show',[$tile->id]) }}"><i class="fas fa-eye"></i></a></td>
                                             <td>{{ $tile->name }}</td>
                                             <td>{{ $tile->page->title ?? ''}}</td>
                                             <td>{{ $tile->order }}</td>

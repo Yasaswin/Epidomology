@@ -59,6 +59,9 @@ class Page extends Model
         return $this->belongsTo(Notice::class);
     }
 
+    public function pages(){
+        return $this->belongsToMany(Tile::class);
+    }
 
 
     public static function products($posts){

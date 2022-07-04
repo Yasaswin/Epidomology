@@ -5,7 +5,7 @@
 				@foreach(Tile::getTiles() as $tile)
 					@php
 						$route = $tile->page ? route('viewpage',[$tile->page->slug]) : '' ; 
-						$image = $tile->background_image && Storage::disk('public')->exists('post/images/'.$tile->background_image) ? Storage::disk('public')->url('post/images/'.$tile->background_image) : 'img/4.jpg'; 
+						$image = $tile->background_image && Storage::disk('public')->exists('tile/images/'.$tile->background_image) ? Storage::disk('public')->url('tile/images/'.$tile->background_image) : 'img/4.jpg'; 
 					@endphp
 					<div class="grid-col grid-col-4">
 						<div class="portfolio-item">
