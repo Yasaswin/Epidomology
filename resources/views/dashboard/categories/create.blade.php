@@ -10,7 +10,7 @@
                 <li class="breadcrumb-item active"  aria-current="page">{{$name}}</li>
             </ol>
             <ol class="breadcrumb py-0 my-0" style="@lang('theme.actionline')">
-                    <button type="submit" class="btn btn-sm btn-x mb-2 px-3 py-1 font-weight-bold">Save</button>
+                <button type="submit" class="btn btn-sm @lang('theme.btn_save') btn-x mb-2 px-3 py-1 font-weight-bold">@lang('common.btn_save')</button>
             </ol>
         </nav>
         @includeIf('dashboard.categories.form', ['mode' => 'CREATE','editable' => true])

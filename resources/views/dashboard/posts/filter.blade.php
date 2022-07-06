@@ -9,7 +9,7 @@
         </ol>
         <ol class="breadcrumb py-0 my-0" style="@lang('theme.actionline')">
             <div class="col pl-0"> 
-                    <a href="{{ route('post.create') }}" class="btn ml-0 btn-sm btn-x mb-2 px-3 py-1 font-weight-bold">Create</a>
+                    <a href="{{ route('post.create') }}" class="btn btn-sm @lang('theme.btn_create') btn-x mb-2 px-3 py-1 font-weight-bold">Create</a>
             </div> 
         </ol>
     </nav>
@@ -50,14 +50,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            <div class="d-flex justify-content-between">
-                                <div class="bd-highlight  @lang('theme.table-info')">         
-                                    @if(isset($posts->info)){{$posts->info}}@endif
-                                </div>
-                                <div class="bd-highlight">
-                                    {{$posts->appends(Request::except('page'))->links()}}
-                                </div> 
-                            </div>
+                            {!! $posts->appends(Request::except('page'))->links('pagination::bootstrap-5') !!}
                         </div>
                     </div>
                 </div>

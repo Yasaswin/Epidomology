@@ -9,7 +9,7 @@
             <li class="breadcrumb-item active" aria-current="page">{{$name}}</li>
         </ol>
         <ol class="breadcrumb py-0 my-0" style="@lang('theme.actionline')">
-                <a class="btn btn-sm @lang('theme.btn_edit') btn-x py-1 px-3 mb-2 font-weight-bolder" href="{{ route('post.edit', [$post]) }}">Edit</a>
+                <a class="btn btn-sm @lang('theme.btn_edit') btn-x py-1 px-3 mb-2 font-weight-bolder" href="{{ route('post.edit', [$post]) }}">@lang('common.btn_edit')</a>
         </ol>
     </nav>
         @includeIf('dashboard.posts.form', ['mode' => 'EDIT','editable' => false])

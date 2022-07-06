@@ -16,7 +16,7 @@
     </a>
     <ul class="nav nav-treeview">
         <li class="nav-item">
-        <a href="{{ route('post.filter') }}" class="nav-link {{ Request::is('home') ? 'active' : '' }}">
+        <a href="{{ route('post.filter') }}" class="nav-link {{ Request::is('post*') ? 'active' : '' }}">
             <i class="nav-icon fas fa-file"></i>
             <p> All Posts</p>
         </a>
@@ -42,7 +42,7 @@
     </ul>
 </li>
 <li class="nav-item">
-    <a href="{{ route('tile.filter') }}" class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}">
+    <a href="{{ route('tile.filter') }}" class="nav-link {{ Request::is('tile*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-th"></i>
         <p>Tiles</p>
     </a>
