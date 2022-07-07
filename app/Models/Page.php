@@ -5,7 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
-
+use Illuminate\Database\Eloquent\Casts\Attribute;
+use Illuminate\Support\Facades\Auth;
 
 class Page extends Model
 {
@@ -19,7 +20,7 @@ class Page extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'body','slug'
+        'title_en','title_si','title_ta', 'body_en','body_si','body_ta','slug','category_id','layout_id','notice_id'
     ];
 
     /**
@@ -32,9 +33,17 @@ class Page extends Model
     {
         return [
             'slug' => [
-                'source' => 'title'
+                'source' => 'title_en'
             ]
         ];
+    }
+
+    protected function title(): Attribute
+    {
+        $attribute = 'title_'.Auth::user()->lang ?? 'en';
+        return Attribute::make(
+            get: fn ($value) => $this->$attribute ?? $this->title_en,
+        ); 
     }
 
     /**
@@ -61,6 +70,10 @@ class Page extends Model
 
     public function pages(){
         return $this->belongsToMany(Tile::class);
+    }
+
+    public function layout(){
+        return $this->belongsTo(Layout::class);
     }
 
 

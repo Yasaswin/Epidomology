@@ -51,17 +51,12 @@ Route::delete('post/postImage/{id}', [App\Http\Controllers\PostController::class
 Route::delete('post/postPdf/{id}', [App\Http\Controllers\PostController::class, 'destroyPdf'])->name('post.destroyPdf');
 Route::delete('post/postVideo/{id}', [App\Http\Controllers\PostController::class, 'destroyVideo'])->name('post.destroyVideo');
 
-
-// pages
-// Route::get('history', [App\Http\Controllers\FrontController::class, 'history'])->name('history');
-// Route::get('vision', [App\Http\Controllers\FrontController::class, 'vision'])->name('vision');
-// Route::get('resources', [App\Http\Controllers\FrontController::class, 'resources'])->name('resources');
-// Route::get('resources2', [App\Http\Controllers\FrontController::class, 'resources2'])->name('resources2');
-// Route::get('gallery', [App\Http\Controllers\FrontController::class, 'gallery'])->name('gallery');
-
-Route::get('ressingle', [App\Http\Controllers\FrontController::class, 'resourcesSingle'])->name('ressingle');
-Route::get('events', [App\Http\Controllers\FrontController::class, 'events'])->name('events');
-Route::get('eventsingle', [App\Http\Controllers\FrontController::class, 'eventSingle'])->name('eventsingle');
+Route::get('pages', [App\Http\Controllers\PageController::class, 'index'])->name('page.filter');
+Route::get('page/create', [App\Http\Controllers\PageController::class, 'create'])->name('page.create');
+Route::post('page/create', [App\Http\Controllers\PageController::class, 'store'])->name('page.store');
+Route::get('page/{page}/edit', [App\Http\Controllers\PageController::class, 'edit'])->name('page.edit');
+Route::post('page/{page}/edit', [App\Http\Controllers\PageController::class, 'update'])->name('page.update');
+Route::get('page/{page}', [App\Http\Controllers\PageController::class, 'show'])->name('page.show');
 
 Route::get('{page}', [App\Http\Controllers\PageController::class, 'viewPage'])->name('viewpage');
 

@@ -37,240 +37,251 @@ class PageMigrate extends Command
             try 
             {
                 $page = new Page();
-                $page->title = 'About Us';
-                $page->body = null;
+                $page->title_en = 'About Us';
+                $page->title_si = 'About Us';
+                $page->title_ta = 'About Us';
+                $page->body_en = null;
+                $page->body_si = null;
+                $page->body_ta = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.layout';
+                $page->layout_id = 4;
                 $page->save();
 
                 $page = new Page();
-                $page->title = 'Vision and Mission';
-                $page->body = null;
+                $page->title_en = 'Vision and Mission';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.vision';
+                $page->layout_id = 1;
                 $page->save();
 
                 $page = new Page();
-                $page->title = 'Organization Structure';
-                $page->body = null;
+                $page->title_en = 'Organization Structure';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.organisation';
+                $page->layout_id = 2;
                 $page->save();
 
                 $page = new Page();
-                $page->title = 'History';
-                $page->body = null;
+                $page->title_en = 'History';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.history';
+                $page->layout_id = 3;
                 $page->save();
 
                 $page = new Page();
-                $page->title = 'Key Achievements';
-                $page->body = null;
+                $page->title_en = 'Key Achievements';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.layout';
+                $page->layout_id = 4;
                 $page->save();
 
                 $page = new Page();
-                $page->title = 'Careers at EPID';
-                $page->body = null;
+                $page->title_en = 'Careers at EPID';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.list';
+                $page->layout_id = 5;
                 $page->save();
 
                 //NIP
                 $page = new Page();
-                $page->title = 'Immunization programme Implementation';
-                $page->body = null;
+                $page->title_en = 'Immunization programme Implementation';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.resources2';
+                $page->layout_id = 6;
                 $page->save();
 
                 $page = new Page();
-                $page->title = 'VPD';
-                $page->body = null;
+                $page->title_en = 'VPD';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.resources2';
+                $page->layout_id = 6;
                 $page->save();
 
                 $page = new Page();
-                $page->title = 'Special vaccination campaigns';
-                $page->body = null;
+                $page->title_en = 'Special vaccination campaigns';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.resources2';
+                $page->layout_id = 6;
                 $page->save();
                 
                 $page = new Page();
-                $page->title = 'Reporting Forms';
-                $page->body = null;
+                $page->title_en = 'Reporting Forms';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.resources2';
+                $page->layout_id = 6;
                 $page->save();
 
                 $page = new Page();
-                $page->title = 'Web Resources';
-                $page->body = null;
+                $page->title_en = 'Web Resources';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.resources2';
+                $page->layout_id = 6;
                 $page->save();
 
                 //•	Communicable Disease Surveillance 
 
                 $page = new Page();
-                $page->title = 'Surveillance Methods';
-                $page->body = null;
+                $page->title_en = 'Surveillance Methods';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.resources2';
+                $page->layout_id = 6;
                 $page->save();
 
                 
                 $page = new Page();
-                $page->title = 'List of Notifiable Diseases';
-                $page->body = null;
+                $page->title_en = 'List of Notifiable Diseases';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.resources2';
+                $page->layout_id = 6;
                 $page->save();
                 
                 $page = new Page();
-                $page->title = 'Vaccine Preventable Diseases';
-                $page->body = null;
+                $page->title_en = 'Vaccine Preventable Diseases';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.resources2';
+                $page->layout_id = 6;
                 $page->save();
                 
                 $page = new Page();
-                $page->title = 'Weekly Epidemiological Report';
-                $page->body = null;
+                $page->title_en = 'Weekly Epidemiological Report';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.resources2';
+                $page->layout_id = 6;
                 $page->save();
 
                 $page = new Page();
-                $page->title = 'Quarterly Epidemiological Bulletin';
-                $page->body = null;
+                $page->title_en = 'Quarterly Epidemiological Bulletin';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.resources2';
+                $page->layout_id = 6;
                 $page->save();
 
                 $page = new Page();
-                $page->title = 'Investigation Forms ';
-                $page->body = null;
+                $page->title_en = 'Investigation Forms ';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.resources2';
+                $page->layout_id = 6;
                 $page->save();
 
                 $page = new Page();
-                $page->title = 'Disease surveillance during disaster';
-                $page->body = null;
+                $page->title_en = 'Disease surveillance during disaster';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.resources2';
+                $page->layout_id = 6;
                 $page->save();
 
                 //•	Disease Information 
 
                 $page = new Page();
-                $page->title = 'Fact Sheets';
-                $page->body = null;
+                $page->title_en = 'Fact Sheets';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.resources2';
+                $page->layout_id = 6;
                 $page->save();
 
                 //•	Training
                 $page = new Page();
-                $page->title = 'Local ';
-                $page->body = null;
+                $page->title_en = 'Local ';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.resources2';
+                $page->layout_id = 6;
                 $page->save();
 
                 $page = new Page();
-                $page->title = 'International';
-                $page->body = null;
+                $page->title_en = 'International';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.resources2';
+                $page->layout_id = 6;
                 $page->save();
                 
                 $page = new Page();
-                $page->title = 'Web-based opportunities';
-                $page->body = null;
+                $page->title_en = 'Web-based opportunities';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.resources2';
+                $page->layout_id = 6;
                 $page->save();
 
                 //•	Dashboards
 
                 $page = new Page();
-                $page->title = 'Immunization';
-                $page->body = null;
+                $page->title_en = 'Immunization';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.dashboard';
+                $page->layout_id = 7;
                 $page->save();
 
                 $page = new Page();
-                $page->title = 'Disease Surveillance';
-                $page->body = null;
+                $page->title_en = 'Disease Surveillance';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.dashboard';
+                $page->layout_id = 7;
                 $page->save();
 
                 $page = new Page();
-                $page->title = 'High Endemic Diseases/Outbreaks';
-                $page->body = null;
+                $page->title_en = 'High Endemic Diseases/Outbreaks';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.dashboard';
+                $page->layout_id = 7;
                 $page->save();
 
                 //Resources 
 
                 $page = new Page();
-                $page->title = 'Publications';
-                $page->body = null;
+                $page->title_en = 'Publications';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.resources2';
+                $page->layout_id = 6;
                 $page->save();
 
                 $page = new Page();
-                $page->title = 'Circulars/Circular Letters';
-                $page->body = null;
+                $page->title_en = 'Circulars/Circular Letters';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.resources2';
+                $page->layout_id = 6;
                 $page->save();
 
                 $page = new Page();
-                $page->title = 'Policy/Strategic Plans';
-                $page->body = null;
+                $page->title_en = 'Policy/Strategic Plans';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.resources2';
+                $page->layout_id = 6;
                 $page->save();
 
                 $page = new Page();
-                $page->title = 'Review/Reporting/Surveillance Forms';
-                $page->body = null;
+                $page->title_en = 'Review/Reporting/Surveillance Forms';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.resources2';
+                $page->layout_id = 6;
                 $page->save();
 
                 $page = new Page();
-                $page->title = 'Other Downloads';
-                $page->body = null;
+                $page->title_en = 'Other Downloads';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.resources2';
+                $page->layout_id = 6;
                 $page->save();
 
                 //Gallery
 
                 $page = new Page();
-                $page->title = 'Video Gallery';
-                $page->body = null;
+                $page->title_en = 'Video Gallery';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.gallery';
+                $page->layout_id = 8;
                 $page->save();
 
                 $page = new Page();
-                $page->title = 'Image Gallery';
-                $page->body = null;
+                $page->title_en = 'Image Gallery';
+                $page->body_en = null;
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.gallery';
+                $page->layout_id = 8;
+                $page->save();
+
+                $page = new Page();
+                $page->title_en = 'Events';
+                $page->body_en = null;
+                $page->category_id = null;
+                $page->layout_id = 9;
                 $page->save();
 
 
@@ -280,8 +291,8 @@ class PageMigrate extends Command
 
 
                 $page = new Page();
-                $page->title = 'Dynamic1';
-                $page->body = ' <p align="justify"><strong>ln 1959, after its establishment with the assistance of the WH0, the Epidemiology Unit was operated by a World Health 0rganization (WHO) public health consultant and a local Medical 0fficer qualified in public health. The latter was appointed formally in 1961 as the Epidemiologist. The Unit was housed along with the Public Health Veterinary Services and the Medical Statistics Unit at Chelsea Gardens, Colombo 03.<strong><br>
+                $page->title_en = 'Dynamic1';
+                $page->body_en = ' <p align="justify"><strong>ln 1959, after its establishment with the assistance of the WH0, the Epidemiology Unit was operated by a World Health 0rganization (WHO) public health consultant and a local Medical 0fficer qualified in public health. The latter was appointed formally in 1961 as the Epidemiologist. The Unit was housed along with the Public Health Veterinary Services and the Medical Statistics Unit at Chelsea Gardens, Colombo 03.<strong><br>
 
                 <br>ln 1967, two more assistant Epidemiologists trained in epidemiology were appointed to the Unit. By 1970 two peripheral health divisions, namely Kalutara and Kurunegala had their own Regional Epidemiologists.These officers have had their epidemiological training with the support of the WHO.<br>
 
@@ -298,7 +309,7 @@ class PageMigrate extends Command
                 <br>Over the years since 1959, the Unit has been steered by nine Chief Epidemiologists and at present, the Unit functions with a full cadre headed by the Chief Epidemiologist, Dr. Sudath Samaraweera.
                 </p>';
                 $page->category_id = null;
-                $page->layout = 'layouts.front.pages.layout';
+                $page->layout_id = 4;
                 $page->save();
 
             }

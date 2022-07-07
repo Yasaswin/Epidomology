@@ -6,6 +6,8 @@ use App\Models\Tile;
 use App\Models\Page;
 use Illuminate\Http\Request;
 use App\Services\TileService;
+use App\Http\Requests\StoreTile;
+use App\Http\Requests\UpdateTile;
 
 class TileController extends Controller
 {
@@ -37,7 +39,7 @@ class TileController extends Controller
      */
     public function create()
     {
-        $pages = Page::all(['id', 'title']);
+        $pages = Page::all(['id', 'title_en']);
         $tile = New Tile;
         $images = $tile->images;
         $name = 'New';
@@ -50,7 +52,7 @@ class TileController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreTile $request)
     {
         $tile = $this->tileservice->store($request);
 
@@ -94,7 +96,7 @@ class TileController extends Controller
      * @param  \App\Models\Tile  $tile
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tile $tile)
+    public function update(UpdateTile $request, Tile $tile)
     {
         $tile = $this->tileservice->update( $tile, $request );
         // Alert::success('Success Title', 'Subpopulation was updated successfully!');

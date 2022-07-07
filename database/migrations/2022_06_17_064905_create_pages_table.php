@@ -15,13 +15,16 @@ return new class extends Migration
     {
         Schema::create('pages', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 100)->unique();
+            $table->string('title_en', 100)->unique();
+            $table->string('title_si', 100)->nullable();
+            $table->string('title_ta', 100)->nullable();
             $table->string('slug', 50)->nullable();
-            $table->longText('body')->nullable();
-            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');            
-            $table->string('layout')->nullable();
+            $table->longText('body_en')->nullable();
+            $table->longText('body_si')->nullable();
+            $table->longText('body_ta')->nullable();
+            $table->foreignId('category_id')->nullable()->constrained('categories')->onDelete('cascade');
+            $table->foreignId('layout_id')->nullable()->constrained('layouts')->onDelete('cascade');            
             $table->timestamps();
-
 
         });
     }

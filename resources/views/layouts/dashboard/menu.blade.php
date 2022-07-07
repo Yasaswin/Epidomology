@@ -47,4 +47,10 @@
         <p>Tiles</p>
     </a>
 </li>
+<li class="nav-item">
+    <a href="{{ route('page.filter') }}" class="nav-link {{ Request::is('page*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-scroll"></i>
+        <p>Pages</p>
+    </a>
+</li>
 

@@ -27,7 +27,7 @@
                                 @endif
                             </div>
                             <div class="mb-3">
-                                <textarea name="body" id="post-body" class="form-control box-shadow" name="body" placeholder="Post content..." {{$editable?'':' disabled'}} >{{$errors->has('body')?old('body'):(empty(old('body'))?$post->body:old('body'))}}</textarea>
+                                <textarea id="post-body" class="form-control box-shadow" name="body" placeholder="Post content..." {{$editable?'':' disabled'}} >{{$errors->has('body')?old('body'):(empty(old('body'))?$post->body:old('body'))}}</textarea>
                                 <div id="count" class="fs-14">0 words, 0 characters</div>
                                 @if ($errors->has('body'))
                                 <span class="invalid-message">
@@ -229,7 +229,7 @@
 <script>
 $(document).ready(function() {
 
-    $('#categories').on('change', function() {
+    $('#category_ids').on('change', function() {
         if($(this).find(':selected').data('name') =="events" || $(this).find(':selected').data('name') == "event"){
             $("#event_start_container").show();
             $("#event_end_container").show();

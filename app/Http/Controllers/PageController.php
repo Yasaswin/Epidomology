@@ -3,13 +3,29 @@
 namespace App\Http\Controllers;
 
 use App\Models\Page;
+use App\Models\Layout;
+use App\Models\Category;
+use App\Models\Notice;
 use Illuminate\Http\Request;
+use App\Services\PageService;
+use App\Http\Requests\StorePage;
+use App\Http\Requests\UpdatePage;
+
 
 class PageController extends Controller
 {
+    private $pageservice;
+    private $model = 'Page';
+
+    public function __construct(PageService $service)
+    {
+        $this->pageservice = $service;
+
+    }
+
     public function viewPage(Page $page){
 
-        return view($page->layout, ['page'=>$page]);
+        return view($page->layout->layout, ['page'=>$page]);
     }
 
     /**
@@ -19,7 +35,8 @@ class PageController extends Controller
      */
     public function index()
     {
-        //
+        $pages = Page::paginate(15);
+        return view('dashboard.pages.filter',['pages'=>$pages]);
     }
 
     /**
@@ -29,7 +46,12 @@ class PageController extends Controller
      */
     public function create()
     {
-        //
+        $layouts = Layout::all(['id', 'name']);
+        $categories = Category::all(['id', 'name']);
+        $notices = Notice::all(['id', 'name']);
+        $page = New Page;
+        $name = 'New';
+        return view('dashboard.pages.create',['page'=>$page,'name' => $name,'layouts'=>$layouts,'categories'=>$categories,'notices'=>$notices]);
     }
 
     /**
@@ -38,9 +60,12 @@ class PageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePage $request)
     {
-        //
+        $page = $this->pageservice->store($request);
+
+        // Alert::success('Success Title', 'Page was created successfully!');
+        return redirect()->route('page.show', [$page])->with('success', 'Page was created successfully!');
     }
 
     /**
@@ -51,7 +76,11 @@ class PageController extends Controller
      */
     public function show(Page $page)
     {
-        //
+        $layouts = Layout::all(['id', 'name']);
+        $categories = Category::all(['id', 'name']);
+        $notices = Notice::all(['id', 'name']);
+        $name = $page->title;
+        return view('dashboard.pages.view',['page'=>$page,'name' => $name,'layouts'=>$layouts,'categories'=>$categories,'notices'=>$notices]);
     }
 
     /**
@@ -62,7 +91,11 @@ class PageController extends Controller
      */
     public function edit(Page $page)
     {
-        //
+        $layouts = Layout::all(['id', 'name']);
+        $categories = Category::all(['id', 'name']);
+        $notices = Notice::all(['id', 'name']);
+        $name = $page->title;
+        return view('dashboard.pages.edit',['page'=>$page,'name' => $name,'layouts'=>$layouts,'categories'=>$categories,'notices'=>$notices]);
     }
 
     /**
@@ -72,9 +105,11 @@ class PageController extends Controller
      * @param  \App\Models\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Page $page)
+    public function update(UpdatePage $request, Page $page)
     {
-        //
+        $page = $this->pageservice->update( $page, $request );
+        // Alert::success('Success Title', 'Page was updated successfully!');
+        return redirect()->route('page.show', [$page])->with('success', 'Page was updated successfully!');
     }
 
     /**
