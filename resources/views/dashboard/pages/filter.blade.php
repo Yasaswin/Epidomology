@@ -5,7 +5,7 @@
     <nav aria-label="breadcrumb">  
         <ol class="breadcrumb @lang('theme.breadcrumb')" >
             <!-- <li class="breadcrumb-item"><a href="{{ url('/') }}">@lang('breadcrumb.home')</a></li> -->
-            <li class="breadcrumb-item active" aria-current="page">Pages</li>
+            <li class="breadcrumb-item active" aria-current="page">@lang('menu.title')</li>
         </ol>
         <ol class="breadcrumb py-0 my-0" style="@lang('theme.actionline')">
             <div class="col pl-0"> 

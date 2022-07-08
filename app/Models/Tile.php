@@ -11,6 +11,15 @@ class Tile extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name_en','name_si','name_ta','description_en','description_si','description_ta','background_image','page_id','status','order'
+    ];
+
     public function page(){
         return $this->belongsTo(Page::class,'page_id');
     }

@@ -46,4 +46,7 @@ return [
     'status_active'=> 'ACTIVE',
     'status_inactive'=> 'INACTIVE',
 
+    'status_show'=> 'SHOW',
+    'status_hide'=> 'HIDE',
+
 ];

@@ -58,7 +58,13 @@ Route::get('page/{page}/edit', [App\Http\Controllers\PageController::class, 'edi
 Route::post('page/{page}/edit', [App\Http\Controllers\PageController::class, 'update'])->name('page.update');
 Route::get('page/{page}', [App\Http\Controllers\PageController::class, 'show'])->name('page.show');
 
-Route::get('{page}', [App\Http\Controllers\PageController::class, 'viewPage'])->name('viewpage');
+Route::get('menus', [App\Http\Controllers\MenuController::class, 'index'])->name('menu.filter');
+Route::get('menu/create', [App\Http\Controllers\MenuController::class, 'create'])->name('menu.create');
+Route::post('menu/create', [App\Http\Controllers\MenuController::class, 'store'])->name('menu.store');
+Route::get('menu/{menu}/edit', [App\Http\Controllers\MenuController::class, 'edit'])->name('menu.edit');
+Route::post('menu/{menu}/edit', [App\Http\Controllers\MenuController::class, 'update'])->name('menu.update');
+Route::get('menu/{menu}', [App\Http\Controllers\MenuController::class, 'show'])->name('menu.show');
 
+Route::get('{page}', [App\Http\Controllers\PageController::class, 'viewPage'])->name('viewpage');
 
 Auth::routes();

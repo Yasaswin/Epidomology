@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\App;
 
 class Page extends Model
 {
@@ -40,8 +41,8 @@ class Page extends Model
 
     protected function title(): Attribute
     {
-        $attribute = 'title_'.Auth::user()->lang ?? 'en';
-        return Attribute::make(
+        $attribute = 'title_'.(App::currentLocale());
+                return Attribute::make(
             get: fn ($value) => $this->$attribute ?? $this->title_en,
         ); 
     }

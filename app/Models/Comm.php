@@ -47,6 +47,21 @@ class Comm extends Model
         return self::statuses(); 
     }
 
+    private static function menuStatuses(){
+        return ['SHOW' => Lang::get('common.status_show'),
+                'HIDE' => Lang::get('common.status_hide')
+            ];
+    }
+
+    public static function decodeMenuStatuses($code=null)
+    {
+        return $code?(self::menuStatuses()[$code]??null):null;
+    }
+
+    public static function getMenuStatuses()
+    {   
+        return self::menuStatuses(); 
+    }
 
 
 

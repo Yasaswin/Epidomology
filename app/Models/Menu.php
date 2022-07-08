@@ -11,6 +11,15 @@ class Menu extends Model
 {
     use HasFactory;
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name_en','name_si','name_ta','category_id','page_id','parent_id','status','order'
+    ];
+
     public function parent(){
         return $this->belongsTo(Menu::class,'parent_id');
     }

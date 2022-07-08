@@ -6,7 +6,7 @@ return [
     'lbl_name_si' => 'Name in Sinhala*',
     'lbl_name_ta' => 'Name in Tamil*',
     'lbl_image' => 'Upload Image',
-
+    'title' => 'Tile',
 
     'lbl_code' => 'Code',
     'lbl_has_remarks' => 'Remarks Compulsory*',

@@ -8,6 +8,7 @@ import $ from 'jquery';
  global.$ = global.jQuery = $;
 
  require('select2');
+ require('bootstrap-switch');
 
  // import'admin-lte/plugins/datatables/jquery.dataTables.min.js';
 // import'admin-lte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js';

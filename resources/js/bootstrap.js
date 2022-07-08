@@ -16,6 +16,8 @@ try {
     require('admin-lte');
     require('sweetalert2');
     require('select2');
+    require('bootstrap-switch');
+
 
 } catch (e) {
     console.log(e);
