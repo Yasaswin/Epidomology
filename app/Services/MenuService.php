@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Menu;
+use App\Models\Page;
+
 
 class MenuService {
 
@@ -29,8 +31,12 @@ class MenuService {
             $menu->has_sub_menus = ($data['has_sub_menus']?? '0') =='1'?true:false;
             $menu->order = $data['order'] ?? null;
             $menu->status = $data['status'] ?? $this->default_status;
-
             $menu->save();
+
+            if($menu->id&&$menu->has_sub_menus){
+                $sub_menu = $data['menu_id'] == '*' ? $menu->id : ($data['menu_id'] ?? null);
+                $menu->page->subMenu->attach($sub_menu);
+            }
 
         }
         catch (Exception $e)
@@ -80,7 +86,15 @@ class MenuService {
             $menu->has_sub_menus = ($data['has_sub_menus']?? '0') =='1'?true:false;
             $menu->order = $data['order'] ?? null;
             $menu->status = $data['status'] ?? $this->default_status;
-            $menu->save();     
+            $menu->save();  
+
+            $menu->page->subMenu()->detach();
+
+            if($menu->id&&$menu->has_sub_menus){
+                $sub_menu = $data['menu_id'] == '*' ? $menu->id : ($data['menu_id'] ?? null);
+                $menu->page->subMenu()->attach($sub_menu);
+            }
+
         }
         catch (Exception $e)
         {

@@ -132,25 +132,27 @@
                             @endif
                             <div class="form-group">
                                 <label for="name" class="mb-1 p-3">Has Sub-menus</label>
-                                <!-- <input type="checkbox" name="my-checkbox" data-on-text="Yes" data-off-text="No" checked data-bootstrap-switch> -->
-                                <input type="checkbox" name="has_sub_menus" value="1" data-on-text="Yes" data-off-text="No" checked data-bootstrap-switch data-off-color="danger" data-on-color="success">
+                                <span class="switch-box">
+                                    <input type="checkbox" data-on-text="Yes" data-off-text="No" name="has_sub_menus" value="1" data-size="mini" id="change-color-switch" data-on-color="success" data-off-color="light" class="ck-in a1" {{ (old('has_sub_menus')??$menu->has_sub_menus)?' checked' :''}} {{$editable?'':' disabled'}}>
+                                </span>
                             </div>
-                            <div class="form-group">
-                                <label for="menus" class="">Sub Menu</label>
-                                <select name="parent_id" id="parent_id" class="form-control {{ $errors->has('parent_id') ? ' is-invalid' : '' }}" {{$editable?'':' disabled'}}>
-                                    <option value="*" class="invisible"></option>
-                                    @if (!empty($menus))
-                                        @foreach ($menus as $parent)
-                                        <option value="{{$parent->id}}" {{$parent->id == (old('parent_id')??$menu->parent_id)?' selected':''}}>{{$parent->name}}</option>
+                            <div class="form-group" id="sub-menu" style="display: none;">
+                                <label for="submenus" class="">Sub Menu Parent</label>
+                                <select name="menu_id" id="menu_id" class="form-control {{ $errors->has('menu_id') ? ' is-invalid' : '' }}" {{$editable?'':' disabled'}}>
+                                    <option value="*" class="invisible">--Self--</option>
+                                    @if (!empty($submenus))
+                                        @foreach ($submenus as $submenu)
+                                        <option value="{{$submenu->id}}" {{$submenu->id == (old('menu_id')??$menu->page->subMenu[0]->id??null)?' selected':''}}>{{$submenu->name}}</option>
                                         @endforeach
                                     @endif
                                 </select>
-                                @if ($errors->has('parent_id'))
+                                @if ($errors->has('menu_id'))
                                 <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('parent_id') }}</strong>
+                                    <strong>{{ $errors->first('menu_id') }}</strong>
                                 </span>
                                 @endif
                             </div>
+
                         </div>
                     </div>
                 </div>    
@@ -172,4 +174,28 @@
       $(this).bootstrapSwitch('state', $(this).prop('checked'));
     });
 })
+</script>
+
+<script>
+    
+    function subMenu(){
+
+        if ($('#change-color-switch').is(':checked')){ 
+            $("#sub-menu").show();
+        } 
+        else { 
+            $("#sub-menu").hide();
+            $("#sub-menu").val('*');
+        }
+    }
+
+
+    $("#change-color-switch").bootstrapSwitch();
+    $(document).ready(function(){
+      subMenu();
+        $('#change-color-switch').on('switchChange.bootstrapSwitch', function (e, data) {
+            subMenu();
+
+    });
+});
 </script>

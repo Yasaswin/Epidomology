@@ -36,6 +36,10 @@ class Menu extends Model
         return $this->hasMany(Menu::class,'parent_id');
     }
 
+    public function subMenuPage(){
+        return $this->belongsToMany(Page::class,'page_menu');
+    }
+
     public function childrenRecusive(){
         return $this->children()->with('children');
     }

@@ -44,9 +44,10 @@ class MenuController extends Controller
         $menu = New Menu;
         $categories = Category::all(['id', 'name']);
         $menus = Menu::all(['id', 'name_en']);
+        $submenus = Menu::all(['id', 'name_en']);
         $name = 'New';
 
-        return view('dashboard.menus.create',['menu'=>$menu,'menus'=>$menus,'name' => $name,'categories'=>$categories,'pages'=>$pages]);
+        return view('dashboard.menus.create',['menu'=>$menu,'menus'=>$menus,'submenus'=>$submenus,'name' => $name,'categories'=>$categories,'pages'=>$pages]);
     }
 
     /**
@@ -73,8 +74,9 @@ class MenuController extends Controller
         $pages = Page::all(['id', 'title_en']);
         $categories = Category::all(['id', 'name']);
         $menus = Menu::all(['id', 'name_en']);
+        $submenus = Menu::all(['id', 'name_en']);
         $name = $menu->name;
-        return view('dashboard.menus.view',['menu'=>$menu,'menus'=>$menus,'name' => $name,'categories'=>$categories,'pages'=>$pages]);
+        return view('dashboard.menus.view',['menu'=>$menu,'menus'=>$menus,'submenus'=>$submenus,'name' => $name,'categories'=>$categories,'pages'=>$pages]);
     }
 
     /**
@@ -85,11 +87,13 @@ class MenuController extends Controller
      */
     public function edit(Menu $menu)
     {
+        // dd($menu->subMenuPage);
         $pages = Page::all(['id', 'title_en']);
         $categories = Category::all(['id', 'name']);
         $menus = Menu::all(['id', 'name_en']);
+        $submenus = Menu::all(['id', 'name_en']);
         $name = $menu->name;
-        return view('dashboard.menus.edit',['menu'=>$menu,'menus'=>$menus,'name' => $name,'categories'=>$categories,'pages'=>$pages]);
+        return view('dashboard.menus.edit',['menu'=>$menu,'menus'=>$menus,'submenus'=>$submenus,'name' => $name,'categories'=>$categories,'pages'=>$pages]);
     }
 
     /**
