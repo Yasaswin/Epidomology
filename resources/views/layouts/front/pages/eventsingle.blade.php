@@ -37,16 +37,21 @@
 				<main>
 					<div class="blog-post"><article>
 						<div class="post-info clear-fix">
-							<div class="date-post"><div class="day">26</div><div class="month">Feb</div></div>
+							<div class="date-post"><div class="day">{{$event->event_day}}</div><div class="month">{{$event->event_month}}</div></div>
 							<div class="post-info-main">
-								<div class="author-post">by Admin</div>
+								<div class="author-post">by {{$event->user->name}}</div>
 							</div>
 						</div>
+						@foreach ($images as $image)
 						<div class="blog-media picture">
-							<img src="img/4.jpg" class="columns-col-12" alt>
+							<div class="link-cont">
+								<a href="{{ asset('storage/post/images/'  . $image->image) }}" class="fancy fa fa-search"></a>
+							</div>
+							<img src="{{ asset('storage/post/images/'  . $image->image) }}" data-at2x="{{ asset('storage/post/images/'  . $image->image) }}" alt>
 						</div>
-						<h2>Donec mollis magna quis urna convallisquis</h2>
-						<p>Ut hendrerit mattis justo at suscipit. Praesent sagittis magna nec neque viverra lobortisProin eleifend neque venenatis facilisis cursus. Cras lobortis consequat lorem a porta. Sed condimentum erat non leo euismod, non tristique lectus elementum. Donec posuere dignissim nulla. Morbi vel molestie massa, vitae scelerisque ligula. Proin euismod tortor rutrum purus porta imperdiet. Pellentesque vitae metus in lorem posuere sagittis. Fusce eu tellus ut metus imperdiet molestie. Nunc dapibus lorem eget rutrum ultricies. Nam pretium accumsan ultricies. Etiam viverra pellentesque dui a feugiat.eros</p>
+						@endforeach
+						<h2>{{$event->title ?? 'Event Tittle'}}</h2>
+						<p>{!! $event->body ?? 'Event Body' !!}</p>
 
 					</article></div>
 				</main>
@@ -55,27 +60,14 @@
 				<!-- widget event -->
 				<aside class="widget-event">
 					<h2>Upcoming Events</h2>
-					<article class="clear-fix">
-						<div class="date"><div class="day">22</div><div class="month">Feb</div></div>
-						<div class="event-description"><span>9:00am to 1:00pm</span><p>Donec ut velit varius, sodales velit ac, aliquet purus. </p></div>
-					</article>
-					<article class="clear-fix">
-						<div class="date"><div class="day">23</div><div class="month">Feb</div></div>
-						<div class="event-description"><span>10:00am to 3:00pm</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
-					</article>
-					<article class="clear-fix">
-						<div class="date"><div class="day">24</div><div class="month">Feb</div></div>
-						<div class="event-description"><span>12:00am to 5:00pm</span><p>Suspendisse consequat eros eget consequat pulvinar</p></div>
-					</article>
-					<article class="clear-fix">
-						<div class="date"><div class="day">25</div><div class="month">Feb</div></div>
-						<div class="event-description"><span>12:00am to 5:00pm</span><p>Suspendisse consequat eros eget consequat pulvinar</p></div>
-					</article>
-					<article class="clear-fix">
-						<div class="date"><div class="day">26</div><div class="month">Feb</div></div>
-						<div class="event-description"><span>12:00am to 5:00pm</span><p>Suspendisse consequat eros eget consequat pulvinar</p></div>
-					</article>
-
+						@foreach(Post::getComingEvents() as $event)
+							<article class="clear-fix" >
+							<a href="{{ route('event.show',[$event->slug]) }}" >
+								<div class="date"><div class="day">{{$event->event_day}}</div><div class="month">{{$event->event_month}}</div></div>
+								<div class="event-description"><span>{{$event->event_start}} to {{$event->event_end}}</span><p>{{$event->title ?? 'Event Tittle'}}</p></div>
+							</a>
+							</article>
+						@endforeach
 				</aside>
 				<!-- / widget event -->
 			</div>

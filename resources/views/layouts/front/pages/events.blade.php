@@ -39,7 +39,7 @@
 						<h2>Upcoming Events</h2>
 						@foreach(Post::getComingEvents() as $event)
 							<article class="clear-fix" >
-							<a href="" >
+							<a href="{{ route('event.show',[$event->slug]) }}" >
 								<div class="date"><div class="day">{{$event->event_day}}</div><div class="month">{{$event->event_month}}</div></div>
 								<div class="event-description"><span>{{$event->event_start}} to {{$event->event_end}}</span><p>{{$event->title ?? 'Event Tittle'}}</p></div>
 							</a>
@@ -54,7 +54,7 @@
 						<h2>Upcoming Events</h2>
 						@foreach(Post::getPastEvents() as $event)
 							<article class="clear-fix" >
-							<a href="" >
+							<a href="{{ route('event.show',[$event->slug]) }}" >
 								<div class="date"><div class="day">{{$event->event_day}}</div><div class="month">{{$event->event_month}}</div></div>
 								<div class="event-description"><span>{{$event->event_start}} to {{$event->event_end}}</span><p>{{$event->title ?? 'Event Tittle'}}</p></div>
 							</a>

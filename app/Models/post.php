@@ -65,6 +65,14 @@ class Post extends Model
         
     }
 
+    protected function body(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => $this->body_en,
+        );
+        
+    }
+
     public static function getComingEvents(){
 
         $names = self::$event_names;

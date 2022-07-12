@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Page;
+use App\Models\Post;
 use App\Models\Layout;
 use App\Models\Category;
 use App\Models\Notice;
@@ -10,7 +11,7 @@ use Illuminate\Http\Request;
 use App\Services\PageService;
 use App\Http\Requests\StorePage;
 use App\Http\Requests\UpdatePage;
-
+use App\Models\PostImage;
 
 class PageController extends Controller
 {
@@ -26,6 +27,14 @@ class PageController extends Controller
     public function viewPage(Page $page){
 
         return view($page->layout->layout, ['page'=>$page]);
+    }
+
+    public function showEvent(Post $event){
+
+        $images = $event->images;
+
+        // dd($event);
+        return view('layouts.front.pages.eventsingle', ['event'=>$event,'images'=>$images]);
     }
 
     /**

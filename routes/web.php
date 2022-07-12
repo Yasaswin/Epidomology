@@ -66,5 +66,6 @@ Route::post('menu/{menu}/edit', [App\Http\Controllers\MenuController::class, 'up
 Route::get('menu/{menu}', [App\Http\Controllers\MenuController::class, 'show'])->name('menu.show');
 
 Route::get('{page}', [App\Http\Controllers\PageController::class, 'viewPage'])->name('viewpage');
+Route::get('events/{event}', [App\Http\Controllers\PageController::class, 'showEvent'])->name('event.show');
 
 Auth::routes();
