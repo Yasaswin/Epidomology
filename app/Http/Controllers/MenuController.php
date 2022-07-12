@@ -87,7 +87,6 @@ class MenuController extends Controller
      */
     public function edit(Menu $menu)
     {
-        // dd($menu->subMenuPage);
         $pages = Page::all(['id', 'title_en']);
         $categories = Category::all(['id', 'name']);
         $menus = Menu::all(['id', 'name_en']);

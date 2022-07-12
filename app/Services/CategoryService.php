@@ -47,7 +47,7 @@ class CategoryService {
 
     public function update(Category $category,$data)
     {
-        $this->checkConcurrency($category->updated_at, $data['updated_at']);
+        // $this->checkConcurrency($category->updated_at, $data['updated_at']);
         DB::beginTransaction();
         try 
         {

@@ -63,8 +63,10 @@ class Comm extends Model
         return self::menuStatuses(); 
     }
 
-
-
+    public static function getNow()
+    {   $now = Carbon::now()->format('Y-m-d H:i:s');
+        return $now;
+    }
     public static function getToday()
     {   $today = Carbon::today()->format(config('app.date_format'));
         //dd($today);

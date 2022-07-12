@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
-
+use Carbon\Carbon;
 
 class Post extends Model
 {
@@ -17,6 +17,8 @@ class Post extends Model
     protected $fillable = [
         'user_id', 'title','slug','body','published_at'
     ];
+
+    private static $event_names = ['event','events'];
 
         /**
      * Return the sluggable configuration array for this model.
@@ -44,7 +46,7 @@ class Post extends Model
     }
 
     /**
-     * Get the user's first name.
+     * 
      *
      * @return \Illuminate\Database\Eloquent\Casts\Attribute
      */
@@ -53,6 +55,70 @@ class Post extends Model
         return Attribute::make(
             get: fn ($value) => $this->categories()->pluck('categories.id')->toArray(),
         );
+    }
+
+    protected function title(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => $this->title_en,
+        );
+        
+    }
+
+    public static function getComingEvents(){
+
+        $names = self::$event_names;
+
+        return self::whereHas('categories', function ($q) use ($names) {
+            $q->whereIn('categories.name',$names);
+        })->where('posts.end','>',Comm::getNow())->orderBy('posts.start')->paginate(10);
+    
+    }
+    
+    public static function getPastEvents(){
+
+        $names = self::$event_names;
+
+        return self::whereHas('categories', function ($q) use ($names) {
+            $q->whereIn('categories.name',$names);
+        })->where('posts.end','<=',Comm::getNow())->orderBy('posts.end','DESC')->paginate(10);
+    
+    }
+
+    protected function eventDay(): Attribute
+    {
+        $day = $this->start ? Carbon::parse($this->start)->format('d') : null;
+        return Attribute::make(
+            get: fn ($value) => $day,
+        );
+        
+    }
+
+    protected function eventMonth(): Attribute
+    {
+        $month = $this->start ? Carbon::parse($this->start)->settings(['formatFunction' => 'translatedFormat'])->format('M') : null;
+        return Attribute::make(
+            get: fn ($value) => $month,
+        );
+        
+    }
+
+    protected function eventStart(): Attribute
+    {
+        $day = $this->start ? Carbon::parse($this->start)->settings(['formatFunction' => 'isoFormat'])->format('LT') : null;
+        return Attribute::make(
+            get: fn ($value) => $day,
+        );
+        
+    }
+
+    protected function eventEnd(): Attribute
+    {
+        $end = $this->end ? Carbon::parse($this->end)->settings(['formatFunction' => 'isoFormat'])->format('LT') : null;
+        return Attribute::make(
+            get: fn ($value) => $end,
+        );
+        
     }
 
     /**

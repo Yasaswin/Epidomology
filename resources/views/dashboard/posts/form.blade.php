@@ -18,20 +18,20 @@
                         <!-- /.card-header -->
                         <div class="card-body pad">
                             <div class="form-group">
-                                <label for="name">Tittle</label>
-                                <input type="text" class="form-control {{ $errors->has('title') ? ' is-invalid' : '' }}" placeholder="Enter Tittle" name="title" value="{{$errors->has('title')?old('title'):(empty(old('title'))?$post->title:old('title'))}}" {{$editable?'':' disabled'}} >
-                                @if ($errors->has('title'))
+                                <label for="name">Tittle English</label>
+                                <input type="text" class="form-control {{ $errors->has('title_en') ? ' is-invalid' : '' }}" placeholder="Enter Tittle" name="title_en" value="{{$errors->has('title_en')?old('title_en'):(empty(old('title_en'))?$post->title_en:old('title_en'))}}" {{$editable?'':' disabled'}} >
+                                @if ($errors->has('title_en'))
                                     <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('title') }}</strong>
+                                        <strong>{{ $errors->first('title_en') }}</strong>
                                     </span>
                                 @endif
                             </div>
                             <div class="mb-3">
-                                <textarea id="post-body" class="form-control box-shadow" name="body" placeholder="Post content..." {{$editable?'':' disabled'}} >{{$errors->has('body')?old('body'):(empty(old('body'))?$post->body:old('body'))}}</textarea>
+                                <textarea id="post-body" class="form-control box-shadow" name="body_en" placeholder="Post content..." {{$editable?'':' disabled'}} >{{$errors->has('body_en')?old('body_en'):(empty(old('body_en'))?$post->body_en:old('body_en'))}}</textarea>
                                 <div id="count" class="fs-14">0 words, 0 characters</div>
-                                @if ($errors->has('body'))
+                                @if ($errors->has('body_en'))
                                 <span class="invalid-message">
-                                    <strong>{{ $errors->first('body') }}</strong>
+                                    <strong>{{ $errors->first('body_en') }}</strong>
                                 </span>
                                 @endif
                             </div>
@@ -106,24 +106,81 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-lg-4">
-                    <div class="form-group">
-                        <div class="card card-outline card-info card-shadow sharp-corners  p-3 mb-3">
-                            <p class="mb-4">Post settings</p>
-                            <div class="d-flex justify-content-between">
-                                <button type="submit" name="draft" class="btn btn-sm btn-outline-secondary">Save draft</button>
-                                <button class="btn btn-sm btn-primary" type="submit">Publish</button>
+                    <!-- Sinahala -->
+                    <div class="card card-outline card-info">
+                        <div class="card-header">
+                            <h3 class="card-title">{{$name}}</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool btn-sm" data-card-widget="collapse" data-toggle="tooltip"
+                                        title="Collapse">
+                                <i class="fas fa-minus"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body pad">
+                            <div class="form-group">
+                                <label for="name">Tittle Sinhala</label>
+                                <input type="text" class="form-control {{ $errors->has('title_si') ? ' is-invalid' : '' }}" placeholder="Enter Tittle" name="title_si" value="{{$errors->has('title_si')?old('title_si'):(empty(old('title_si'))?$post->title_si:old('title_si'))}}" {{$editable?'':' disabled'}} >
+                                @if ($errors->has('title_si'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('title_si') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-group">
+                                    <label for="body_si">Content Sinhala</label>
+                                    <textarea class="form-control{{ $errors->has('body_si') ? ' is-invalid' : '' }}" placeholder="Content" name="body_si" rows="4" {{$editable?'':' disabled'}}>{{old('body_si')??$post->body_si}}</textarea>
+                                    @if ($errors->has('body_si'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('body_si') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Tamil -->
+                    <div class="card card-outline card-info">
+                        <div class="card-header">
+                            <h3 class="card-title">{{$name}}</h3>
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool btn-sm" data-card-widget="collapse" data-toggle="tooltip"
+                                        title="Collapse">
+                                <i class="fas fa-minus"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body pad">
+                            <div class="form-group">
+                                <label for="name">Tittle Tamil</label>
+                                <input type="text" class="form-control {{ $errors->has('title_ta') ? ' is-invalid' : '' }}" placeholder="Enter Tittle" name="title_ta" value="{{$errors->has('title_ta')?old('title_ta'):(empty(old('title_ta'))?$post->title_ta:old('title_ta'))}}" {{$editable?'':' disabled'}} >
+                                @if ($errors->has('title_ta'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('title_ta') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-group">
+                                    <label for="body_ta">Content Tamil</label>
+                                    <textarea class="form-control{{ $errors->has('body_ta') ? ' is-invalid' : '' }}" placeholder="Content" name="body_ta" rows="4" {{$editable?'':' disabled'}}>{{old('body_ta')??$post->body_ta}}</textarea>
+                                    @if ($errors->has('body_ta'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('body_ta') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
                     <div class="form-group">
                         <div class="card card-outline card-info card-shadow sharp-corners p-3 mb-3">
                             <label for="categories" class="mb-3">Categories</label>
                             <div class="select2-blue">
                                 <select name="category_ids[]" id="category_ids" class="form-control select2{{ $errors->has('category_ids') ? ' is-invalid' : '' }}" multiple="multiple" {{$editable?'':' disabled'}}>
                                     @foreach ($categories as $category)
-                                    <option value="{{$category->id}}" {{in_array($category->id,old('category_ids')??$post->category_ids)?'selected':''}}>{{$category->name}}</option>
+                                    <option value="{{$category->id}}" {{in_array($category->id,old('category_ids')??$post->category_ids)?'selected':''}} data-name="{{$category->name}}">{{$category->name}}</option>
                                     @endforeach
                                 </select>
                                 @if ($errors->has('category_ids'))
@@ -132,22 +189,21 @@
                                 </span>
                                  @endif
                             </div>
-                            <div class="form-group" id="event_start_container" style="display:none; margin-top:10px">
-
-                                <div class="box bg-white rounded box-shadow p-3 mb-3">
+                            <div class="form-group p-2" id="event_start_container" style="{{ $is_event ? '' : ' display:none;'}}">
+                                <div class="box bg-white rounded box-shadow">
                                     <label for="Language" class="mb-3">Event Start Date</label>
-                                    <input class="form-control" id="event_start_datetime" type="date" name="event_start_datetime" placeholder="date"><span class="help-block">Please enter a valid date</span>
+                                    <input class="form-control" id="event_start_datetime" type="datetime-local" name="start" placeholder="date" value="{{old('start')??$post->start??null}}" ><span class="help-block">Please enter a valid date</span>
                                 </div>
                             </div>
-                            <div class="form-group" id="event_end_container" style="display:none;">
-
-                                <div class="box bg-white rounded box-shadow p-3 mb-3">
+                            <div class="form-group p-1" id="event_end_container" style="{{ $is_event ? '' : ' display:none;'}}">
+                                <div class="box bg-white rounded box-shadow">
                                     <label for="Language" class="mb-3">Event End Date</label>
-                                    <input class="form-control" id="event_end_datetime" type="date" name="event_end_datetime" placeholder="date"><span class="help-block">Please enter a valid date</span>
+                                    <input class="form-control" id="event_end_datetime" type="datetime-local" name="end" placeholder="date" value="{{old('end')??$post->end??null}}"><span class="help-block">Please enter a valid date</span>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    @if ($editable)
                     <div class="form-group">
                         <div class="card card-outline card-info card-shadow sharp-corners p-3 mb-3">
                             <p class="mb-4">Featured images</p>
@@ -161,7 +217,7 @@
                                 <div class="hdtuto control-group lst input-group" style="margin-top:10px">
                                     <input type="file" name="image[]" class="myfrm form-control" multiple="true" accept=".png, .jpg, .jpeg">
                                     <div class="input-group-btn">
-                                        <button class="btn btn-danger btn-remove-image" type="button"><i class="fldemo glyphicon glyphicon-remove"></i> Remove</button>
+                                        <button class="btn btn-danger btn-remove-image" type="button"><i class="fldemo glyphicon glyphicon-remove"></i>Remove</button>
                                     </div>
                                 </div>
                             </div>
@@ -185,7 +241,7 @@
                                 <div class="hdtuto control-group lst input-group" style="margin-top:10px">
                                     <input type="file" name="pdf[]" class="myfrm form-control" multiple="true" accept=".png, .jpg, .jpeg">
                                     <div class="input-group-btn">
-                                        <button class="btn btn-danger btn-remove-doc" type="button"><i class="fldemo glyphicon glyphicon-remove"></i> Remove</button>
+                                        <button class="btn btn-danger btn-remove-doc" type="button"><i class="fldemo glyphicon glyphicon-remove"></i>Remove</button>
                                     </div>
                                 </div>
                             </div>
@@ -209,7 +265,7 @@
                                 <div class="hdtuto control-group lst input-group" style="margin-top:10px">
                                     <input type="text" name="video_link[]" class="myfrm form-control" placeholder="video Url" >
                                     <div class="input-group-btn">
-                                        <button class="btn btn-danger btn-remove-video" type="button"><i class="fldemo glyphicon glyphicon-remove"></i> Remove</button>
+                                        <button class="btn btn-danger btn-remove-video" type="button"><i class="fldemo glyphicon glyphicon-remove"></i>Remove</button>
                                     </div>
                                 </div>
                             </div>
@@ -220,6 +276,8 @@
                             @endif
                         </div>
                     </div>
+                    @else
+                    @endif
                 </div>    
             </div>
         </div>
@@ -230,6 +288,7 @@
 $(document).ready(function() {
 
     $('#category_ids').on('change', function() {
+        console.log($(this).find(':selected').data('name'))
         if($(this).find(':selected').data('name') =="events" || $(this).find(':selected').data('name') == "event"){
             $("#event_start_container").show();
             $("#event_end_container").show();
@@ -250,7 +309,7 @@ $(document).ready(function() {
 
   $('#post-body').summernote({
     placeholder: 'Post content...',
-    height: 365,
+    height: 250,
     callbacks: {
       onInit: function() {
         if ($('.note-editable').text().length) {

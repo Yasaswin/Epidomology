@@ -31,7 +31,6 @@ class PostController extends Controller
 
     }
 
-
     /**
      * Display a listing of the resource.
      *
@@ -51,6 +50,7 @@ class PostController extends Controller
      */
     public function create()
     {
+        $is_event = Category:: isEventPost( old('category_ids')??[] );
         $categories = Category::all(['id', 'name']);
         $post = New Post;
         $images = $post->images;
@@ -58,7 +58,7 @@ class PostController extends Controller
         $vedios = $post->vedios;
         $name = 'New';
         $post->category_ids = [];
-        return view('dashboard.posts.create',['post'=>$post,'name' => $name,'categories'=>$categories,'images'=>$images,'pdfs'=>$pdfs,'vedios'=>$vedios]);
+        return view('dashboard.posts.create',['post'=>$post,'name' => $name,'categories'=>$categories,'is_event' => $is_event,'images'=>$images,'pdfs'=>$pdfs,'vedios'=>$vedios]);
     }
 
     /**
@@ -85,11 +85,12 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
+        $is_event = Category:: isEventPost( $post->categories()->pluck('category_id')->toArray()??[] );
         $categories = Category::all(['id', 'name']);
         $images = $post->images;
         $name = $post->name;
         $post->category_ids = $post->categories()->pluck('categories.id')->toArray();
-        return view('dashboard.posts.view', ['post'=>$post,'name' => $name,'categories'=>$categories,'images'=>$images]);
+        return view('dashboard.posts.view', ['post'=>$post,'name' => $name,'categories'=>$categories,'is_event' => $is_event,'images'=>$images]);
     }
 
     /**
@@ -100,11 +101,12 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
+        $is_event = Category:: isEventPost( old('category_ids')??$post->categories()->pluck('category_id')->toArray()??[] );
         $categories = Category::all(['id', 'name']);
         $name = $post->title;
         $images = $post->images;
         $post->category_ids = $post->categories()->pluck('categories.id')->toArray();
-        return view('dashboard.posts.edit', ['post'=>$post,'name' => $name,'categories'=>$categories,'images'=>$images]);
+        return view('dashboard.posts.edit', ['post'=>$post,'name' => $name,'categories'=>$categories,'is_event' => $is_event,'images'=>$images]);
     }
 
     /**

@@ -7,7 +7,7 @@
 
 	<!-- CSRF Token -->
 	<meta name="csrf-token" content="{{ csrf_token() }}">
-
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 	<title>@yield('pageTitle') - {{ config('app.name') }}</title>
 
     @include('layouts.front.styles')
@@ -33,83 +33,36 @@
     <!-- page content -->
     <div class="page-content container clear-fix">
         <div class="grid-col-row">
-                <div class="grid-col grid-col-6">
-                    <!-- main content -->
-                    <div class="page-content grid-row">
-							<!-- widget event -->
-							<aside class="widget-event">
-								<h2>Upcoming Events</h2>
-								<article class="clear-fix" >
-                                <a href="{{ route('eventsingle') }}" >
-									<div class="date"><div class="day">22</div><div class="month">Feb</div></div>
-									<div class="event-description"><span>9:00am to 1:00pm</span><p>Donec ut velit varius, sodales velit ac, aliquet purus. </p></div>
-                                </a>
-								</article>
-								<article class="clear-fix">
-									<div class="date"><div class="day">23</div><div class="month">Feb</div></div>
-									<div class="event-description"><span>10:00am to 3:00pm</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
-								</article>
-								<article class="clear-fix">
-									<div class="date"><div class="day">24</div><div class="month">Feb</div></div>
-									<div class="event-description"><span>12:00am to 5:00pm</span><p>Suspendisse consequat eros eget consequat pulvinar</p></div>
-								</article>
-                                <article class="clear-fix">
-									<div class="date"><div class="day">25</div><div class="month">Feb</div></div>
-									<div class="event-description"><span>9:00am to 1:00pm</span><p>Donec ut velit varius, sodales velit ac, aliquet purus. </p></div>
-								</article>
-								<article class="clear-fix">
-									<div class="date"><div class="day">27</div><div class="month">Feb</div></div>
-									<div class="event-description"><span>10:00am to 3:00pm</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
-								</article>
-								<article class="clear-fix">
-									<div class="date"><div class="day">28</div><div class="month">Feb</div></div>
-									<div class="event-description"><span>12:00am to 5:00pm</span><p>Suspendisse consequat eros eget consequat pulvinar</p></div>
-								</article>
-							</aside>
-							<!-- / widget event -->
-		            </div>
-                    <!-- / main content -->
-                </div>
-				<div class="grid-col grid-col-6">
-                    <!-- main content -->
-                    <div class="page-content grid-row">
-							<!-- widget event -->
-							<aside class="widget-event">
-								<h2>Past Events</h2>
-								<article class="clear-fix" >
-                                <a href="{{ route('eventsingle') }}" >
-									<div class="date"><div class="day">22</div><div class="month">Feb</div></div>
-									<div class="event-description"><span>9:00am to 1:00pm</span><p>Donec ut velit varius, sodales velit ac, aliquet purus. </p></div>
-                                </a>
-								</article>
-								<article class="clear-fix">
-									<div class="date"><div class="day">23</div><div class="month">Feb</div></div>
-									<div class="event-description"><span>10:00am to 3:00pm</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
-								</article>
-								<article class="clear-fix">
-									<div class="date"><div class="day">24</div><div class="month">Feb</div></div>
-									<div class="event-description"><span>12:00am to 5:00pm</span><p>Suspendisse consequat eros eget consequat pulvinar</p></div>
-								</article>
-                                <article class="clear-fix">
-									<div class="date"><div class="day">25</div><div class="month">Feb</div></div>
-									<div class="event-description"><span>9:00am to 1:00pm</span><p>Donec ut velit varius, sodales velit ac, aliquet purus. </p></div>
-								</article>
-								<article class="clear-fix">
-									<div class="date"><div class="day">27</div><div class="month">Feb</div></div>
-									<div class="event-description"><span>10:00am to 3:00pm</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
-								</article>
-								<article class="clear-fix">
-									<div class="date"><div class="day">28</div><div class="month">Feb</div></div>
-									<div class="event-description"><span>12:00am to 5:00pm</span><p>Suspendisse consequat eros eget consequat pulvinar</p></div>
-								</article>
-							</aside>
-							<!-- / widget event -->
-		            </div>
-                    <!-- / main content -->
-                </div>
-				
-            <!-- sidebar right content -->
-            <!-- End sidebar right content -->
+			<div class="grid-col grid-col-6">
+				<div class="page-content grid-row">
+					<aside class="widget-event">
+						<h2>Upcoming Events</h2>
+						@foreach(Post::getComingEvents() as $event)
+							<article class="clear-fix" >
+							<a href="" >
+								<div class="date"><div class="day">{{$event->event_day}}</div><div class="month">{{$event->event_month}}</div></div>
+								<div class="event-description"><span>{{$event->event_start}} to {{$event->event_end}}</span><p>{{$event->title ?? 'Event Tittle'}}</p></div>
+							</a>
+							</article>
+						@endforeach
+					</aside>
+				</div>
+			</div>
+			<div class="grid-col grid-col-6">
+			<div class="page-content grid-row">
+					<aside class="widget-event">
+						<h2>Upcoming Events</h2>
+						@foreach(Post::getPastEvents() as $event)
+							<article class="clear-fix" >
+							<a href="" >
+								<div class="date"><div class="day">{{$event->event_day}}</div><div class="month">{{$event->event_month}}</div></div>
+								<div class="event-description"><span>{{$event->event_start}} to {{$event->event_end}}</span><p>{{$event->title ?? 'Event Tittle'}}</p></div>
+							</a>
+							</article>
+						@endforeach
+					</aside>
+				</div>
+			</div>
         </div>
     </div>
 

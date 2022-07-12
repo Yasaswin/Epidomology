@@ -88,13 +88,17 @@ class MenuService {
             $menu->status = $data['status'] ?? $this->default_status;
             $menu->save();  
 
-            $menu->page->subMenu()->detach();
+            if($menu->page){
+                if($menu->page->subMenu){
+                        $menu->page->subMenu()->detach();
+                        
+                    if($menu->has_sub_menus){
+                        $sub_menu = $data['menu_id'] == '*' ? $menu->id : ($data['menu_id'] ?? null);
+                        $menu->page->subMenu()->attach($sub_menu);
+                    }
+                }
 
-            if($menu->id&&$menu->has_sub_menus){
-                $sub_menu = $data['menu_id'] == '*' ? $menu->id : ($data['menu_id'] ?? null);
-                $menu->page->subMenu()->attach($sub_menu);
             }
-
         }
         catch (Exception $e)
         {

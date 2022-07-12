@@ -195,6 +195,7 @@ return [
         'Menu' => App\Models\Menu::class,
         'Page' => App\Models\Page::class,
         'Tile' => App\Models\Tile::class,
+        'Post' => App\Models\Post::class,
 
     ])->toArray(),
 

@@ -24,7 +24,7 @@ class StorePost extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string',
+            'title_en' => 'required|string',
         ];
     }
 
@@ -36,7 +36,7 @@ class StorePost extends FormRequest
     public function messages()
     {
         return [
-            'title.required' => 'Post Tittle is mandetory',
+            'title_en.required' => 'Post Tittle is mandetory',
         ];
     }
 }

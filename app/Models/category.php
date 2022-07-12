@@ -68,6 +68,14 @@ class Category extends Model
     {
         return $this->belongsToMany(Post::class,'category_post');
     }
+
+    public function scopeIn($query, $ids)
+    {
+        return whereIn('id',$ids);
+    }
     
+    public static function isEventPost($ids=[]){
+        return self::whereIn('id',$ids)->whereIn('name',['event','events'])->exists();
+    }
 
 }

@@ -68,9 +68,8 @@ class TileController extends Controller
      */
     public function show(Tile $tile)
     {
-        $pages = Page::all(['id', 'title']);
+        $pages = Page::all(['id', 'title_en']);
         $images = $tile->background_image;
-        // dd($images);
         $name = $tile->name;
         return view('dashboard.tiles.view', ['tile'=>$tile,'name' => $name,'pages'=>$pages,'images'=>$images]);
     }
@@ -83,7 +82,7 @@ class TileController extends Controller
      */
     public function edit(Tile $tile)
     {
-        $pages = Page::all(['id', 'title']);
+        $pages = Page::all(['id', 'title_en']);
         $images = $tile->images;
         $name = $tile->name;
         return view('dashboard.tiles.edit', ['tile'=>$tile,'name' => $name,'pages'=>$pages,'images'=>$images]);

@@ -71,8 +71,14 @@ class PostService {
         {          
             $post = new Post; 
             $post->user_id = $uid;          
-            $post->title = $data['title'];
-            $post->body = $data['body'];
+            $post->title_en = $data['title_en']??null;
+            $post->body_en = $data['body_en']??null;
+            $post->title_si = $data['title_si']??null;
+            $post->body_si = $data['body_si']??null;
+            $post->title_ta = $data['title_ta']??null;
+            $post->body_ta = $data['body_ta']??null;
+            $post->start = $data['start']??null;
+            $post->end = $data['end']??null;
             $post->published_at = \Carbon\Carbon::now();
             $post->save();
 
@@ -107,8 +113,14 @@ class PostService {
     {    
         if (
             !$post->user_id ||          
-            $post->title != $data['title'] ||
-            $post->body != $data['body'] ||
+            $post->title_en != $data['title_en'] ||
+            $post->body_en != $data['body_en'] ||
+            $post->title_si != $data['title_si'] ||
+            $post->body_si != $data['body_si'] ||
+            $post->title_ta != $data['title_ta'] ||
+            $post->body_ta != $data['body_ta'] ||
+            $post->start != $data['start'] ||
+            $post->end != $data['end'] ||
             !$post->published_at
                 ) {          
                 return true;
@@ -129,8 +141,14 @@ class PostService {
         {
             if ($this->shouldUpdate($post,$data)){
             $post->user_id = $post->user_id ?? $uid;          
-            $post->title = $data['title'];
-            $post->body = $data['body'];
+            $post->title_en = $data['title_en']??null;
+            $post->body_en = $data['body_en']??null;
+            $post->title_si = $data['title_si']??null;
+            $post->body_si = $data['body_si']??null;
+            $post->title_ta = $data['title_ta']??null;
+            $post->body_ta = $data['body_ta']??null;
+            $post->start = $data['start']??null;
+            $post->end = $data['end']??null;
             $post->published_at = \Carbon\Carbon::now();
             $post->save();
             }
