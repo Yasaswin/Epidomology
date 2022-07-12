@@ -21,9 +21,8 @@
 <div class="page-title">
 			<div class="grid-row">
 				<nav class="bread-crumb">
-					<a href="index.html">About us</a>
+					<a href="index.html">Events</a>
 					<i class="fa fa-long-arrow-right"></i>
-					<a href="content-elements.html">History</a>
 				</nav>
 			</div>
 		</div>
@@ -41,7 +40,7 @@
 							<article class="clear-fix" >
 							<a href="{{ route('event.show',[$event->slug]) }}" >
 								<div class="date"><div class="day">{{$event->event_day}}</div><div class="month">{{$event->event_month}}</div></div>
-								<div class="event-description"><span>{{$event->event_start}} to {{$event->event_end}}</span><p>{{$event->title ?? 'Event Tittle'}}</p></div>
+								<div class="event-description"><span>{{$event->event_start}} to {{$event->event_end}}</span><p><strong>{{$event->title ?? 'Event Tittle'}}</strong></p></div>
 							</a>
 							</article>
 						@endforeach
@@ -56,7 +55,7 @@
 							<article class="clear-fix" >
 							<a href="{{ route('event.show',[$event->slug]) }}" >
 								<div class="date"><div class="day">{{$event->event_day}}</div><div class="month">{{$event->event_month}}</div></div>
-								<div class="event-description"><span>{{$event->event_start}} to {{$event->event_end}}</span><p>{{$event->title ?? 'Event Tittle'}}</p></div>
+								<div class="event-description"><span>{{$event->event_start}} to {{$event->event_end}}</span><strong>{{$event->title ?? 'Event Tittle'}}</strong></div>
 							</a>
 							</article>
 						@endforeach

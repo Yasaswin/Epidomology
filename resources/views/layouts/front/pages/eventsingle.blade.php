@@ -21,9 +21,9 @@
 <div class="page-title">
 			<div class="grid-row">
 				<nav class="bread-crumb">
-					<a href="">Event</a>
+					<a href="">Events</a>
 					<i class="fa fa-long-arrow-right"></i>
-					<a href="">Single Item</a>
+					<a href="">{{$event->title ?? 'Event Tittle'}}</a>
 				</nav>
 			</div>
 		</div>
