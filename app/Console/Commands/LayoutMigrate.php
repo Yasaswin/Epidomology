@@ -72,6 +72,11 @@ class LayoutMigrate extends Command
             $page->save();
 
             $page = new layout();
+            $page->name = 'Disaster';
+            $page->layout = 'layouts.front.pages.disaster';
+            $page->save();
+
+            $page = new layout();
             $page->name = 'Gallery';
             $page->layout = 'layouts.front.pages.gallery';
             $page->save();

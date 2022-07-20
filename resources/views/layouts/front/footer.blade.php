@@ -20,18 +20,18 @@
 						<br />
 						<a href="www.sample.com" class="address">Epidemiology Unit,<br/>Ministry of Health,<br/> #231, De Saram Place, Colombo 10</a>
 					</address>
-					<div class="footer-social">
+					<!-- <div class="footer-social">
 						<a href="" class="fa fa-twitter"></a>
 						<a href="" class="fa fa-skype"></a>
 						<a href="" class="fa fa-google-plus"></a>
 						<a href="" class="fa fa-rss"></a>
 						<a href="" class="fa fa-youtube"></a>
-					</div>
+					</div> -->
 				</section>
 				<section class="grid-col grid-col-4 footer-latest">
 					<h2 class="corner-radius">Latest </h2>
 					<article>
-						<!-- <img src="http://placehold.it/83x83" data-at2x="http://placehold.it/83x83" alt> -->
+						<img src="img/9.jpg" data-at2x="img/9.jpg" alt>
 						<h3>Sed aliquet dui at auctor blandit</h3>
 						<div class="course-date">
 							<div>10<sup>00</sup></div>
@@ -41,7 +41,7 @@
 						sit amet pretium tortor mattis.</p>
 					</article>
 					<article>
-						<!-- <img src="http://placehold.it/83x83" data-at2x="http://placehold.it/83x83" alt> -->
+						<img src="img/9.jpg" data-at2x="img/9.jpg" alt>
 						<h3>Sed aliquet dui at auctor blandit</h3>
 						<div class="course-date">
 							<div>10<sup>00</sup></div>
@@ -52,27 +52,10 @@
 					</article>
 				</section>
 				<section class="grid-col grid-col-4 footer-latest">
-					<h2 class="corner-radius">Reference </h2>
-					<article>
-						<!-- <img src="http://placehold.it/83x83" data-at2x="http://placehold.it/83x83" alt> -->
-						<h3>Sed aliquet dui at auctor blandit</h3>
-						<div class="course-date">
-							<div>10<sup>00</sup></div>
-							<div>23.02.15</div>
-						</div>
-						<p>Sed pharetra lorem ut dolor dignissim,
-						sit amet pretium tortor mattis.</p>
-					</article>
-					<article>
-						<!-- <img src="http://placehold.it/83x83" data-at2x="http://placehold.it/83x83" alt> -->
-						<h3>Sed aliquet dui at auctor blandit</h3>
-						<div class="course-date">
-							<div>10<sup>00</sup></div>
-							<div>23.02.15</div>
-						</div>
-						<p>Sed pharetra lorem ut dolor dignissim,
-						sit amet pretium tortor mattis.</p>
-					</article>
+					<h2 class="corner-radius">Location </h2>
+						<!-- google map -->
+						<div class="mapouter"><div class="gmap_canvas"><iframe width="437" height="333" id="gmap_canvas" src="https://maps.google.com/maps?q=epidamology&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org">123movies</a><br><style>.mapouter{position:relative;text-align:right;height:320px;width:370px;}</style><a href="https://www.embedgooglemap.net">how to embed google maps</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:320px;width:370px;}</style></div></div>
+						<!-- / google map -->					
 				</section>
 				<!-- <section class="grid-col grid-col-4 footer-contact-form">
 					<h2 class="corner-radius">apply for instructor</h2>
