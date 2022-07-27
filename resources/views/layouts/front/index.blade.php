@@ -121,7 +121,7 @@
 						<div class="counter-block">
 							<i class="flaticon-pencil"></i>
 							<div class="counter" data-count="41">0</div>
-							<div class="counter-name">Lections</div>
+							<div class="counter-name">Item 3</div>
 						</div>
 					</div>
 					<div class="grid-col grid-col-3 alt">
@@ -155,12 +155,12 @@
 						</div>
 					</div>
 					<div class="grid-col grid-col-6">
-						<h2>We Offer</h2>
+						<h2>Section</h2>
 						<p>Donec sollicitudin lacus in felis luctus blandit. Ut hendrerit mattis justo at suscipit. Vivamus orci urna, ornare vitae tellus in, condimentum imperdiet eros. Maecenas accumsan, massa nec vulputate congue.<br/><br/>Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</p>
 						<div class="tabs-box">
-							<a href="#vd" data-boxs-tab="1" class="active">Education</a>
-							<a href="#dvd" data-boxs-tab="2">Knoweledge</a>
-							<a href="#cddv" data-boxs-tab="3">Employment</a>
+							<a href="#vd" data-boxs-tab="1" class="active">Tab 1</a>
+							<a href="#dvd" data-boxs-tab="2">Tab 3</a>
+							<a href="#cddv" data-boxs-tab="3">Tab 3</a>
 						</div>
 					</div>
 				</div>

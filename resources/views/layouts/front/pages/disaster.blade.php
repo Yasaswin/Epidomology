@@ -88,7 +88,8 @@
 											$has_td = false; 
 											for ($i = 1; $i <= $tbl1_cols; $i++){
 												$has_td = $has_td || ($labels['tbl1_r'.$j.'_c'.$i] ?? false);
-												$tr = $tr.'<td>'.($labels['tbl1_r'.$j.'_c'.$i]??null).'</td>';											}
+												$tr = $tr.'<td>'.($labels['tbl1_r'.$j.'_c'.$i]??null).'</td>';											
+											}
 											$tr = $tr.'</tr>';
 										@endphp
 										@if ($has_td)
@@ -117,7 +118,8 @@
 											$has_td = false; 
 											for ($i = 1; $i <= $tbl2_cols; $i++){
 												$has_td = $has_td || ($labels['tbl2_r'.$j.'_c'.$i] ?? false);
-												$tr = $tr.'<td>'.($labels['tbl2_r'.$j.'_c'.$i]??null).'</td>';											}
+												$tr = $tr.'<td>'.($labels['tbl2_r'.$j.'_c'.$i]??null).'</td>';											
+											}
 											$tr = $tr.'</tr>';
 										@endphp
 										@if ($has_td)

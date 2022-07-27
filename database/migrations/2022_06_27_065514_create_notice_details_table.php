@@ -23,8 +23,6 @@ return new class extends Migration
             $table->string('label_id', 20)->nullable();
             $table->enum('status', array('SHOW','HIDE'))->default('SHOW');
             $table->unique(['notice_id','label_id']);
-
-
             $table->timestamps();
         });
     }

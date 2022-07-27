@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Notice;
+use App\Models\Layout;
+
 use Illuminate\Http\Request;
 
 class NoticeController extends Controller
@@ -14,7 +16,7 @@ class NoticeController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -24,7 +26,10 @@ class NoticeController extends Controller
      */
     public function create()
     {
-        //
+        $layouts = Layout::all(['id', 'name']);
+        $notice = New Notice;
+        $name = 'New';
+        return view('dashboard.notices.create',['notice'=>$notice,'name' => $name,'layouts'=>$layouts]);
     }
 
     /**
@@ -35,7 +40,11 @@ class NoticeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
+        $notice = $this->noticeservice->store($request);
+
+        // Alert::success('Success Title', 'Tile was created successfully!');
+        return redirect()->route('notice.show', [$notice])->with('success', 'Notice was created successfully!');
     }
 
     /**

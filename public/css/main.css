@@ -1329,7 +1329,7 @@ header:before{
 	position: relative;
 }
 .sticky-menu .logo {
-	height: 100px;
+	height: 90px;
 	display: flex;
 	margin: 14px 0;
 	float: left;
@@ -1418,6 +1418,9 @@ header:before{
 	display: block;
 	padding-left: 10px;
 }
+.main-nav>ul>li>a:hover {
+color: white;}
+
 .main-nav>ul>li>a:after {
 	content: "|";
 	padding-left: 9.5px;
@@ -1583,6 +1586,9 @@ header:before{
 	display: block;
 	padding: 2px 25px;
 	white-space: nowrap;
+}
+.main-nav>ul>li>ul a:hover {
+color:white;
 }
 .main-nav>ul>li>ul a:before{
 	font-family: FontAwesome;

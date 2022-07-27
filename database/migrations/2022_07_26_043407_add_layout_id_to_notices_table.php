@@ -13,12 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('notices', function (Blueprint $table) {
-            $table->id();
-            $table->string('name', 100);
-            $table->string('image')->nullable();
-            $table->enum('status', array('ACTIVE','INACTIVE'))->default('ACTIVE');
-            $table->timestamps();
+        Schema::table('notices', function (Blueprint $table) {
+            $table->foreignId('layout_id')->nullable()->constrained('layouts')->onDelete('cascade');  
         });
     }
 
@@ -29,6 +25,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('notices');
+        Schema::table('notices', function (Blueprint $table) {
+            $table->dropForeign(['layout_id']);
+            $table->dropColumn('layout_id');
+        });
     }
 };

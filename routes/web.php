@@ -65,6 +65,14 @@ Route::get('menu/{menu}/edit', [App\Http\Controllers\MenuController::class, 'edi
 Route::post('menu/{menu}/edit', [App\Http\Controllers\MenuController::class, 'update'])->name('menu.update');
 Route::get('menu/{menu}', [App\Http\Controllers\MenuController::class, 'show'])->name('menu.show');
 
+Route::get('notices', [App\Http\Controllers\NoticeController::class, 'index'])->name('notice.filter');
+Route::get('notice/create', [App\Http\Controllers\NoticeController::class, 'create'])->name('notice.create');
+Route::post('notice/create', [App\Http\Controllers\NoticeController::class, 'store'])->name('notice.store');
+Route::get('notice/{notice}/edit', [App\Http\Controllers\NoticeController::class, 'edit'])->name('notice.edit');
+Route::post('notice/{notice}/edit', [App\Http\Controllers\NoticeController::class, 'update'])->name('notice.update');
+Route::get('notice/{notice}', [App\Http\Controllers\NoticeController::class, 'show'])->name('notice.show');
+
+
 Route::get('{page}', [App\Http\Controllers\PageController::class, 'viewPage'])->name('viewpage');
 Route::get('events/{event}', [App\Http\Controllers\PageController::class, 'showEvent'])->name('event.show');
 
