@@ -68,7 +68,7 @@ class LayoutMigrate extends Command
 
             $page = new layout();
             $page->name = 'Diseases Card';
-            $page->layout = 'layouts.front.pages.dashboard';
+            $page->layout = 'layouts.front.pages.covid';
             $page->save();
 
             $page = new layout();

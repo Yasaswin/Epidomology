@@ -9,7 +9,11 @@ return [
     'title' => 'Notice',
     'lbl_name' => 'Notice Name',
     'lbl_layout' => 'Layout',
-    'lbl_image' => 'Upload Image'
+    'lbl_image' => 'Upload Image',
+
+    'tbl_name' => 'Name',
+    'tbl_status' => 'Status'
+
 
 
 ];

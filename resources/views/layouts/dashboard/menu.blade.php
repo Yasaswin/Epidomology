@@ -59,4 +59,10 @@
         <p>Menus</p>
     </a>
 </li>
+<li class="nav-item">
+    <a href="{{ route('notice.filter') }}" class="nav-link {{ Request::is('notice*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-bars"></i>
+        <p>Notices</p>
+    </a>
+</li>
 

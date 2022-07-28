@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name',150)->nullable();
             $table->string('layout',150)->nullable();
+            $table->enum('mapping', array('NOTICE','PAGE'))->default('PAGE');
             $table->timestamps();
         });
     }
